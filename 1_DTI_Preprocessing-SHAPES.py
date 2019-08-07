@@ -173,12 +173,12 @@ reorient2 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 register2 = Node(fsl.FLIRT(output_type='NIFTI_GZ',
                            rigid2D=True,
                            apply_xfm=True),
-                 name='register2'
+                 name='register2')
 
 # In[20]:
 
 
-preproc_flow=Workflow(name='preproc_flow')
+preproc_flow = Workflow(name='preproc_flow')
 preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Select AP and PA encoded fieldmaps; merge niftis
                       (sf, create_merge, [('fmapap', 'ap'),
@@ -242,6 +242,6 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, datasink, [('bval', '2_Transfer.@par.@par.@par'),
                                       ('bvec', '2_Transfer.@par.@par.@par.@par')])
                       ])
-preproc_flow.base_dir=workflow_dir
+preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
-preproc=preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
+preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
