@@ -173,19 +173,12 @@ reorient2 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 register2 = Node(fsl.FLIRT(output_type='NIFTI_GZ',
                            rigid2D=True,
                            apply_xfm=True),
-                 name='register2')
-
-# FSL Eddy correction to remove eddy current distortion
-eddy = Node(fsl.Eddy(is_shelled=True,
-                     cnr_maps=True,
-                     repol=True),
-            name='eddy')
-
+                 name='register2'
 
 # In[20]:
 
 
-preproc_flow = Workflow(name='preproc_flow')
+preproc_flow=Workflow(name='preproc_flow')
 preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Select AP and PA encoded fieldmaps; merge niftis
                       (sf, create_merge, [('fmapap', 'ap'),
@@ -248,51 +241,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                              ('out_file', '2_Transfer.@par.@par')]),
                       (sf, datasink, [('bval', '2_Transfer.@par.@par.@par'),
                                       ('bvec', '2_Transfer.@par.@par.@par.@par')])
-                      #                       #Run eddy correction
-                      #                        (sf, eddy, [('index', 'in_index'),
-                      #                                   ('bvec', 'in_bvec'),
-                      #                                   ('bval', 'in_bval'),
-                      #                                   ('aps', 'in_acqp')]),
-                      #                        (stripT1, eddy, [('mask_file', 'in_mask')]),
-                      #                        (register2, eddy, [('out_file','in_file')]),
-                      #                        (eddy, datasink,[('out_corrected','2_Eddy_Corrected'),
-                      #                                         ('out_corrected', 'preafq.@par'),
-                      #                                         ('out_rotated_bvecs','preafq.@par.@par'),
-                      #                                         ('out_rotated_bvecs','2_Eddy_Corrected.@par'),
-                      #                                         ('out_movement_rms','2_Eddy_Corrected.@par.@par'),
-                      #                                         ('out_outlier_report','2_Eddy_Corrected.@par.@par.@par')]),
-                      #                        #Save subject bval files to preafq dir
-                      #                        (sf, datasink, [('bval', 'preafq.@par.@par.@par')])
                       ])
-preproc_flow.base_dir = workflow_dir
+preproc_flow.base_dir=workflow_dir
 preproc_flow.write_graph(graph2use='flat')
-preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
-
-
-# In[16]:
-
-
-###
-
-# def organize_preafq(sub):
-
-
-# # Do all the things:
-# def run_AFQ(preafq):
-#     from AFQ import api
-#     myafq = api.AFQ(join(home,'preafq/'))
-#     myafq.set_dti_cfa()
-#     myafq.set_dti_pdd()
-#     myafq.set_template_xform()
-#     myafq.export_rois()
-#     myafq.export_bundles()
-#     myafq.combine_profiles()
-
-
-# In[17]:
-
-
-# myafq.combine_profiles()
-
-
-# In[ ]:
+preproc=preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
