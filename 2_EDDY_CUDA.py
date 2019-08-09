@@ -87,7 +87,18 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                      ('out_rotated_bvecs', '3_Eddy_Corrected.@par'),
                                      ('out_movement_rms',
                                       '3_Eddy_Corrected.@par.@par'),
-                                     ('out_outlier_report', '3_Eddy_Corrected.@par.@par.@par')])
+                                     ('out_parameter',
+                                      '3_Eddy_Corrected.@par.@par.@par'),
+                                     ('out_restricted_movement_rms',
+                                      '3_Eddy_Corrected.@par.@par.@par.@par'),
+                                     ('out_shell_alignment_parameters',
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par'),
+                                     ('out_cnr_maps',
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par'),
+                                     ('out_residuals',
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
+                                     ('out_outlier_report',
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par')])
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')

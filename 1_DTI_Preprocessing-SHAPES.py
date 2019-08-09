@@ -38,12 +38,13 @@ else:
 
 
 # Read in subject subject_list
-subject_info = read_csv(
-    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_info[0].tolist()
+# subject_info = read_csv(
+#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subject_list = subject_info[0].tolist()
 
 # Manual subject list
-#subject_list = ['sub-A200', 'sub-A201']
+subject_list = ['sub-A200', 'sub-A201',
+                'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']
 
 # Create preprocessing Workflow
 
