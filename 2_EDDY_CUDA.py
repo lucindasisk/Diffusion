@@ -50,7 +50,8 @@ template = dict(mask=join(home, '2_Transfer/{subject_id}/{subject_id}_ses-shapes
                 bvec=join(
                     home, '2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_dwi.bvec'),
                 aps=join(home, 'shapes_acqparams.txt'),
-                index=join(home, 'shapes_index.txt')
+                index=join(home, 'shapes_index.txt',
+eddybase=join(home,'eddyCUDA_data/3_Eddy_Corrected/{subject_id)/eddy_corrected')
                 )
 
 sf = Node(SelectFiles(template,
@@ -107,9 +108,6 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
-<<<<<<< HEAD
-eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 10})
-=======
 eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
@@ -133,4 +131,4 @@ eddyqc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
 eddyqc_flow.base_dir = workflow_dir
 eddyqc_flow.write_graph(graph2use='flat')
 eddyqc = eddyqc_flow.run('MultiProc', plugin_args={'n_procs': 4})
->>>>>>> 61459304dccfca693f815b486fe28f37825e69ff
+
