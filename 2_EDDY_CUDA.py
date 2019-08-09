@@ -20,7 +20,7 @@ from os.path import join
 # Set variables
 subject_list = ['sub-A200']  # , 'sub-A201']
 
-home = getcwd()
+home = getcwd() + '/..'
 data_dir = join(home, 'eddyCUDA_data')
 workflow_dir = join(home, 'eddyCUDA_workflow')
 home
