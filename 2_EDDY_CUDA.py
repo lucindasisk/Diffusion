@@ -102,7 +102,7 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                      ('out_residuals',
                                       '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
                                      ('out_outlier_report',
-                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par')])
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')])
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
