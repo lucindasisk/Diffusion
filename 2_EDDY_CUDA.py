@@ -43,7 +43,7 @@ infosource.iterables = [('subject_id', subject_list)]
 # SelectFiles
 template = dict(mask=join(home, '2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain_mask.nii.gz'),
                 dti=join(
-                    home, '2_Transfer/{subject_id}/resampled_dropped_denoised_gibbs_biascorr_corrected_reoriented_flirt.nii.gz'),
+                    home, '2_Transfer/{subject_id}/denoised_gibbs_bias_corrected_reoriented_flirt.nii.gz'),
                 bval=join(
                     home, '2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
@@ -64,7 +64,7 @@ sf = Node(SelectFiles(template,
 # FSL Eddy correction to remove eddy current distortion
 
 eddy = Node(fsl.Eddy(is_shelled=True,
-                     interp='spline',
+                     interp='trilinear',
                      method='jac',
                      output_type='NIFTI_GZ',
                      residuals=True,
@@ -106,4 +106,4 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
-eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
+eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 10})
