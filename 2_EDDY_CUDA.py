@@ -44,7 +44,7 @@ infosource.iterables = [('subject_id', subject_list)]
 # SelectFiles
 template = dict(mask=join(home, '2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain_mask.nii.gz'),
                 dti=join(
-                    home, '2_Transfer/{subject_id}/resampled_dropped_denoised_gibbs_biascorr_corrected_reoriented_flirt.nii.gz'),
+                    home, '2_Transfer/{subject_id}/denoised_gibbs_bias_corrected_reoriented_flirt.nii.gz'),
                 bval=join(
                     home, '2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
