@@ -64,7 +64,7 @@ sf = Node(SelectFiles(template,
 # FSL Eddy correction to remove eddy current distortion
 
 eddy = Node(fsl.Eddy(is_shelled=True,
-                     interp='linear',
+                     interp='spline',
                      method='jac',
                      output_type='NIFTI_GZ',
                      residuals=True,
