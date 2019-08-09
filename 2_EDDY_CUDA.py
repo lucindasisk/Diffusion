@@ -18,7 +18,8 @@ from os.path import join
 
 
 # Set variables
-subject_list = ['sub-A200']  # , 'sub-A201']
+subject_list = ['sub-A200', 'sub-A201', 'sub-A687',
+                'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
 
 home = getcwd() + '/..'
 data_dir = join(home, 'eddyCUDA_data')
@@ -107,3 +108,25 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
 eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
+
+
+# eddyqc nodes
+
+eddyquad = Node(fsl.EddyQuad(base_name='eddy_corrected'),
+                name='eddyquad')
+
+
+# Workflow
+
+eddyqc_flow = Workflow(name='eddyqc_flow')
+eddyqc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
+                     (sf, eddyquad, [('eddybase', 'base_name'),
+                                     ('index', 'idx_file'),
+                                     ('aps', 'param_file'),
+                                     ('mask', 'mask_file'),
+                                     ('bval', 'bval_file'),
+                                     ('bvec', 'bvec_file')])
+                     ])
+eddyqc_flow.base_dir = workflow_dir
+eddyqc_flow.write_graph(graph2use='flat')
+eddyqc = eddyqc_flow.run('MultiProc', plugin_args={'n_procs': 4})
