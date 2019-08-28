@@ -43,8 +43,7 @@ else:
 # subject_list = subject_info[0].tolist()
 
 # Manual subject list
-subject_list = ['sub-A200', 'sub-A201',
-                'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']
+subject_list = ['sub-A208']
 
 # Create preprocessing Workflow
 
