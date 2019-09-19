@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[7]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
@@ -21,34 +21,34 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[10]:
+# In[8]:
+
 
 # Set variables
 user = expanduser('~')
 if user == '/Users/lucindasisk':
     home = join(user, 'Desktop/Milgram/candlab')
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    workflow_dir = join(home, 'analyses/dwi/preproc_workflow')
-    data_dir = join(home, 'analyses/dwi/preproc_data')
+    workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
+    data_dir = join(home, 'analyses/shapes/dwi/preproc_data')
 else:
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    workflow_dir = join(home, 'analyses/dwi/preproc_workflow')
-    data_dir = join(home, 'analyses/dwi/preproc_data')
-
-
+    workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
+    data_dir = join(home, 'analyses/shapes/dwi/preproc_data')
+    
 # Read in subject subject_list
-# subject_info = read_csv(
-#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-# subject_list = subject_info[0].tolist()
+subject_list = read_csv(
+    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ')
 
 # Manual subject list
-subject_list = ['sub-A208']
+# subject_list = ['sub-A200']  # , 'sub-A201']
+
+
+# In[9]:
+
 
 # Create preprocessing Workflow
-
-
-# In[12]:
 
 # set default FreeSurfer subjects dir
 fsr.FSCommand.set_default_subjects_dir(raw_dir)
@@ -85,7 +85,7 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
-# In[13]:
+# In[10]:
 
 
 # Merge AP/PA encoding direction fieldmaps
@@ -104,7 +104,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
                     name='create_merge')
 
 
-# In[14]:
+# In[11]:
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
@@ -176,7 +176,9 @@ register2 = Node(fsl.FLIRT(output_type='NIFTI_GZ',
                            apply_xfm=True),
                  name='register2')
 
-# In[20]:
+
+# In[12]:
+
 
 
 preproc_flow = Workflow(name='preproc_flow')
@@ -246,3 +248,10 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
 preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
 preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
+
+
+# In[ ]:
+
+
+
+
