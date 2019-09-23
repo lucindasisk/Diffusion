@@ -18,7 +18,7 @@ from os import chdir, remove, getcwd, makedirs
 from shutil import copyfile
 from nipype import config, logging
 from datetime import date
-import AFQ
+#import AFQ
 today = str(date.today())
 config.enable_debug_mode()
 
