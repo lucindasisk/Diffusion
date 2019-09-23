@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
+# In[3]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[8]:
+# In[4]:
 
 
 # Set variables
@@ -45,7 +45,13 @@ subject_list = read_csv(
 # subject_list = ['sub-A200']  # , 'sub-A201']
 
 
-# In[9]:
+# In[ ]:
+
+
+# 9/22/19: change so that T1 is registered to B0 per https://mrtrix.readthedocs.io/en/latest/quantitative_structural_connectivity/act.html
+
+
+# In[5]:
 
 
 # Create preprocessing Workflow
@@ -77,7 +83,8 @@ template = dict(t1=join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_se
                 fmapap=join(
                     raw_dir, '{subject_id}/ses-shapesV1/fmap/{subject_id}_ses-shapesV1_acq-dwi_dir-AP_epi.nii.gz'),
                 aps=join(raw_dir, 'shapes_acqparams.txt'),
-                index=join(raw_dir, 'shapes_index.txt')
+                index=join(raw_dir, 'shapes_index.txt'),
+                mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
                 )
 
 sf = Node(SelectFiles(template,
@@ -85,7 +92,7 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
-# In[10]:
+# In[6]:
 
 
 # Merge AP/PA encoding direction fieldmaps
@@ -104,7 +111,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
                     name='create_merge')
 
 
-# In[11]:
+# In[7]:
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
@@ -151,10 +158,11 @@ fslroi = Node(fsl.ExtractROI(t_min=0,
 reorient1 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
                  name='reorient1')
 
-# Register b0 to T1 - rigid 2D transformation
+# Register T1 to MNI - rigid 2D transformation
 register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
                            rigid2D=True,
-                           output_type='NIFTI_GZ'),
+                           output_type='NIFTI_GZ',
+                          no_resample=True),
                  name='register1')
 
 # apply topup from merged file to rest of pe0 scan
@@ -166,18 +174,21 @@ apptop = Node(fsl.ApplyTOPUP(method='jac',
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
-# Reorient DTI data to standard orientation
-reorient2 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
-                 name='reorient2')
+#Eddy_CUDA Node
+# FSL Eddy correction to remove eddy current distortion
 
-# Flirt node to register DTI data using transformation matrix from register1 (rigid body)
-register2 = Node(fsl.FLIRT(output_type='NIFTI_GZ',
-                           rigid2D=True,
-                           apply_xfm=True),
-                 name='register2')
+eddy = Node(fsl.Eddy(is_shelled=True,
+                     interp='trilinear',
+                     method='jac',
+                     output_type='NIFTI_GZ',
+                     residuals=True,
+                     use_cuda=True,
+                     cnr_maps=True,
+                     repol=True),
+            name='eddy')
 
 
-# In[12]:
+# In[9]:
 
 
 
@@ -195,24 +206,18 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                        ('out_corrected', '1_Check_Unwarped.@par')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
-                      # Reorient b0 to standard
-                      (fslroi, reorient1, [('roi_file', 'in_file')]),
                       # Resample T1w to same voxel dimensions as DTI
-                      (sf,  resampt1, [('t1', 'in_file')]),
-                      (resampt1, stripT1, [('resampled_file', 'in_file')]),
-                      # Skull strip T1w, save stripped anat and mask
+                      (sf, resampt1, [('t1', 'in_file')]),
+                      #Register T1 to b0 brain
+                      (resampt1, register1, [('out_file', 'in_file')]),
+                      (fslroi, register1, [('roi_file', 'reference')]),
+                      #skullstrip T1
+                      (register1, stripT1, [('out_file', 'in_file')]),
+                      # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                                           ('mask_file', '2_Transfer'),
-                                           ('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
-                                           ('out_file', '2_Transfer.@par')]),
-                      # Register reoriented b0 to T1
-                      (stripT1, register1, [('out_file', 'reference')]),
-                      (reorient1, register1, [('out_file', 'in_file')]),
-                      (register1, datasink, [
-                       ('out_file', '1_Check_Unwarped.@par.@par')]),
-                      # Apply transform generated in topup to DTI
-                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                       ('out_movpar', 'in_topup_movpar')]),
+                                           ('mask_file', '2_Transfer')]),
+                      (register1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
+                                             ('out_file', '2_Transfer.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       # Local PCA to denoise DTI data
@@ -229,19 +234,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (bias, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
-                       ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par')]),
-                      # reorient DTI file with topup applied to standard
-                      (apptop, reorient2, [('out_corrected', 'in_file')]),
-                      (reorient2, datasink, [
-                       ('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par')]),
-                      # Register DTI to skullstripped, resampled T1w
-                      (reorient2, register2, [('out_file', 'in_file')]),
-                      (stripT1, register2, [('out_file', 'reference')]),
-                      # use xfm from b0 registration from T1 to apply to DTI nifti
-                      (register1, register2, [
-                       ('out_matrix_file', 'in_matrix_file')]),
-                      (register2, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
-                                             ('out_file', '2_Transfer.@par.@par')]),
+                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par'),
+                          ('out_corrected', '2_Transfer.@par.@par')]),
                       (sf, datasink, [('bval', '2_Transfer.@par.@par.@par'),
                                       ('bvec', '2_Transfer.@par.@par.@par.@par')])
                       ])
