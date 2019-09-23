@@ -231,6 +231,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, bias, [('bvec', 'in_bvec')]),
                       (sf, bias, [('bval', 'in_bval')]),
                       # Apply topup to bias corrected DTI data
+                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef')]),
                       (bias, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file'),
                                    ('index', 'in_index')]),
