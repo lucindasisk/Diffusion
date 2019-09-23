@@ -36,10 +36,10 @@ else:
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
     data_dir = join(home, 'analyses/shapes/dwi/preproc_data')
-    
+
 # Read in subject subject_list
 subject_list = read_csv(
-    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ')
+    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None).values.tolist()
 
 # Manual subject list
 # subject_list = ['sub-A200']  # , 'sub-A201']
@@ -162,21 +162,21 @@ reorient1 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
                            rigid2D=True,
                            output_type='NIFTI_GZ',
-                          no_resample=True),
+                           no_resample=True),
                  name='register1')
 
 # apply topup from merged file to rest of pe0 scan
 apptop = Node(fsl.ApplyTOPUP(method='jac',
-                             in_index=[2], 
+                             in_index=[2],
                              output_type='NIFTI_GZ',
-                            out_corrected = 'preprocessed_dwi.nii.gz'),
+                             out_corrected='preprocessed_dwi.nii.gz'),
               name='apptop')
 
 # Skullstrip the T1w image
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
-#Eddy_CUDA Node
+# Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
 eddy = Node(fsl.Eddy(is_shelled=True,
@@ -191,7 +191,6 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 
 
 # In[9]:
-
 
 
 preproc_flow = Workflow(name='preproc_flow')
@@ -210,10 +209,10 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (topup, fslroi, [('out_corrected', 'in_file')]),
                       # Resample T1w to same voxel dimensions as DTI
                       (sf, resampt1, [('t1', 'in_file')]),
-                      #Register T1 to b0 brain
+                      # Register T1 to b0 brain
                       (resampt1, register1, [('resampled_file', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
-                      #skullstrip T1
+                      # skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
@@ -234,7 +233,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, bias, [('bval', 'in_bval')]),
                       # Apply topup to bias corrected DTI data
                       (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                      ('out_movpar','in_topup_movpar')]),
+                                       ('out_movpar', 'in_topup_movpar')]),
                       (bias, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
@@ -249,7 +248,3 @@ preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
 # In[ ]:
-
-
-
-
