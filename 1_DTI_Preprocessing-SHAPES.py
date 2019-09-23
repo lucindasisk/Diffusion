@@ -167,7 +167,9 @@ register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
 
 # apply topup from merged file to rest of pe0 scan
 apptop = Node(fsl.ApplyTOPUP(method='jac',
-                             in_index=[2], output_type='NIFTI_GZ'),
+                             in_index=[2], 
+                             output_type='NIFTI_GZ',
+                            out_corrected = 'preprocessed_dwi.nii.gz'),
               name='apptop')
 
 # Skullstrip the T1w image
@@ -231,10 +233,10 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, bias, [('bvec', 'in_bvec')]),
                       (sf, bias, [('bval', 'in_bval')]),
                       # Apply topup to bias corrected DTI data
-                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef')]),
+                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
+                                      ('out_movpar','in_topup_movpar')]),
                       (bias, apptop, [('out_file', 'in_files')]),
-                      (sf, apptop, [('aps', 'encoding_file'),
-                                   ('index', 'in_index')]),
+                      (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
                           ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par'),
                           ('out_corrected', '2_Transfer.@par.@par')]),
