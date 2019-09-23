@@ -1,0 +1,20 @@
+Source the FSL configuration script using: 
+  .
+/gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.0-centos7_64/etc/fslconf/fsl.sh 
+Source the FSL configuration script using: 
+  .
+/gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.0-centos7_64/etc/fslconf/fsl.sh 
+Source the FSL configuration script using: 
+  .
+/gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.0-centos7_64/etc/fslconf/fsl.sh 
+Source the FSL configuration script using: 
+  .
+/gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.0-centos7_64/etc/fslconf/fsl.sh 
+
+The following have been reloaded with a version change:
+  1) Python/2.7.14-foss-2018a => Python/miniconda
+
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/1_DTI_Preprocessing-SHAPES.py", line 7, in <module>
+    from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
+ModuleNotFoundError: No module named 'nipype'
