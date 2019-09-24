@@ -38,17 +38,10 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/preproc_data')
     
 # Read in subject subject_list
-<<<<<<< HEAD
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
 subject_list = subject_csv[0].values.tolist()
 # Manual subject list
-subject_list# = ['sub-A200', 'sub-A201']
-=======
-subject_list = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ').values.tolist()
-
-# Manual subject list
 #subject_list = ['sub-A200', 'sub-A201']
->>>>>>> 6496a968f8b2d4250a450fc38421451e358cd970
 
 
 # In[3]:

@@ -1,0 +1,7 @@
+Source the FSL configuration script using: 
+  .
+/gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.0-centos7_64/etc/fslconf/fsl.sh 
+
+The following have been reloaded with a version change:
+  1) Python/2.7.14-foss-2018a => Python/miniconda
+
