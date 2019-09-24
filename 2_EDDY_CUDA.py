@@ -72,8 +72,7 @@ template = dict(mask=join(home, 'analyses/shapes/dwi/preproc_data/2_Transfer/{su
                 bvec=join(
                     raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bvec'),
                 aps=join(raw_dir, 'shapes_acqparams.txt'),
-                index=join(raw_dir, 'shapes_index.txt'),
-                eddy_base=join(home, 'eddyCUDA_data/3_Eddy_Corrected/{subject_id}/eddy_corrected')    
+                index=join(raw_dir, 'shapes_index.txt')    
                 )
 
 
