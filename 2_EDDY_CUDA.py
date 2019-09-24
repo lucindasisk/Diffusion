@@ -9,6 +9,7 @@ from nipype.interfaces.utility import IdentityInterface, Function
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 from nipype.interfaces import fsl
 from nipype import config, logging
+from pandas import Series, read_csv, to_numeric
 from datetime import date
 from os import getcwd
 from os.path import join, expanduser
