@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[10]:
+# In[14]:
 
 
 # Set variables
@@ -40,17 +40,18 @@ else:
 # Read in subject subject_list
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
 subject_list = subject_csv[0].values.tolist()
+
 # Manual subject list
-subject_list# = ['sub-A200', 'sub-A201']
+subject_list #= ['sub-A200', 'sub-A201']
 
 
-# In[3]:
+# In[9]:
 
 
 # 9/22/19: change so that T1 is registered to B0 per https://mrtrix.readthedocs.io/en/latest/quantitative_structural_connectivity/act.html
 
 
-# In[4]:
+# In[10]:
 
 
 # Create preprocessing Workflow
@@ -91,7 +92,7 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
-# In[5]:
+# In[11]:
 
 
 # Merge AP/PA encoding direction fieldmaps
@@ -110,7 +111,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
                     name='create_merge')
 
 
-# In[6]:
+# In[12]:
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
@@ -189,7 +190,7 @@ eddy = Node(fsl.Eddy(is_shelled=True,
             name='eddy')
 
 
-# In[7]:
+# In[13]:
 
 
 
@@ -245,6 +246,12 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
 preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
 preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
