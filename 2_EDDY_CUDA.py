@@ -38,7 +38,8 @@ if user == '/home/fas/gee_dylan/lms233':
 #Set user for Milgram
 if user == '/home/lms233':
     home = '/gpfs/milgram/project/gee_dylan/candlab'
-    data_dir = 'analyses/shapes/dwi/eddyCUDA_data'
+    raw_dir = join(home, 'data/mri/bids_recon/shapes')
+    data_dir = join(home, 'analyses/shapes/dwi/eddyCUDA_data')
     workflow_dir = join(home, 'analyses/shapes/dwi/eddyCUDA_workflow')
 
 
@@ -59,13 +60,13 @@ infosource.iterables = [('subject_id', subject_list)]
 # SelectFiles
 template = dict(mask=join(home, 'preproc_data/2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain_mask.nii.gz'),
                 dti=join(
-                    home, 'preproc_data/2_Transfer/{subject_id}/denoised_gibbs_bias_corrected_reoriented_flirt.nii.gz'),
+                    data_dir, '../preproc_data/2_Transfer/{subject_id}/preprocessed_dwi.nii.gz'),
                 bval=join(
-                    home, 'preproc_data/2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
+                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
-                    home, 'preproc_data/2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_dwi.bvec'),
-                aps=join(home, 'shapes_acqparams.txt'),
-                index=join(home, 'shapes_index.txt'),
+                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bvec'),
+                aps=join(raw_dir, 'shapes_acqparams.txt'),
+                index=join(raw_dir, 'shapes_index.txt'),
                 eddy_base=join(home, 'eddyCUDA_data/3_Eddy_Corrected/{subject_id}/eddy_corrected')    
                 )
 
@@ -139,18 +140,18 @@ eddyquad = Node(fsl.EddyQuad(),
 
 # Workflow
 
-eddyqc_flow = Workflow(name='eddyqc_flow')
-eddyqc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                     (sf, eddyquad, [('eddy_base','base_name'),
-                                     ('index', 'idx_file'),
-                                     ('aps', 'param_file'),
-                                     ('mask', 'mask_file'),
-                                     ('bval', 'bval_file'),
-                                     ('bvec','bvec_file')])
-                   ])
-eddyqc_flow.base_dir = workflow_dir
-eddyqc_flow.write_graph(graph2use='flat')
-eddyqc = eddyqc_flow.run('MultiProc', plugin_args={'n_procs': 4})
+# eddyqc_flow = Workflow(name='eddyqc_flow')
+# eddyqc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
+#                      (sf, eddyquad, [('eddy_base','base_name'),
+#                                      ('index', 'idx_file'),
+#                                      ('aps', 'param_file'),
+#                                      ('mask', 'mask_file'),
+#                                      ('bval', 'bval_file'),
+#                                      ('bvec','bvec_file')])
+#                    ])
+# eddyqc_flow.base_dir = workflow_dir
+# eddyqc_flow.write_graph(graph2use='flat')
+# eddyqc = eddyqc_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
 # In[ ]:
