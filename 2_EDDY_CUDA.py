@@ -18,7 +18,7 @@ from os.path import join, expanduser
 
 
 # Set variables
-subject_list = ['sub-A200', 'sub-A201', 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
+#subject_list = ['sub-A200', 'sub-A201', 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
 
 user = expanduser('~')
 
@@ -41,6 +41,11 @@ if user == '/home/lms233':
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     data_dir = join(home, 'analyses/shapes/dwi/eddyCUDA_data')
     workflow_dir = join(home, 'analyses/shapes/dwi/eddyCUDA_workflow')
+    
+    
+# Read in subject_list
+subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_list = subject_csv[0].values.tolist()
 
 
 # In[54]:
