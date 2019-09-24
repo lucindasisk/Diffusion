@@ -3864,3 +3864,1479 @@ topup --config=b02b0.cnf --datain=/gpfs/milgram/project/gee_dylan/candlab/data/m
 	 No resources available
 190923-21:07:41,568 nipype.workflow DEBUG:
 	 No resources available
+190923-21:07:43,569 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:45,571 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:47,573 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:49,575 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:51,577 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:53,579 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:55,581 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:57,583 nipype.workflow DEBUG:
+	 No resources available
+190923-21:07:59,585 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:01,587 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:03,589 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:05,592 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:07,593 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:09,596 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:11,597 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:13,599 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:15,919 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:17,603 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:19,605 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:21,606 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:23,608 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:25,611 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:27,612 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:29,614 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:31,617 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:33,619 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:35,620 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:37,638 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:39,624 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:41,626 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:43,628 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:45,630 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:47,654 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:49,634 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:51,637 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:53,638 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:55,641 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:57,659 nipype.workflow DEBUG:
+	 No resources available
+190923-21:08:59,655 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:01,646 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:03,649 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:05,650 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:07,959 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:09,653 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:11,655 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:13,658 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:15,659 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:17,661 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:19,663 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:21,666 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:23,678 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:25,669 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:27,687 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:29,673 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:31,675 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:33,677 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:35,679 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:37,687 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:39,683 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:41,686 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:43,235 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A698/ses-shapesV1/dwi/sub-A698_ses-shapesV1_dwi.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/_0xfa546fb1929c6563089304e8b38592f4_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/command.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/_node.pklz
+190923-21:09:43,236 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/_report
+190923-21:09:43,236 nipype.workflow DEBUG:
+	 Removing files: 
+190923-21:09:43,236 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/result_drop2.pklz'
+190923-21:09:43,250 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/_report/report.rst"
+190923-21:09:43,250 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/result_drop2.pklz
+190923-21:09:43,252 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+190923-21:09:43,258 nipype.workflow INFO:
+	 [Node] Finished "preproc_flow.drop2".
+190923-21:09:43,680 nipype.workflow INFO:
+	 [Job 1] Completed (preproc_flow.drop2).
+190923-21:09:43,683 nipype.workflow DEBUG:
+	 Tasks currently running: 3. Pending: 3.
+190923-21:09:43,705 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 148 jobs ready. Free memory (GB): 225.51/226.11, Free processors: 1/4.
+                     Currently running:
+                       * preproc_flow.topup
+                       * preproc_flow.topup
+                       * preproc_flow.drop2
+190923-21:09:43,939 nipype.workflow DEBUG:
+	 Allocating preproc_flow.gibbs ID=2 (0.20GB, 1 threads). Free: 225.31GB, 0 threads.
+190923-21:09:43,939 nipype.workflow DEBUG:
+	 Setting node inputs
+190923-21:09:43,940 nipype.workflow DEBUG:
+	 input: in_file
+190923-21:09:43,940 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/result_drop2.pklz
+190923-21:09:43,940 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/result_drop2.pklz
+190923-21:09:43,941 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+190923-21:09:43,941 nipype.workflow DEBUG:
+	 output: roi_file
+190923-21:09:43,941 nipype.workflow DEBUG:
+	 [Node] gibbs - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz
+190923-21:09:43,942 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs".
+190923-21:09:43,942 nipype.workflow DEBUG:
+	 Checking hash "preproc_flow.gibbs" locally: cached=False, updated=False.
+190923-21:09:43,944 nipype.workflow INFO:
+	 [Node] Setting-up "preproc_flow.gibbs" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs".
+190923-21:09:43,944 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs".
+190923-21:09:43,944 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs
+190923-21:09:43,944 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs
+190923-21:09:43,948 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs/_report
+190923-21:09:43,949 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs/_report/report.rst"
+190923-21:09:43,954 nipype.interface DEBUG:
+	 axes_[0, 1]
+190923-21:09:43,954 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz
+190923-21:09:43,954 nipype.interface DEBUG:
+	 maxW_3
+190923-21:09:43,954 nipype.interface DEBUG:
+	 minW_1
+190923-21:09:43,954 nipype.interface DEBUG:
+	 nshifts_20
+190923-21:09:43,954 nipype.interface DEBUG:
+	 out_file_denoised_gibbs.nii.gz
+190923-21:09:43,955 nipype.workflow INFO:
+	 [Node] Running "gibbs" ("nipype.interfaces.mrtrix3.preprocess.MRDeGibbs"), a CommandLine Interface with command:
+mrdegibbs -axes 0,1 -maxW 3 -minW 1 -nshifts 20 /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz denoised_gibbs.nii.gz
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task preproc_flow.gibbs (taskid=9).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 4 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 29 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 33 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 34 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 43 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 47 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 48 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 56 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 70 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 84 (0.20GB, 1 threads).
+190923-21:09:43,970 nipype.workflow DEBUG:
+	 Cannot allocate job 98 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 112 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 126 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 140 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 154 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 168 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 182 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 196 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 210 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 224 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 238 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 252 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 266 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 280 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 294 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 308 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 322 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 336 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 350 (0.20GB, 1 threads).
+190923-21:09:43,971 nipype.workflow DEBUG:
+	 Cannot allocate job 364 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 378 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 392 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 406 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 420 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 434 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 448 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 462 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 476 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 490 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 504 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 518 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 532 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 546 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 560 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 574 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 588 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 602 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 616 (0.20GB, 1 threads).
+190923-21:09:43,972 nipype.workflow DEBUG:
+	 Cannot allocate job 630 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 644 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 658 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 672 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 686 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 700 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 714 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 728 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 742 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 756 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 770 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 784 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 798 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 812 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 826 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 840 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 854 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 868 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 882 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 896 (0.20GB, 1 threads).
+190923-21:09:43,973 nipype.workflow DEBUG:
+	 Cannot allocate job 910 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 924 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 938 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 952 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 966 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 980 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 994 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1008 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1022 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1036 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1050 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1064 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1078 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1092 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1106 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1120 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1134 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1148 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1162 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1176 (0.20GB, 1 threads).
+190923-21:09:43,974 nipype.workflow DEBUG:
+	 Cannot allocate job 1190 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1204 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1218 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1232 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1246 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1260 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1274 (0.20GB, 1 threads).
+190923-21:09:43,975 nipype.workflow DEBUG:
+	 Cannot allocate job 1288 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1302 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1316 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1330 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1344 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1358 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1372 (0.20GB, 1 threads).
+190923-21:09:44,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1386 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1400 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1414 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1428 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1442 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1456 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1470 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1484 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1498 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1512 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1526 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1540 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1554 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1568 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1582 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1596 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1610 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1624 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1638 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1652 (0.20GB, 1 threads).
+190923-21:09:44,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1666 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1680 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1694 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1708 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1722 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1736 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1750 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1764 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1778 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1792 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1806 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1820 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1834 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1848 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1862 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1876 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1890 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1904 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1918 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1932 (0.20GB, 1 threads).
+190923-21:09:44,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1946 (0.20GB, 1 threads).
+190923-21:09:44,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1960 (0.20GB, 1 threads).
+190923-21:09:44,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1974 (0.20GB, 1 threads).
+190923-21:09:44,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1988 (0.20GB, 1 threads).
+190923-21:09:44,7 nipype.workflow DEBUG:
+	 Cannot allocate job 2002 (0.20GB, 1 threads).
+190923-21:09:44,663 nipype.interface DEBUG:
+	 axes_[0, 1]
+190923-21:09:44,663 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz
+190923-21:09:44,663 nipype.interface DEBUG:
+	 maxW_3
+190923-21:09:44,663 nipype.interface DEBUG:
+	 minW_1
+190923-21:09:44,663 nipype.interface DEBUG:
+	 nshifts_20
+190923-21:09:44,663 nipype.interface DEBUG:
+	 out_file_denoised_gibbs.nii.gz
+190923-21:09:45,270 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/sub-A695_ses-shapesV1_dwi_roi.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A695/ses-shapesV1/dwi/sub-A695_ses-shapesV1_dwi.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/_0xdb29e1f62fc3b08cd5d1ced27cb42858_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/command.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/_node.pklz
+190923-21:09:45,271 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/_report
+190923-21:09:45,271 nipype.workflow DEBUG:
+	 Removing files: 
+190923-21:09:45,271 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/result_drop2.pklz'
+190923-21:09:45,290 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/_report/report.rst"
+190923-21:09:45,291 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop2/result_drop2.pklz
+190923-21:09:45,293 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+190923-21:09:45,302 nipype.workflow INFO:
+	 [Node] Finished "preproc_flow.drop2".
+190923-21:09:45,681 nipype.workflow DEBUG:
+	 Progress: 2016 jobs, 11/4/147 (done/running/ready), 4/2001 (pending_tasks/waiting).
+190923-21:09:45,681 nipype.workflow INFO:
+	 [Job 15] Completed (preproc_flow.drop2).
+190923-21:09:45,684 nipype.workflow DEBUG:
+	 Tasks currently running: 3. Pending: 3.
+190923-21:09:45,698 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 149 jobs ready. Free memory (GB): 225.51/226.11, Free processors: 1/4.
+                     Currently running:
+                       * preproc_flow.gibbs
+                       * preproc_flow.topup
+                       * preproc_flow.topup
+190923-21:09:45,949 nipype.workflow DEBUG:
+	 Allocating preproc_flow.denoise ID=4 (0.20GB, 1 threads). Free: 225.31GB, 0 threads.
+190923-21:09:45,949 nipype.workflow DEBUG:
+	 Setting node inputs
+190923-21:09:45,949 nipype.workflow DEBUG:
+	 input: in_file
+190923-21:09:45,949 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/result_drop2.pklz
+190923-21:09:45,949 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/result_drop2.pklz
+190923-21:09:45,950 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+190923-21:09:45,951 nipype.workflow DEBUG:
+	 output: roi_file
+190923-21:09:45,951 nipype.workflow DEBUG:
+	 [Node] denoise - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz
+190923-21:09:45,951 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise".
+190923-21:09:45,951 nipype.workflow DEBUG:
+	 Checking hash "preproc_flow.denoise" locally: cached=False, updated=False.
+190923-21:09:45,953 nipype.workflow INFO:
+	 [Node] Setting-up "preproc_flow.denoise" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise".
+190923-21:09:45,953 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise".
+190923-21:09:45,953 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise
+190923-21:09:45,953 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise
+190923-21:09:45,955 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/_report
+190923-21:09:45,955 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/_report/report.rst"
+190923-21:09:45,959 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz
+190923-21:09:45,960 nipype.interface DEBUG:
+	 noise_sub-A698_ses-shapesV1_dwi_roi_noise.nii.gz
+190923-21:09:45,960 nipype.interface DEBUG:
+	 out_file_denoised.nii.gz
+190923-21:09:45,960 nipype.workflow INFO:
+	 [Node] Running "denoise" ("nipype.interfaces.mrtrix3.preprocess.DWIDenoise"), a CommandLine Interface with command:
+dwidenoise -noise sub-A698_ses-shapesV1_dwi_roi_noise.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz denoised.nii.gz
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task preproc_flow.denoise (taskid=10).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 16 (0.20GB, 1 threads).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 18 (0.20GB, 1 threads).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 29 (0.20GB, 1 threads).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 33 (0.20GB, 1 threads).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 34 (0.20GB, 1 threads).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 43 (0.20GB, 1 threads).
+190923-21:09:45,980 nipype.workflow DEBUG:
+	 Cannot allocate job 47 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 48 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 56 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 70 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 84 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 98 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 112 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 126 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 140 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 154 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 168 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 182 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 196 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 210 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 224 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 238 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 252 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 266 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 280 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 294 (0.20GB, 1 threads).
+190923-21:09:45,981 nipype.workflow DEBUG:
+	 Cannot allocate job 308 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 322 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 336 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 350 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 364 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 378 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 392 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 406 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 420 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 434 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 448 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 462 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 476 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 490 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 504 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 518 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 532 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 546 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 560 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 574 (0.20GB, 1 threads).
+190923-21:09:45,982 nipype.workflow DEBUG:
+	 Cannot allocate job 588 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 602 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 616 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 630 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 644 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 658 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 672 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 686 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 700 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 714 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 728 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 742 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 756 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 770 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 784 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 798 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 812 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 826 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 840 (0.20GB, 1 threads).
+190923-21:09:45,983 nipype.workflow DEBUG:
+	 Cannot allocate job 854 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 868 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 882 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 896 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 910 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 924 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 938 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 952 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 966 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 980 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 994 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1008 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1022 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1036 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1050 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1064 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1078 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1092 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1106 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1120 (0.20GB, 1 threads).
+190923-21:09:45,984 nipype.workflow DEBUG:
+	 Cannot allocate job 1134 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1148 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1162 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1176 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1190 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1204 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1218 (0.20GB, 1 threads).
+190923-21:09:45,985 nipype.workflow DEBUG:
+	 Cannot allocate job 1232 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1246 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1260 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1274 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1288 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1302 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1316 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1330 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1344 (0.20GB, 1 threads).
+190923-21:09:46,4 nipype.workflow DEBUG:
+	 Cannot allocate job 1358 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1372 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1386 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1400 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1414 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1428 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1442 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1456 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1470 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1484 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1498 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1512 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1526 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1540 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1554 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1568 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1582 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1596 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1610 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1624 (0.20GB, 1 threads).
+190923-21:09:46,5 nipype.workflow DEBUG:
+	 Cannot allocate job 1638 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1652 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1666 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1680 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1694 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1708 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1722 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1736 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1750 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1764 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1778 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1792 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1806 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1820 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1834 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1848 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1862 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1876 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1890 (0.20GB, 1 threads).
+190923-21:09:46,6 nipype.workflow DEBUG:
+	 Cannot allocate job 1904 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1918 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1932 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1946 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1960 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1974 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 1988 (0.20GB, 1 threads).
+190923-21:09:46,7 nipype.workflow DEBUG:
+	 Cannot allocate job 2002 (0.20GB, 1 threads).
+190923-21:09:46,639 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz
+190923-21:09:46,639 nipype.interface DEBUG:
+	 noise_sub-A698_ses-shapesV1_dwi_roi_noise.nii.gz
+190923-21:09:46,660 nipype.interface DEBUG:
+	 out_file_denoised.nii.gz
+190923-21:09:47,684 nipype.workflow DEBUG:
+	 Progress: 2016 jobs, 12/4/148 (done/running/ready), 4/2000 (pending_tasks/waiting).
+190923-21:09:47,684 nipype.workflow DEBUG:
+	 Tasks currently running: 4. Pending: 4.
+190923-21:09:47,697 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 148 jobs ready. Free memory (GB): 225.31/226.11, Free processors: 0/4.
+                     Currently running:
+                       * preproc_flow.denoise
+                       * preproc_flow.gibbs
+                       * preproc_flow.topup
+                       * preproc_flow.topup
+190923-21:09:47,697 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:49,691 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:51,694 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:53,695 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:55,697 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:57,704 nipype.workflow DEBUG:
+	 No resources available
+190923-21:09:59,709 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:01,707 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:03,705 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:05,715 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:07,713 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:09,719 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:11,722 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:13,723 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:15,717 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:17,727 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:19,729 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:21,731 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:23,728 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:25,726 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:27,773 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:29,741 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:31,741 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:33,742 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:35,740 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:37,746 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:41,349 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/result_denoise.pklz'
+190923-21:10:41,349 nipype.workflow WARNING:
+	 Storing result file without outputs
+190923-21:10:41,451 nipype.workflow WARNING:
+	 [Node] Error on "preproc_flow.denoise" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise)
+190923-21:10:41,533 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/result_denoise.pklz
+190923-21:10:41,689 nipype.workflow DEBUG:
+	 No resources available
+190923-21:10:41,899 nipype.workflow DEBUG:
+	 Clearing 4 from queue
+190923-21:10:41,900 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/result_denoise.pklz
+190923-21:10:41,901 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/result_denoise.pklz
+190923-21:10:42,23 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/result_denoise.pklz
+190923-21:10:42,24 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/denoise/result_denoise.pklz
+190923-21:10:42,25 nipype.workflow ERROR:
+	 Node denoise.a143 failed to run on host c04n01.milgram.hpc.yale.internal.
+190923-21:10:42,25 nipype.workflow ERROR:
+	 Saving crash info to /gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/crash-20190923-211042-lms233-denoise.a143-9f1b0453-d2eb-4980-af93-f13a155989fd.pklz
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+dwidenoise -noise sub-A698_ses-shapesV1_dwi_roi_noise.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz denoised.nii.gz
+Standard output:
+
+Standard error:
+
+dwidenoise: [  0%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  1%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  2%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  3%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  4%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  5%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  6%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  7%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  8%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  9%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 10%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 11%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 12%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 13%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 14%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 15%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 16%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 17%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 18%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 19%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 20%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 21%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 22%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 23%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 24%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 25%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 26%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 27%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 28%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 29%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 30%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 31%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 32%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 33%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 34%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 35%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 36%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 37%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 38%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 39%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 40%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 41%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 42%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 43%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 44%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 45%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 46%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 47%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 48%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 49%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 50%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 51%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 52%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 53%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 54%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 55%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 56%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 57%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 58%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 59%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 60%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 61%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 62%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 63%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 64%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 65%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 66%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 67%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 68%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 69%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 70%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 71%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 72%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 73%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 74%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 75%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 76%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 77%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 78%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 79%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 80%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 81%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 82%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 83%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 84%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 85%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 86%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 87%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 88%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 89%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 90%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 91%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 92%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 93%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 94%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 95%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 96%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 97%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 98%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 99%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"[0K
+
+dwidenoise: [  0%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  1%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  2%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  3%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  4%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  5%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  6%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  7%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  8%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  9%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 10%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 11%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 12%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 13%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 14%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 15%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 16%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 17%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 18%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 19%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 20%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 21%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 22%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 23%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 24%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 25%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 26%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 27%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 28%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 29%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 30%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 31%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 32%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 33%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 34%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 35%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 36%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 37%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 38%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 39%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 40%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 41%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 42%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 43%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 44%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 45%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 46%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 47%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 48%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 49%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 50%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 51%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 52%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 53%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 54%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 55%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 56%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 57%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 58%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 59%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 60%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 61%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 62%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 63%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 64%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 65%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 66%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 67%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 68%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 69%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 70%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 71%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 72%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 73%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 74%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 75%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 76%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 77%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 78%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 79%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 80%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 81%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 82%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 83%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 84%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 85%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 86%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 87%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 88%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 89%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 90%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 91%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 92%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 93%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 94%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 95%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 96%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 97%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 98%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 99%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"[0K
+dwidenoise: [01;31m[ERROR] Not a directory[0m
+dwidenoise: [01;31m[ERROR] error creating image "denoised.nii.gz"[0m
+Return code: 1
+
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+190923-21:14:44,560 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs/result_gibbs.pklz'
+190923-21:14:44,560 nipype.workflow WARNING:
+	 Storing result file without outputs
+190923-21:14:44,591 nipype.workflow WARNING:
+	 [Node] Error on "preproc_flow.gibbs" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs)
+190923-21:14:44,596 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/gibbs/result_gibbs.pklz
+190923-21:44:31,717 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/AP_PA_merged_roi_base_fieldcoef.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/AP_PA_merged_roi_base_movpar.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/AP_PA_merged_roi_field.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/warpfield_01.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/warpfield_02.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/jac_01.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/jac_02.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_01.hdr;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_01.img;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_01.mat;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_01.nii;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_01.mat;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_02.hdr;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_02.img;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_02.mat;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_02.nii;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/xfm_02.mat;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/ap_pa_topup.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/AP_PA_merged_roi_topup.log;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/shapes_acqparams.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/drop/AP_PA_merged_roi.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/_0x6418adc1745547db060f7000a74a9e0a_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/command.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/_node.pklz
+190923-21:44:31,717 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/_report
+190923-21:44:31,717 nipype.workflow DEBUG:
+	 Removing files: 
+190923-21:44:31,717 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/result_topup.pklz'
+190923-21:44:31,723 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/_report/report.rst"
+190923-21:44:31,724 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A695/topup/result_topup.pklz
+190923-21:44:31,725 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+190923-21:44:31,734 nipype.workflow INFO:
+	 [Node] Finished "preproc_flow.topup".
+190923-21:44:33,768 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/topup/result_topup.pklz'
+190923-21:44:33,768 nipype.workflow WARNING:
+	 Storing result file without outputs
+190923-21:44:33,775 nipype.workflow WARNING:
+	 [Node] Error on "preproc_flow.topup" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/topup)
+190923-21:44:33,782 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/topup/result_topup.pklz
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/1_DTI_Preprocessing-SHAPES.py", line 247, in <module>
+    preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/workflows.py", line 599, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 160, in run
+    self._clean_queue(jobid, graph, result=result))
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 223, in _clean_queue
+    raise RuntimeError("".join(result['traceback']))
+RuntimeError: Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+dwidenoise -noise sub-A698_ses-shapesV1_dwi_roi_noise.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz denoised.nii.gz
+Standard output:
+
+Standard error:
+
+dwidenoise: [  0%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  1%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  2%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  3%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  4%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  5%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  6%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  7%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  8%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  9%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 10%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 11%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 12%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 13%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 14%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 15%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 16%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 17%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 18%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 19%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 20%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 21%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 22%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 23%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 24%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 25%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 26%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 27%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 28%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 29%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 30%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 31%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 32%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 33%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 34%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 35%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 36%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 37%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 38%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 39%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 40%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 41%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 42%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 43%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 44%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 45%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 46%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 47%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 48%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 49%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 50%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 51%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 52%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 53%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 54%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 55%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 56%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 57%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 58%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 59%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 60%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 61%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 62%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 63%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 64%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 65%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 66%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 67%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 68%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 69%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 70%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 71%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 72%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 73%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 74%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 75%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 76%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 77%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 78%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 79%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 80%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 81%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 82%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 83%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 84%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 85%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 86%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 87%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 88%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 89%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 90%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 91%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 92%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 93%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 94%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 95%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 96%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 97%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 98%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 99%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"[0K
+
+dwidenoise: [  0%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  1%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  2%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  3%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  4%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  5%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  6%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  7%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  8%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [  9%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 10%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 11%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 12%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 13%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 14%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 15%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 16%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 17%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 18%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 19%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 20%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 21%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 22%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 23%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 24%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 25%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 26%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 27%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 28%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 29%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 30%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 31%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 32%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 33%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 34%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 35%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 36%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 37%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 38%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 39%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 40%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 41%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 42%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 43%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 44%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 45%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 46%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 47%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 48%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 49%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 50%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 51%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 52%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 53%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 54%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 55%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 56%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 57%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 58%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 59%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 60%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 61%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 62%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 63%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 64%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 65%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 66%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 67%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 68%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 69%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 70%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 71%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 72%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 73%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 74%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 75%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 76%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 77%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 78%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 79%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 80%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 81%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 82%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 83%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 84%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 85%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 86%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 87%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 88%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 89%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 90%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 91%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 92%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 93%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 94%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 95%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 96%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 97%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 98%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [ 99%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"... [0K
+dwidenoise: [100%] preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/preproc_workflow/preproc_flow/_subject_id_sub-A698/drop2/sub-A698_ses-shapesV1_dwi_roi.nii.gz"[0K
+dwidenoise: [01;31m[ERROR] Not a directory[0m
+dwidenoise: [01;31m[ERROR] error creating image "denoised.nii.gz"[0m
+Return code: 1
+

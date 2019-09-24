@@ -217,7 +217,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
                                            ('mask_file', '2_Transfer')]),
-                      (register1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
+                      (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
                                              ('out_file', '2_Transfer.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
