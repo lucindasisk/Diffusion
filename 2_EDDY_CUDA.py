@@ -37,10 +37,10 @@ if user == '/home/fas/gee_dylan/lms233':
 
 #Set user for Milgram
 if user == '/home/lms233':
-    raw_dir = join(home, 'data/mri/bids_recon/shapes')
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     data_dir = 'analyses/shapes/dwi/data'
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+    raw_dir = join(home, 'data/mri/bids_recon/shapes')
     
 # Manual subject list
 #subject_list = ['sub-A200', 'sub-A201', 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
