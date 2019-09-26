@@ -6,12 +6,12 @@
 #SBATCH --time=6:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=lucinda.sisk@yale.edu
-#SBATCH ----partition=scavenge_gpu
+#SBATCH --gres=gpu:1
 
 
  ml load StdEnv
- ml load CUDA/7.5.18
- ml load FSL/6.0.0
+ #ml load CUDA/7.5.18
+ ml load FSL/6.0.1-centos7_64
  ml load Python/miniconda
 
 source activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi

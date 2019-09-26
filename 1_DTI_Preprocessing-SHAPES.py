@@ -40,14 +40,8 @@ else:
 # Read in subject subject_list
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
 subject_list = subject_csv[0].values.tolist()
-<<<<<<< HEAD
-
-# Manual subject list
-#subject_list #= ['sub-A200', 'sub-A201']
-=======
 # Manual subject list
 #subject_list = ['sub-A200', 'sub-A201']
->>>>>>> 85924201f96f29931834b98f50c5246d1a0f7ec4
 
 
 # In[9]:
