@@ -29,12 +29,12 @@ user = expanduser('~')
 if user == '/Users/lucindasisk':
     home = join(user, 'Desktop/Milgram/candlab')
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+    workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
     data_dir = join(home, 'analyses/shapes/dwi/data')
 else:
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+    workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
