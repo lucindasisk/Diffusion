@@ -42,7 +42,7 @@ else:
 # subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
-subject_list #= ['sub-A200', 'sub-A201']
+subject_list = ['sub-A200', 'sub-A201']
 
 
 # In[9]:
