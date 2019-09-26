@@ -9,7 +9,6 @@ from nipype.interfaces.utility import IdentityInterface, Function
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 from nipype.interfaces import fsl
 from nipype import config, logging
-from pandas import Series, read_csv, to_numeric
 from datetime import date
 from os import getcwd
 from os.path import join, expanduser
@@ -19,7 +18,7 @@ from os.path import join, expanduser
 
 
 # Set variables
-#subject_list = ['sub-A200', 'sub-A201', 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
+subject_list = ['sub-A200', 'sub-A201', 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
 
 user = expanduser('~')
 
@@ -39,14 +38,8 @@ if user == '/home/fas/gee_dylan/lms233':
 #Set user for Milgram
 if user == '/home/lms233':
     home = '/gpfs/milgram/project/gee_dylan/candlab'
-    raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    data_dir = join(home, 'analyses/shapes/dwi/eddyCUDA_data')
-    workflow_dir = join(home, 'analyses/shapes/dwi/eddyCUDA_workflow')
-    
-    
-# Read in subject_list
-subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()
+    data_dir = 'analyses/shapes/dwi/data'
+    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
 
 
 # In[54]:
@@ -64,15 +57,15 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 # SelectFiles
-template = dict(mask=join(home, 'analyses/shapes/dwi/preproc_data/2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_flirt_brain_mask.nii.gz'),
+template = dict(mask=join(home, 'preproc_data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain_mask.nii.gz'),
                 dti=join(
-                    home, 'analyses/shapes/dwi/preproc_data/2_Transfer/{subject_id}/preprocessed_dwi.nii.gz'),
+                    home, 'preproc_data/2_Preprocessed/{subject_id}/denoised_gibbs_bias_corrected_reoriented_flirt.nii.gz'),
                 bval=join(
-                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
+                    home, 'preproc_data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
-                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bvec'),
-                aps=join(raw_dir, 'shapes_acqparams.txt'),
-                index=join(raw_dir, 'shapes_index.txt')    
+                    home, 'preproc_data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bvec'),
+                aps=join(home, 'shapes_acqparams.txt'),
+                index=join(home, 'shapes_index.txt')    
                 )
 
 
@@ -109,22 +102,22 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                ('index', 'in_index'),
                                ('aps', 'in_acqp'),
                                ('mask', 'in_mask')]),
-                   (eddy, datasink, [('out_corrected', '3_Eddy_Corrected'),
-                                     ('out_rotated_bvecs', '3_Eddy_Corrected.@par'),
+                   (eddy, datasink, [('out_corrected', '2_Preprocessed'),
+                                     ('out_rotated_bvecs', '2_Preprocessed.@par'),
                                      ('out_movement_rms',
-                                      '3_Eddy_Corrected.@par.@par'),
+                                      '2_Preprocessed.@par.@par'),
                                      ('out_parameter',
-                                      '3_Eddy_Corrected.@par.@par.@par'),
+                                      '2_Preprocessed.@par.@par.@par'),
                                      ('out_restricted_movement_rms',
-                                      '3_Eddy_Corrected.@par.@par.@par.@par'),
+                                      '2_Preprocessed.@par.@par.@par.@par'),
                                      ('out_shell_alignment_parameters',
-                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par'),
+                                      '2_Preprocessed.@par.@par.@par.@par.@par'),
                                      ('out_cnr_maps',
-                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par'),
+                                      '2_Preprocessed.@par.@par.@par.@par.@par.@par'),
                                      ('out_residuals',
-                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
+                                      '2_Preprocessed.@par.@par.@par.@par.@par.@par.@par'),
                                      ('out_outlier_report',
-                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')])
+                                      '2_Preprocessed.@par.@par.@par.@par.@par.@par.@par.@par')])
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
@@ -136,8 +129,8 @@ eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 #eddyqc nodes
 
-eddyquad = Node(fsl.EddyQuad(),     
-               name='eddyquad')
+# eddyquad = Node(fsl.EddyQuad(),     
+#                name='eddyquad')
 
 
 # In[56]:
