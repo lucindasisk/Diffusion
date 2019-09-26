@@ -204,15 +204,14 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Drop bottom slice of nifi (had odd # slices)
                       (create_merge, drop, [('merged_file', 'in_file')]),
                       # Run topop across merged niftis
-                      (drop, resamp_1, [('roi_file', 'in_file')]),
-                      (resamp_1, topup, [('resampled_file', 'in_file')]),
+                      (drop, topup, [('roi_file', 'in_file')]),
                       (sf, topup, [('aps', 'encoding_file')]),
                       (topup, datasink, [
                        ('out_corrected', '1_Check_Unwarped.@par')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
                       #Register T1 to b0 brain
-                      (sf, register1, [('t1', 'in_file')]),
+                      (sf, register1, [('resampled_file', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
                       #skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
@@ -222,8 +221,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
                                              ('out_file', '2_Preprocessed.@par')]),
                       # Drop bottom slice from DTI nifti
-                      (sf, resamp_2, [('dti', 'in_file')]),
-                      (resamp_2, drop2, [('resampled_fil', 'in_file')]),
+                      (sf, drop2, [('dti', 'in_file')]),
                       # Local PCA to denoise DTI data
                       (drop2, denoise, [('roi_file', 'in_file')]),
                       (denoise, datasink, [
