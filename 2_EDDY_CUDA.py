@@ -72,8 +72,8 @@ template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subjec
                     raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
                     raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bvec'),
-                aps=join(home, 'shapes_acqparams.txt'),
-                index=join(home, 'shapes_index.txt')    
+                aps=join(home, 'analyses/shapes/dwi/shapes_acqparams.txt'),
+                index=join(home, 'analyses/shapes/dwi/shapes_index.txt')    
                 )
 
 
