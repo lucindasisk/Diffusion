@@ -211,7 +211,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
                       #Register T1 to b0 brain
-                      (sf, register1, [('resampled_file', 'in_file')]),
+                      (sf, register1, [('t', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
                       #skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
