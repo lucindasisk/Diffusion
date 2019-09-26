@@ -29,20 +29,20 @@ user = expanduser('~')
 if user == '/Users/lucindasisk':
     home = join(user, 'Desktop/Milgram/candlab')
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
-    data_dir = join(home, 'analyses/shapes/dwi/preproc_data')
+    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+    data_dir = join(home, 'analyses/shapes/dwi/data')
 else:
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    workflow_dir = join(home, 'analyses/shapes/dwi/preproc_workflow')
-    data_dir = join(home, 'analyses/shapes/dwi/preproc_data')
+    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+    data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
 subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
-subject_list #= ['sub-A200', 'sub-A201']
+#subject_list #= ['sub-A200', 'sub-A201']
 
 
 # In[9]:
@@ -158,11 +158,10 @@ fslroi = Node(fsl.ExtractROI(t_min=0,
 reorient1 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
                  name='reorient1')
 
-# Register T1 to MNI - rigid 2D transformation
+# Register T1 to b0 - rigid 2D transformation
 register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
                            rigid2D=True,
-                           output_type='NIFTI_GZ',
-                          no_resample=True),
+                           output_type='NIFTI_GZ'),
                  name='register1')
 
 # apply topup from merged file to rest of pe0 scan
@@ -208,18 +207,16 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                        ('out_corrected', '1_Check_Unwarped.@par')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
-                      # Resample T1w to same voxel dimensions as DTI
-                      (sf, resampt1, [('t1', 'in_file')]),
                       #Register T1 to b0 brain
-                      (resampt1, register1, [('resampled_file', 'in_file')]),
+                      (sf, register1, [('t1', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
                       #skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                                           ('mask_file', '2_Transfer')]),
-                      (register1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
-                                             ('out_file', '2_Transfer.@par')]),
+                                           ('mask_file', '2_Preprocessed')]),
+                      (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
+                                             ('out_file', '2_Preprocessed.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       # Local PCA to denoise DTI data
@@ -239,9 +236,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
                           ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par'),
-                          ('out_corrected', '2_Transfer.@par.@par')]),
-                      (sf, datasink, [('bval', '2_Transfer.@par.@par.@par'),
-                                      ('bvec', '2_Transfer.@par.@par.@par.@par')])
+                          ('out_corrected', '2_Preprocessed.@par.@par')])
                       ])
 preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
