@@ -10,6 +10,7 @@ from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 from nipype.interfaces import fsl
 from nipype import config, logging
 from datetime import date
+from pandas import Series, read_csv, to_numeric
 from os import getcwd
 from os.path import join, expanduser
 
