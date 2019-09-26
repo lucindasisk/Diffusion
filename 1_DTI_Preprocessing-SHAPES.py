@@ -115,8 +115,8 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
-resampt1 = Node(fsr.Resample(voxel_size=(1.714290, 1.714290, 1.700000)),
-                name='resampT1')
+# resampt1 = Node(fsr.Resample(voxel_size=(1.714290, 1.714290, 1.700000)),
+#                 name='resampT1')
 
 # Drop bottom slice (S/I) to create even # of slices
 drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
