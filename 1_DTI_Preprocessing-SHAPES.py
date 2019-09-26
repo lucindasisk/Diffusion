@@ -38,11 +38,11 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-#subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-#subject_list = subject_csv[0].values.tolist()
+subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
-subject_list = ['sub-A698', 'sub-A695']
+#subject_list #= ['sub-A200', 'sub-A201']
 
 
 # In[9]:
@@ -115,8 +115,11 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
-# resampt1 = Node(fsr.Resample(voxel_size=(1.714290, 1.714290, 1.700000)),
-#                 name='resampT1')
+resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+                name='resamp_1')
+
+resamp_2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+                name='resamp_2')
 
 # Drop bottom slice (S/I) to create even # of slices
 drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
@@ -201,7 +204,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Drop bottom slice of nifi (had odd # slices)
                       (create_merge, drop, [('merged_file', 'in_file')]),
                       # Run topop across merged niftis
-                      (drop, topup, [('roi_file', 'in_file')]),
+                      (drop, resamp_1, [('roi_file', 'in_file')]),
+                      (resamp_1, topup, [('resampled_file', 'in_file')]),
                       (sf, topup, [('aps', 'encoding_file')]),
                       (topup, datasink, [
                        ('out_corrected', '1_Check_Unwarped.@par')]),
@@ -218,7 +222,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
                                              ('out_file', '2_Preprocessed.@par')]),
                       # Drop bottom slice from DTI nifti
-                      (sf, drop2, [('dti', 'in_file')]),
+                      (sf, resamp_2, [('dti', 'in_file')]),
+                      (resamp_2, drop2, [('resampled_fil', 'in_file')]),
                       # Local PCA to denoise DTI data
                       (drop2, denoise, [('roi_file', 'in_file')]),
                       (denoise, datasink, [
