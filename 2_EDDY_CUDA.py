@@ -57,13 +57,13 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 # SelectFiles
-template = dict(mask=join(home, 'preproc_data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain_mask.nii.gz'),
+template = dict(mask=join(home, 'data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain_mask.nii.gz'),
                 dti=join(
-                    home, 'preproc_data/2_Preprocessed/{subject_id}/denoised_gibbs_bias_corrected_reoriented_flirt.nii.gz'),
+                    home, 'data/2_Preprocessed/{subject_id}/denoised_gibbs_bias_corrected_reoriented_flirt.nii.gz'),
                 bval=join(
-                    home, 'preproc_data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
+                    home, 'data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
-                    home, 'preproc_data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bvec'),
+                    home, 'data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bvec'),
                 aps=join(home, 'shapes_acqparams.txt'),
                 index=join(home, 'shapes_index.txt')    
                 )
