@@ -223,7 +223,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                              ('out_file', '2_Preprocessed.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, resamp_2, [('dti', 'in_file')]),
-                      (resamp_2, drop2, [('resampled_fil', 'in_file')]),
+                      (resamp_2, drop2, [('resampled_file', 'in_file')]),
                       # Local PCA to denoise DTI data
                       (drop2, denoise, [('roi_file', 'in_file')]),
                       (denoise, datasink, [
