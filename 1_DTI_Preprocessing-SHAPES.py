@@ -115,7 +115,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
-resampt1 = Node(fsr.Resample(voxel_size=(1.714286, 1.714286, 1.700001)),
+resampt1 = Node(fsr.Resample(voxel_size=(1.714290, 1.714290, 1.700000)),
                 name='resampT1')
 
 # Drop bottom slice (S/I) to create even # of slices
@@ -161,7 +161,8 @@ reorient1 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 # Register T1 to b0 - rigid 2D transformation
 register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
                            rigid2D=True,
-                           output_type='NIFTI_GZ'),
+                           output_type='NIFTI_GZ',
+                           no_resample=True),
                  name='register1')
 
 # apply topup from merged file to rest of pe0 scan
@@ -208,7 +209,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
                       #Register T1 to b0 brain
-                      (sf, register1, [('t1', 'in_file')]),
+                      (sf, resampt1, [('t1', 'in_file')]),
+                      (resampt1, register1, [('resampled_file', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
                       #skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
