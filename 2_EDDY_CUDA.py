@@ -27,6 +27,7 @@ if user == '/Users/lucindasisk':
     home = join(base,'analyses/shapes/dwi')
     data_dir = join(base, 'analyses/shapes/dwi/eddyCUDA_data')
     workflow_dir = join(base, 'analyses/shapes/dwi/eddyCUDA_workflow')
+    raw_dir = join(base, 'data/mri/bids_recon/shapes')
 
 #Set user for Grace
 if user == '/home/fas/gee_dylan/lms233':
@@ -36,6 +37,7 @@ if user == '/home/fas/gee_dylan/lms233':
 
 #Set user for Milgram
 if user == '/home/lms233':
+    raw_dir = join(home, 'data/mri/bids_recon/shapes')
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     data_dir = 'analyses/shapes/dwi/data'
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
@@ -67,9 +69,9 @@ template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subjec
                 dti=join(
                     home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/preprocessed_dwi.nii.gz'),
                 bval=join(
-                    home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bval'),
+                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec=join(
-                    home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_dwi.bvec'),
+                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bvec'),
                 aps=join(home, 'shapes_acqparams.txt'),
                 index=join(home, 'shapes_index.txt')    
                 )
