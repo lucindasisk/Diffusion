@@ -65,7 +65,7 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 # SelectFiles
-template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_resample_brain_mask.nii.gz'),
+template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/out_file.nii.gz'),
                 dti=join(
                     home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/preprocessed_dwi.nii.gz'),
                 bval=join(
