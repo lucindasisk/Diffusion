@@ -8,6 +8,7 @@ from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
 from nipype.interfaces.utility import IdentityInterface, Function    
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 from nipype.interfaces import fsl
+import nipype.interfaces.freesurfer as fsr
 from nipype import config, logging
 from datetime import date
 from pandas import Series, read_csv, to_numeric
