@@ -119,7 +119,7 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                ('index', 'in_index'),
                                ('aps', 'in_acqp')]),
                    (resamp_1, eddy, [('resampled_file', 'in_mask')]),
-                   (resamp_2, eddy, [('resampled_file', 'in_file')])
+                   (resamp_2, eddy, [('resampled_file', 'in_file')]),
                    (eddy, datasink, [('out_corrected', '2_Preprocessed'),
                                      ('out_rotated_bvecs', '2_Preprocessed.@par'),
                                      ('out_movement_rms',
