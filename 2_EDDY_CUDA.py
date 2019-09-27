@@ -39,7 +39,7 @@ if user == '/home/fas/gee_dylan/lms233':
 #Set user for Milgram
 if user == '/home/lms233':
     home = '/gpfs/milgram/project/gee_dylan/candlab'
-    data_dir = 'analyses/shapes/dwi/data'
+    data_dir = join(home,'analyses/shapes/dwi/data')
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     
