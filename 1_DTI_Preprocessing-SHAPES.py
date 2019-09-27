@@ -115,11 +115,8 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 
 
 # Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
-resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+resamp_1 = Node(fsr.Resample(voxel_size=(1.714290, 1.714290, 1.7)),
                 name='resamp_1')
-
-resamp_2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
-                name='resamp_2')
 
 # Drop bottom slice (S/I) to create even # of slices
 drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
@@ -214,7 +211,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, register1, [('t1', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
                       #skullstrip T1
-                      (register1, stripT1, [('out_file', 'in_file')]),
+                      (register1, resamp_1, [('out_file', 'in_file')]),
+                      (resamp_1, stripT1, [('resampled_file', 'in_file')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
                                            ('mask_file', '2_Preprocessed')]),
