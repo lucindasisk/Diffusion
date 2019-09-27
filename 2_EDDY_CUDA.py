@@ -85,6 +85,13 @@ sf = Node(SelectFiles(template,
 # In[38]:
 
 
+# Resample b0 to uniform voxel dims
+resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.714290, 1.7)),
+                name='resamp_1')
+
+#Resample DTI to uniform voxel dims
+resamp_2 = resamp1.clone(name='resamp_2')
+
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
@@ -104,12 +111,14 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 
 eddy_flow = Workflow(name='eddy_flow')
 eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                   (sf, eddy, [('dti', 'in_file'),
-                               ('bval', 'in_bval'),
+                   (sf, resamp_1, [('mask', 'in_file')]),
+                   (sf, resamp_2, [('dti', 'in_file')]),
+                   (sf, eddy, [('bval', 'in_bval'),
                                ('bvec', 'in_bvec'),
                                ('index', 'in_index'),
-                               ('aps', 'in_acqp'),
-                               ('mask', 'in_mask')]),
+                               ('aps', 'in_acqp')]),
+                   (resamp_1, eddy, [('resampled_file', 'in_mask')]),
+                   (resamp_2, eddy, [('resampled_file', 'in_file')])
                    (eddy, datasink, [('out_corrected', '2_Preprocessed'),
                                      ('out_rotated_bvecs', '2_Preprocessed.@par'),
                                      ('out_movement_rms',
