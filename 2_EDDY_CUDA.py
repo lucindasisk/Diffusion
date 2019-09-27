@@ -43,11 +43,11 @@ if user == '/home/lms233':
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     
 # Manual subject list
-#subject_list = ['sub-A200', 'sub-A201', 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
+subject_list = ['sub-A200', 'sub-A201'] #, 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
     
 # Read in subject subject_list
-subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()
+# subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subject_list = subject_csv[0].values.tolist()
 
 
 # In[54]:
@@ -65,7 +65,7 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 # SelectFiles
-template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_brain_mask.nii.gz'),
+template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_resample_brain_mask.nii.gz'),
                 dti=join(
                     home, 'analyses/shapes/dwi/data/2_Preprocessed/{subject_id}/preprocessed_dwi.nii.gz'),
                 bval=join(
