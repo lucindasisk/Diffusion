@@ -11,6 +11,7 @@
 
  ml load StdEnv
 # ml load CUDA/7.5.18
+ ml load FreeSurfer/6.0.0 
  ml load FSL/6.0.1-centos7_64
  ml load Python/miniconda
 
