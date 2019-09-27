@@ -91,7 +91,7 @@ resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.714290, 1.7)),
                 name='resamp_1')
 
 #Resample DTI to uniform voxel dims
-resamp_2 = resamp1.clone(name='resamp_2')
+resamp_2 = resamp_1.clone(name='resamp_2')
 
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
