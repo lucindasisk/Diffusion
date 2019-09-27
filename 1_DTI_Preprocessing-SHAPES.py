@@ -219,7 +219,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (stripb0, datasink, [('out_file', '2_Preprocessed'),
                                           ('mask_file', '2_Preprocessed.@par')]),
                       #skullstrip T1
-                      (register1, stripT1, [('resampled_file', 'in_file')]),
+                      (register1, stripT1, [('out_file', 'in_file')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
                                            ('mask_file', '2_Preprocessed.@par.@par')]),
