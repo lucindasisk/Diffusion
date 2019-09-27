@@ -38,11 +38,11 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-# subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-# subject_list = subject_csv[0].values.tolist()
+subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
-subject_list = ['sub-A200', 'sub-A201']
+# subject_list = ['sub-A200', 'sub-A201']
 
 
 # In[9]:
@@ -114,9 +114,6 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 # In[12]:
 
 
-# Resample T1w to same voxel dimensions as DTI to avoid data interpolation (1.714286 x 1.714286 x 1.700001) .
-resamp_1 = Node(fsr.Resample(voxel_size=(1.714290, 1.714290, 1.7)),
-                name='resamp_1')
 
 # Drop bottom slice (S/I) to create even # of slices
 drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
@@ -176,8 +173,7 @@ stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
 # Skullstrip the b0image
-stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
-               name='stripb0')
+stripb0 = stripT1.clone(name='stripb0')
 
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
