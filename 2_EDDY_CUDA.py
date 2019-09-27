@@ -87,7 +87,7 @@ sf = Node(SelectFiles(template,
 
 
 # Resample b0 to uniform voxel dims
-resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.714290, 1.7)),
+resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                 name='resamp_1')
 
 #Resample DTI to uniform voxel dims
