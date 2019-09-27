@@ -175,6 +175,10 @@ apptop = Node(fsl.ApplyTOPUP(method='jac',
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
+# Skullstrip the b0image
+stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
+               name='stripb0')
+
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
@@ -210,14 +214,17 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Register T1 to b0 brain
                       (sf, register1, [('t1', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
+                      #skullstrip b0 and save
+                      (fslroi, stripb0, [('roi_file', 'in_file')]),
+                      (stripb0, datasink, [('out_file', '2_Preprocessed'),
+                                          ('mask_file', '2_Preprocessed.@par')])
                       #skullstrip T1
-                      (register1, resamp_1, [('out_file', 'in_file')]),
-                      (resamp_1, stripT1, [('resampled_file', 'in_file')]),
+                      (register1, stripT1, [('resampled_file', 'in_file')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                                           ('mask_file', '2_Preprocessed')]),
+                                           ('mask_file', '2_Preprocessed.@par.@par')]),
                       (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
-                                             ('out_file', '2_Preprocessed.@par')]),
+                                             ('out_file', '2_Preprocessed.@par.@par.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       # Local PCA to denoise DTI data
@@ -237,7 +244,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
                           ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par'),
-                          ('out_corrected', '2_Preprocessed.@par.@par')])
+                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')])
                       ])
 preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
