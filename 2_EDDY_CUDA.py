@@ -86,6 +86,12 @@ sf = Node(SelectFiles(template,
 # In[38]:
 
 
+#Drop extra slice in b0 vol
+drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
+                           y_min=0, y_size=140,
+                           z_min=1, z_size=80, output_type='NIFTI_GZ'),
+            name='drop')
+
 # Resample b0 to uniform voxel dims
 resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                 name='resamp_1')
@@ -112,7 +118,8 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 
 eddy_flow = Workflow(name='eddy_flow')
 eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                   (sf, resamp_1, [('mask', 'in_file')]),
+                   (sf, drop, ['mask', 'in_file']),
+                   (drop, resamp_1, [('roi_file', 'in_file')]),
                    (resamp_1, datasink, [('resampled_file', '3_EddyCorrected')]),
                    (sf, resamp_2, [('dti', 'in_file')]),
                    (resamp_2, datasink, [('resampled_file', '3_EddyCorrected.@par')]),
