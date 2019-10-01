@@ -118,7 +118,7 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 
 eddy_flow = Workflow(name='eddy_flow')
 eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                   (sf, drop, ['mask', 'in_file']),
+                   (sf, drop, [('mask', 'in_file')]),
                    (drop, resamp_1, [('roi_file', 'in_file')]),
                    (resamp_1, datasink, [('resampled_file', '3_EddyCorrected')]),
                    (sf, resamp_2, [('dti', 'in_file')]),
