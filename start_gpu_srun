@@ -1,3 +1,2 @@
 #! /bin/bash
-
-srun --pty --x11 -c 10 -t 6:00:00 --gres=gpu:1 bash
+srun --pty --x11 -c 10 -p gpu -t 6:00:00 --gres=gpu:1 bash
