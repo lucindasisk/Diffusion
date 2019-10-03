@@ -160,6 +160,15 @@ eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
 #                name='eddyquad')
 
 
+# In[55]:
+
+
+#eddyqc nodes
+
+# eddyquad = Node(fsl.EddyQuad(),     
+#                name='eddyquad')
+
+
 # In[56]:
 
 
