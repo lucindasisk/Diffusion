@@ -126,7 +126,7 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                    #Resample DTI to uniform dimensions
                    (sf, resamp_1, [('dti', 'in_file')]),
                    #Save resampled DTI
-                   (resamp_1, datasink, [('resampled_file', '3_EddyCorrected')])
+                   (resamp_1, datasink, [('resampled_file', '3_EddyCorrected')]),
                    #Extract b0 volume
                    (resamp_1, fslroi, [('resampled_file', 'in_file')]),
                    #Skullstrip b0 volume
