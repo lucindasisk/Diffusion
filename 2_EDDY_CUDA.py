@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -16,7 +16,7 @@ from os import getcwd
 from os.path import join, expanduser
 
 
-# In[53]:
+# In[2]:
 
 
 # Set variables
@@ -51,7 +51,7 @@ subject_list = ['sub-A200', 'sub-A202'] #, 'sub-A687', 'sub-A694', 'sub-A695', '
 # subject_list = subject_csv[0].values.tolist()
 
 
-# In[54]:
+# In[3]:
 
 
 # Setup Datasink, Infosource, Selectfiles
@@ -83,14 +83,18 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
-# In[38]:
+# In[4]:
 
 
-#Drop extra slice in b0 vol
-drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
-                           y_min=0, y_size=140,
-                           z_min=1, z_size=80, output_type='NIFTI_GZ'),
-            name='drop')
+# Select b0 image for registration
+fslroi = Node(fsl.ExtractROI(t_min=0,
+                             t_size=1,
+                             roi_file='b0_img.nii.gz', output_type='NIFTI_GZ'),
+              name='fslroi')
+
+# Skullstrip the b0 image
+stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
+               name='stripb0')
 
 # Resample b0 to uniform voxel dims
 resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
@@ -113,22 +117,23 @@ eddy = Node(fsl.Eddy(is_shelled=True,
             name='eddy')
 
 
-# In[39]:
+# In[5]:
 
 
 eddy_flow = Workflow(name='eddy_flow')
 eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                   (sf, drop, [('mask', 'in_file')]),
-                   (drop, resamp_1, [('roi_file', 'in_file')]),
-                   (resamp_1, datasink, [('resampled_file', '3_EddyCorrected')]),
-                   (sf, resamp_2, [('dti', 'in_file')]),
-                   (resamp_2, datasink, [('resampled_file', '3_EddyCorrected.@par')]),
-                   (sf, eddy, [('bval', 'in_bval'),
+                   (sf, fslroi, [('dti', 'in_file')]),
+                   (fslroi, stripb0, [('roi_file', 'in_file')]),
+                   (stripb0, datasink, [('mask_file', '3_EddyCorrected')]),
+#                    (sf, resamp_2, [('dti', 'in_file')]),
+#                    (resamp_2, datasink, [('resampled_file', '3_EddyCorrected.@par')]),
+                   (sf, eddy, [('dti', 'in_file'),
+                               ('bval', 'in_bval'),
                                ('bvec', 'in_bvec'),
                                ('index', 'in_index'),
                                ('aps', 'in_acqp')]),
-                   (resamp_1, eddy, [('resampled_file', 'in_mask')]),
-                   (resamp_2, eddy, [('resampled_file', 'in_file')]),
+                   (stripb0, eddy, [('mask_file', 'in_mask')]),
+                   #(resamp_2, eddy, [('resampled_file', 'in_file')]),
                    (eddy, datasink, [('out_corrected', '3_EddyCorrected.@par.@par'),
                                      ('out_rotated_bvecs', '3_EddyCorrected.@par.@par.@par'),
                                      ('out_movement_rms',
@@ -151,7 +156,7 @@ eddy_flow.write_graph(graph2use='flat')
 eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
-# In[55]:
+# In[ ]:
 
 
 #eddyqc nodes
@@ -160,7 +165,7 @@ eddy = eddy_flow.run('MultiProc', plugin_args={'n_procs': 4})
 #                name='eddyquad')
 
 
-# In[56]:
+# In[ ]:
 
 
 # Workflow
