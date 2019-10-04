@@ -43,12 +43,12 @@ if user == '/home/lms233':
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     
-# Manual subject list
-#subject_list = ['sub-A200', 'sub-A202'] #, 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
+## Manual subject list
+subject_list = ['sub-A200', 'sub-A202'] #, 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
     
 # Read in subject subject_list
-subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()
+# subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subject_list = subject_csv[0].values.tolist()
 
 
 # In[3]:
