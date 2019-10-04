@@ -44,11 +44,11 @@ if user == '/home/lms233':
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     
 # Manual subject list
-subject_list = ['sub-A200', 'sub-A202'] #, 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
+#subject_list = ['sub-A200', 'sub-A202'] #, 'sub-A687', 'sub-A694', 'sub-A695', 'sub-A698']  # , 'sub-A201']
     
 # Read in subject subject_list
-# subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-# subject_list = subject_csv[0].values.tolist()
+subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_list = subject_csv[0].values.tolist()
 
 
 # In[3]:
@@ -83,8 +83,14 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
+# #### Workflow Nodes
+
 # In[4]:
 
+
+# Resample DTI to uniform voxel dims
+resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+                name='resamp_1')
 
 # Select b0 image for registration
 fslroi = Node(fsl.ExtractROI(t_min=0,
@@ -95,13 +101,6 @@ fslroi = Node(fsl.ExtractROI(t_min=0,
 # Skullstrip the b0 image
 stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripb0')
-
-# Resample b0 to uniform voxel dims
-resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
-                name='resamp_1')
-
-#Resample DTI to uniform voxel dims
-resamp_2 = resamp_1.clone(name='resamp_2')
 
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
@@ -117,23 +116,31 @@ eddy = Node(fsl.Eddy(is_shelled=True,
             name='eddy')
 
 
+# #### Workflow Nodes
+
 # In[5]:
 
 
 eddy_flow = Workflow(name='eddy_flow')
 eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                   (sf, fslroi, [('dti', 'in_file')]),
+                   #Resample DTI to uniform dimensions
+                   (sf, resamp_1, [('dti', 'in_file')]),
+                   #Save resampled DTI
+                   (resamp_1, datasink, [('resampled_file', '3_EddyCorrected')])
+                   #Extract b0 volume
+                   (resamp_1, fslroi, [('resampled_file', 'in_file')]),
+                   #Skullstrip b0 volume
                    (fslroi, stripb0, [('roi_file', 'in_file')]),
-                   (stripb0, datasink, [('mask_file', '3_EddyCorrected')]),
-#                    (sf, resamp_2, [('dti', 'in_file')]),
-#                    (resamp_2, datasink, [('resampled_file', '3_EddyCorrected.@par')]),
+                   #Save b0 mask
+                   (stripb0, datasink, [('mask_file', '3_EddyCorrected.@par')]),
+                   #Run Eddy correction
                    (sf, eddy, [('dti', 'in_file'),
                                ('bval', 'in_bval'),
                                ('bvec', 'in_bvec'),
                                ('index', 'in_index'),
                                ('aps', 'in_acqp')]),
                    (stripb0, eddy, [('mask_file', 'in_mask')]),
-                   #(resamp_2, eddy, [('resampled_file', 'in_file')]),
+                   #Save Eddy outputs
                    (eddy, datasink, [('out_corrected', '3_EddyCorrected.@par.@par'),
                                      ('out_rotated_bvecs', '3_EddyCorrected.@par.@par.@par'),
                                      ('out_movement_rms',
