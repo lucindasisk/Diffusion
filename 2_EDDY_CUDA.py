@@ -88,10 +88,6 @@ sf = Node(SelectFiles(template,
 # In[4]:
 
 
-# Resample DTI to uniform voxel dims
-resamp_1 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
-                name='resamp_1')
-
 # Select b0 image for registration
 fslroi = Node(fsl.ExtractROI(t_min=0,
                              t_size=1,
