@@ -172,9 +172,6 @@ apptop = Node(fsl.ApplyTOPUP(method='jac',
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
-# Skullstrip the b0image
-stripb0 = stripT1.clone(name='stripb0')
-
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
@@ -210,10 +207,6 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Register T1 to b0 brain
                       (sf, register1, [('t1', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
-                      #skullstrip b0 and save
-                      (fslroi, stripb0, [('roi_file', 'in_file')]),
-                      (stripb0, datasink, [('out_file', '2_Preprocessed'),
-                                          ('mask_file', '2_Preprocessed.@par')]),
                       #skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
                       # Save stripped anat and mask
