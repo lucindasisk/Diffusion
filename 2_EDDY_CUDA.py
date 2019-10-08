@@ -74,7 +74,8 @@ template = dict(mask=join(home, 'analyses/shapes/dwi/data/2_Preprocessed/{subjec
                 bvec=join(
                     raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bvec'),
                 aps=join(home, 'analyses/shapes/dwi/shapes_acqparams.txt'),
-                index=join(home, 'analyses/shapes/dwi/shapes_index.txt')    
+                index=join(home, 'analyses/shapes/dwi/shapes_index.txt'),
+                mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
                 )
 
 
@@ -165,6 +166,7 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                    (eddy, resample, [('out_corrected', 'in_file')]),
                    (resample, reorient, [('resampled_file','in_file')]),
                    (reorient, register, [('out_file', 'in_file')]),
+                   (sf, register, [('mni', 'reference')]),
                    (register, datasink, [('out_file', '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])      
                    ])
 eddy_flow.base_dir = workflow_dir
