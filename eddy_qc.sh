@@ -23,6 +23,6 @@ for sub in $subs ; do
   -idx $dwi'/shapes_index.txt' \
   -par $dwi'/shapes_acqparams.txt' \
   -m $dwi'/data/3_EddyCorrected/'$sub'/b0_img_brain_mask.nii.gz' \
-  -b $dwi'/data/mri/bids_recon/shapes/'$sub'/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval' \
+  -b $home'/data/mri/bids_recon/shapes/'$sub'/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval' \
   -o $fldr'/'$sub
 done
