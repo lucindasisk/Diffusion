@@ -113,7 +113,7 @@ eddy = Node(fsl.Eddy(is_shelled=True,
             name='eddy')
 
 #Resample dti to isotropic 1.7x1.7x1.7
-resample = Node(fsr.Resample(voxel_size=(1.7, 1.7,1.7)),
+resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                name = "resample")
 
 #Reorient to standard
@@ -122,8 +122,9 @@ reorient = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 
 #Register to MNI brain
 register = Node(fsl.FLIRT(no_resample=True,
-                         output_type='NIFTI_GZ',
-                         out_file='eddy_corrected_resample_mni.nii.gz'),
+                          out_matrix_file='DwiToMNI_reorient_reg.mat',
+                          output_type='NIFTI_GZ',
+                          out_file='eddy_corrected_resample_mni.nii.gz'),
                name='register')
 
 
