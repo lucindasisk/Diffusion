@@ -122,7 +122,8 @@ reorient = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 
 #Register to MNI brain
 register = Node(fsl.FLIRT(no_resample=True,
-                         output_type='NIFTI_GZ'),
+                         output_type='NIFTI_GZ',
+                         out_file='eddy_corrected_resample_mni.nii.gz'),
                name='register')
 
 
