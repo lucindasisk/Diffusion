@@ -35,7 +35,7 @@ for sub in $subs ; do
     -f $dwi'/data/1_Check_Unwarped/'$sub'/AP_PA_merged_roi_base_fieldcoef.nii.gz' \
     -m $dwi'/data/3_EddyCorrected/'$sub'/b0_img_brain_mask.nii.gz' \
     -b $home'/data/mri/bids_recon/shapes/'$sub'/ses-shapesV1/dwi/'$sub'_ses-shapesV1_dwi.bval' \
-    -g $dwi'/data/3_EddyCorrected/'$sub'/eddy_corrected.eddy_rotated_bvecs' \
+  #  -g $dwi'/data/3_EddyCorrected/'$sub'/eddy_corrected.eddy_rotated_bvecs' \
     -o $fldr'/'$sub
   fi
 done
