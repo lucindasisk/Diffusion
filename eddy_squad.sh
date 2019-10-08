@@ -17,6 +17,8 @@ ml load FSL/6.0.1-centos7_64
 home='/gpfs/milgram/project/gee_dylan/candlab'
 quad=$home'/analyses/shapes/dwi/data/4_Eddy_QC_Data'
 cd $quad
-quad_fldrs=$(ls)
+#quad_fldrs=$(ls)
+#echo $quad_fldrs > 'eddyquad_folders.txt'
+fldrlist='eddyquad_folders.txt'
 
-eddy_squad $quad_fldrs
+eddy_squad $fldrlist
