@@ -111,6 +111,19 @@ eddy = Node(fsl.Eddy(is_shelled=True,
                      repol=True),
             name='eddy')
 
+#Resample dti to isotropic 1.7x1.7x1.7
+resample = Node(fsr.Resample(voxel_size=(1.7, 1.7,1.7)),
+               name = "resample")
+
+#Reorient to standard
+reorient = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
+                 name='reorient')
+
+#Register to MNI brain
+register = Node(fsl.FLIRT(no_resample=True,
+                         output_type='NIFTI_GZ'),
+               name='register')
+
 
 # #### Workflow Nodes
 
@@ -148,7 +161,11 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                      ('out_residuals',
                                       '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
                                      ('out_outlier_report',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
+                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),   
+                   (eddy, resample, [('out_corrected', 'in_file')]),
+                   (resample, reorient, [('resampled_file','in_file')]),
+                   (reorient, register, [('out_file', 'in_file')]),
+                   (register, datasink, [('out_file', '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])      
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
