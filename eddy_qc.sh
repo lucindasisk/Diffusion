@@ -2,6 +2,9 @@
 
 #Usage: ./eddy_qc <name_of_subject_list.txt
 
+ml load StdEnv
+ml load FSL/6.0.1-centos7_64
+
 home='/gpfs/milgram/project/gee_dylan/candlab/'
 dwi='/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi'
 subs=`cat $home'/scripts/shapes/mri/dwi/Diffusion/'$1`
