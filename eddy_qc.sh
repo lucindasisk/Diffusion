@@ -17,7 +17,6 @@ fi
 
 for sub in $subs ; do
   fldr=$home'/analyses/shapes/dwi/data/4_Eddy_QC_Data'
-  mkdir $fldr'/'$sub
 
   eddy_quad $dwi'/data/3_EddyCorrected/'$sub'/eddy_corrected' \
   -idx $dwi'/shapes_index.txt' \
