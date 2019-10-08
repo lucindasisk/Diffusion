@@ -17,12 +17,12 @@ fi
 
 for sub in $subs ; do
   fldr=$home'/analyses/shapes/dwi/data/4_Eddy_QC_Data'
-  mkdir $fldr'/sub'
+  mkdir $fldr'/'$sub
 
   eddy_quad $home'/analyses/shapes/dwi/data/3_EddyCorrected/'$sub'/eddy_corrected' \
   -idx $dwi'/shapes_index.txt' \
   -par $dwi'/shapes_acqparams.txt' \
   -m $home'/data/3_EddyCorrected/'$sub'/b0_img_brain_mask.nii.gz' \
   -b $home'/data/mri/bids_recon/shapes/'$sub'/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval' \
-  -o $fldr'/sub'
+  -o $fldr'/'$sub
 done
