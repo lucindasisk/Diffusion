@@ -13,6 +13,7 @@ if [ -d $home'/analyses/shapes/dwi/data/4_Eddy_QC_Data' ] ; then
   pass
 else
   mkdir $home'/analyses/shapes/dwi/data/4_Eddy_QC_Data'
+fi
 
 for sub in $subs; do
   fldr=$home'/analyses/shapes/dwi/data/4_Eddy_QC_Data'
@@ -24,3 +25,4 @@ for sub in $subs; do
   -m $home'/data/3_EddyCorrected/'$sub'/b0_img_brain_mask.nii.gz' \
   -b $home'/data/mri/bids_recon/shapes/'$sub'/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval' \
   -o $fldr'/sub'
+done
