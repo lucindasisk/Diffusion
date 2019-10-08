@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[15]:
+# In[ ]:
 
 
 # Set variables
@@ -45,13 +45,13 @@ subject_list = subject_csv[0].values.tolist()
 # subject_list = ['sub-A200', 'sub-A201']
 
 
-# In[9]:
+# In[ ]:
 
 
 # 9/22/19: change so that T1 is registered to B0 per https://mrtrix.readthedocs.io/en/latest/quantitative_structural_connectivity/act.html
 
 
-# In[10]:
+# In[ ]:
 
 
 # Create preprocessing Workflow
@@ -92,7 +92,7 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
-# In[11]:
+# In[ ]:
 
 
 # Merge AP/PA encoding direction fieldmaps
@@ -111,7 +111,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
                     name='create_merge')
 
 
-# In[12]:
+# In[ ]:
 
 
 
@@ -186,7 +186,7 @@ eddy = Node(fsl.Eddy(is_shelled=True,
             name='eddy')
 
 
-# In[13]:
+# In[ ]:
 
 
 
@@ -201,7 +201,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (drop, topup, [('roi_file', 'in_file')]),
                       (sf, topup, [('aps', 'encoding_file')]),
                       (topup, datasink, [
-                       ('out_corrected', '1_Check_Unwarped.@par')]),
+                       ('out_corrected', '1_Check_Unwarped.@par'),
+                      ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
                       #Register T1 to b0 brain
@@ -210,16 +211,16 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
                       # Save stripped anat and mask
-                      (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
+                      (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par'),
                                            ('mask_file', '2_Preprocessed.@par.@par')]),
-                      (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par'),
+                      (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par'),
                                              ('out_file', '2_Preprocessed.@par.@par.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       # Local PCA to denoise DTI data
                       (drop2, denoise, [('roi_file', 'in_file')]),
                       (denoise, datasink, [
-                       ('out_file', '1_Check_Unwarped.@par.@par.@par')]),
+                       ('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par')]),
                       # Gibbs ringing removal
                       (drop2, gibbs, [('roi_file', 'in_file')]),
                       # Perform DWI bias field correction
@@ -232,7 +233,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (bias, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
-                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par'),
+                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
                           ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')])
                       ])
 preproc_flow.base_dir = workflow_dir
