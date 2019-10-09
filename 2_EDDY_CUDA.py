@@ -166,10 +166,7 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                      ('out_outlier_report',
                                       '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),   
                    (eddy, resample, [('out_corrected', 'in_file')]),
-                   (resample, reorient, [('resampled_file','in_file')]),
-                   (reorient, register, [('out_file', 'in_file')]),
-                   (sf, register, [('mni', 'reference')]),
-                   (register, datasink, [('out_file', '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])      
+                   (resample, datasink, [('resampled_file', '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])      
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
