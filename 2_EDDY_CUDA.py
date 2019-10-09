@@ -116,16 +116,18 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                name = "resample")
 
-#Reorient to standard
-reorient = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
-                 name='reorient')
+## Take out these nodes per this "best practices" discussion: https://community.mrtrix.org/t/diffusion-in-mni-space/367
 
-#Register to MNI brain
-register = Node(fsl.FLIRT(no_resample=True,
-                          out_matrix_file='DwiToMNI_reorient_reg.mat',
-                          output_type='NIFTI_GZ',
-                          out_file='eddy_corrected_resample_mni.nii.gz'),
-               name='register')
+# #Reorient to standard
+# reorient = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
+#                  name='reorient')
+
+# #Register to MNI brain
+# register = Node(fsl.FLIRT(no_resample=True,
+#                           out_matrix_file='DwiToMNI_reorient_reg.mat',
+#                           output_type='NIFTI_GZ',
+#                           out_file='eddy_corrected_resample_mni.nii.gz'),
+#                name='register')
 
 
 # #### Workflow Nodes
@@ -140,7 +142,7 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                    #Skullstrip b0 volume
                    (fslroi, stripb0, [('roi_file', 'in_file')]),
                    #Save b0 mask
-                   (stripb0, datasink, [('mask_file', '3_EddyCorrected.@par')]),
+                   (stripb0, datasink, [('mask_file', '3_Eddy_Corrected.@par')]),
                    #Run Eddy correction
                    (sf, eddy, [('dti', 'in_file'),
                                ('bval', 'in_bval'),
@@ -149,24 +151,24 @@ eddy_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                ('aps', 'in_acqp')]),
                    (stripb0, eddy, [('mask_file', 'in_mask')]),
                    #Save Eddy outputs
-                   (eddy, datasink, [('out_corrected', '3_EddyCorrected.@par.@par'),
-                                     ('out_rotated_bvecs', '3_EddyCorrected.@par.@par.@par'),
+                   (eddy, datasink, [('out_corrected', '3_Eddy_Corrected.@par.@par'),
+                                     ('out_rotated_bvecs', '3_Eddy_Corrected.@par.@par.@par'),
                                      ('out_movement_rms',
-                                      '3_EddyCorrected.@par.@par.@par.@par'),
+                                      '3_Eddy_Corrected.@par.@par.@par.@par'),
                                      ('out_parameter',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par'),
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par'),
                                      ('out_restricted_movement_rms',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par'),
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par'),
                                      ('out_shell_alignment_parameters',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par'),
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
                                      ('out_cnr_maps',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par'),
                                      ('out_residuals',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
                                      ('out_outlier_report',
-                                      '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),   
+                                      '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),   
                    (eddy, resample, [('out_corrected', 'in_file')]),
-                   (resample, datasink, [('resampled_file', '3_EddyCorrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])      
+                   (resample, datasink, [('resampled_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])      
                    ])
 eddy_flow.base_dir = workflow_dir
 eddy_flow.write_graph(graph2use='flat')
