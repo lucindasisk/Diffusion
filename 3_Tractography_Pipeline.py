@@ -38,9 +38,9 @@ if user == '/Users/lucindasisk':
     else:
         home = join(user, 'Desktop/Milgram/candlab')
         raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    proc_dir = join(home, 'analyses/shapes/dwi/data')
-    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
-    data_dir = join(home, 'analyses/shapes/dwi/data')
+        proc_dir = join(home, 'analyses/shapes/dwi/data')
+        workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+        data_dir = join(home, 'analyses/shapes/dwi/data')
 else:
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
@@ -72,10 +72,10 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 #SelectFiles
-template = dict(dti = join(proc_dir,'eddyCUDA_data/3_Eddy_Corrected/{subject_id}/eddy_corrected.nii.gz'),
+template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.nii.gz'),
                 bval = join(raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
-                bvec = join(proc_dir,'eddyCUDA_data/3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
-                t1 = join(proc_dir, 'preproc_data/2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain.nii.gz'),
+                bvec = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
+                t1 = join(proc_dir, '2_Transfer/{subject_id}/{subject_id}_ses-shapesV1_T1w_resample_brain.nii.gz'),
                 aseg = join(home, 'data/mri/hcp_pipeline_preproc/shapes/{subject_id}/MNINonLinear/aparc.a2009s+aseg.nii.gz'),
                 mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
                )
