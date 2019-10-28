@@ -110,7 +110,7 @@ eddy = Node(fsl.Eddy(is_shelled=True,
                      use_cuda=True,
                      cnr_maps=True,
                      repol=True,
-                     args=``%s`` % "--ol_type='both' --ol_pos=true'"),
+                     args="--ol_type='both' --ol_pos=true'"),
             name='eddy')
 
 #Resample dti to isotropic 1.7x1.7x1.7
