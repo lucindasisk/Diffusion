@@ -49,12 +49,12 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-# subject_info = read_csv(
-#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-# subject_list = subject_info[0].tolist()
+subject_info = read_csv(
+    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_list = subject_info[0].tolist()
 
 # Manual subject list
-subject_list = ['sub-A200', 'sub-A201']
+#subject_list = ['sub-A200', 'sub-A201']
 
 
 # In[ ]:
@@ -175,7 +175,7 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                    ])
 tract_flow.base_dir = workflow_dir
 tract_flow.write_graph(graph2use = 'flat')
-dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 1})
+dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
 # In[ ]:
