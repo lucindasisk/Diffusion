@@ -45,8 +45,8 @@ else:
     home = '/gpfs/milgram/project/gee_dylan/candlab'
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     proc_dir = join(home, 'analyses/shapes/dwi/data')
-    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
-    data_dir = join(home, 'analyses/shapes/dwi/data')
+    workflow_dir = join(home, 'analyses/shapes/dwi/workflow_tractography')
+    data_dir = join(home, 'analyses/shapes/dwi/data_mg')
     
 # Read in subject subject_list
 # subject_info = read_csv(

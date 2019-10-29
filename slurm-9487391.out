@@ -1,0 +1,602 @@
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.1-centos7_64/etc/fslconf/fsl.sh
+
+The following have been reloaded with a version change:
+  1) Python/2.7.14-foss-2018a => Python/miniconda
+
+191009-13:56:26,943 nipype.workflow DEBUG:
+	 (tract_flow.infosource, tract_flow.sf): No edge data
+191009-13:56:26,943 nipype.workflow DEBUG:
+	 (tract_flow.infosource, tract_flow.sf): new edge data: {'connect': [('subject_id', 'subject_id')]}
+191009-13:56:26,943 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.bet): No edge data
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.bet): new edge data: {'connect': [('t1', 'in_file')]}
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.seg5tt): No edge data
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.seg5tt): new edge data: {'connect': [('t1', 'in_file')]}
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.seg5tt, tract_flow.datasink): No edge data
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.seg5tt, tract_flow.datasink): new edge data: {'connect': [('out_file', '4_tract_Reconstruction')]}
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.dwiresp): No edge data
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.dwiresp): new edge data: {'connect': [('dti', 'in_file'), ('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+191009-13:56:26,944 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.datasink): No edge data
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.datasink): new edge data: {'connect': [('wm_file', '4_tract_Reconstruction.@par'), ('gm_file', '4_tract_Reconstruction.@par.@par'), ('csf_file', '4_tract_Reconstruction.@par.@par.@par')]}
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.mscsd): No edge data
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.mscsd): new edge data: {'connect': [('dti', 'in_file'), ('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.mscsd): No edge data
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.mscsd): new edge data: {'connect': [('wm_file', 'wm_txt'), ('gm_file', 'gm_txt'), ('csf_file', 'csf_txt')]}
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.tract): No edge data
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.tract): new edge data: {'connect': [('wm_odf', 'in_file')]}
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.datasink): No edge data
+191009-13:56:26,945 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.datasink): new edge data: {'connect': [('wm_odf', '4_tract_Reconstruction.@par.@par.@par.@par'), ('gm_odf', '4_tract_Reconstruction.@par.@par.@par.@par.@par'), ('csf_odf', '4_tract_Reconstruction.@par.@par.@par.@par.@par.@par')]}
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.tract): No edge data
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.tract): new edge data: {'connect': [('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.tract): No edge data
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.tract): new edge data: {'connect': [('mask_file', 'seed_image')]}
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.trkconvert): No edge data
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.trkconvert): new edge data: {'connect': [('out_file', 'in_file')]}
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): No edge data
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): new edge data: {'connect': [('t1', 'image_file')]}
+191009-13:56:26,946 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): Edge data exists: {'connect': [('t1', 'image_file')]}
+191009-13:56:26,951 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): new edge data: {'connect': [('t1', 'image_file'), ('t1', 'registration_image_file')]}
+191009-13:56:26,951 nipype.workflow DEBUG:
+	 (tract_flow.trkconvert, tract_flow.datasink): No edge data
+191009-13:56:26,951 nipype.workflow DEBUG:
+	 (tract_flow.trkconvert, tract_flow.datasink): new edge data: {'connect': [('out_file', '4_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par')]}
+191009-13:56:26,952 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.datasink): No edge data
+191009-13:56:26,952 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.datasink): new edge data: {'connect': [('out_file', '4_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]}
+191009-13:56:26,952 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.datasink): No edge data
+191009-13:56:26,952 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.datasink): new edge data: {'connect': [('mask_file', '4_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]}
+191009-13:56:26,958 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: tract_flow
+191009-13:56:26,967 nipype.workflow DEBUG:
+	 expanding workflow: tract_flow
+191009-13:56:26,969 nipype.workflow DEBUG:
+	 processing node: tract_flow.infosource
+191009-13:56:26,970 nipype.workflow DEBUG:
+	 processing node: tract_flow.sf
+191009-13:56:26,970 nipype.workflow DEBUG:
+	 processing node: tract_flow.dwiresp
+191009-13:56:26,970 nipype.workflow DEBUG:
+	 processing node: tract_flow.mscsd
+191009-13:56:26,970 nipype.workflow DEBUG:
+	 processing node: tract_flow.seg5tt
+191009-13:56:26,970 nipype.workflow DEBUG:
+	 processing node: tract_flow.bet
+191009-13:56:26,970 nipype.workflow DEBUG:
+	 processing node: tract_flow.tract
+191009-13:56:26,971 nipype.workflow DEBUG:
+	 processing node: tract_flow.trkconvert
+191009-13:56:26,971 nipype.workflow DEBUG:
+	 processing node: tract_flow.datasink
+191009-13:56:26,971 nipype.workflow DEBUG:
+	 finished expanding workflow: tract_flow
+191009-13:56:26,977 nipype.workflow DEBUG:
+	 using input graph
+191009-13:56:27,709 nipype.workflow DEBUG:
+	 creating dot graph
+191009-13:56:27,909 nipype.workflow INFO:
+	 Generated workflow graph: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/graph.png (graph2use=flat, simple_form=True).
+191009-13:56:29,175 nipype.workflow DEBUG:
+	 [MultiProc] Starting (n_procs=2, mem_gb=226.11, cwd=/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion)
+191009-13:56:29,182 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: tract_flow
+191009-13:56:29,188 nipype.workflow DEBUG:
+	 expanding workflow: tract_flow
+191009-13:56:29,189 nipype.workflow DEBUG:
+	 processing node: tract_flow.infosource
+191009-13:56:29,189 nipype.workflow DEBUG:
+	 processing node: tract_flow.sf
+191009-13:56:29,189 nipype.workflow DEBUG:
+	 processing node: tract_flow.dwiresp
+191009-13:56:29,189 nipype.workflow DEBUG:
+	 processing node: tract_flow.mscsd
+191009-13:56:29,190 nipype.workflow DEBUG:
+	 processing node: tract_flow.seg5tt
+191009-13:56:29,190 nipype.workflow DEBUG:
+	 processing node: tract_flow.bet
+191009-13:56:29,190 nipype.workflow DEBUG:
+	 processing node: tract_flow.tract
+191009-13:56:29,190 nipype.workflow DEBUG:
+	 processing node: tract_flow.trkconvert
+191009-13:56:29,190 nipype.workflow DEBUG:
+	 processing node: tract_flow.datasink
+191009-13:56:29,190 nipype.workflow DEBUG:
+	 finished expanding workflow: tract_flow
+191009-13:56:29,190 nipype.workflow INFO:
+	 Workflow tract_flow settings: ['check', 'execution', 'logging', 'monitoring']
+191009-13:56:29,194 nipype.workflow DEBUG:
+	 PE: expanding iterables
+191009-13:56:29,195 nipype.workflow DEBUG:
+	 Detected iterable nodes [tract_flow.infosource]
+191009-13:56:29,196 nipype.workflow DEBUG:
+	 Expanding the iterable node tract_flow.infosource...
+191009-13:56:29,196 nipype.workflow DEBUG:
+	 node: tract_flow.infosource iterables: {'subject_id': <function _standardize_iterables.<locals>.make_field_func.<locals>.<lambda> at 0x2b17cea7f048>}
+191009-13:56:29,196 nipype.workflow DEBUG:
+	 ('subnodes:', [tract_flow.infosource, tract_flow.sf, tract_flow.bet, tract_flow.tract, tract_flow.trkconvert, tract_flow.datasink, tract_flow.seg5tt, tract_flow.dwiresp, tract_flow.mscsd])
+191009-13:56:29,201 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A200
+191009-13:56:29,201 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A200
+191009-13:56:29,206 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A201
+191009-13:56:29,206 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A201
+191009-13:56:29,206 nipype.workflow DEBUG:
+	 PE: expanding iterables ... done
+191009-13:56:29,207 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A201
+191009-13:56:29,207 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191009-13:56:29,207 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A200
+191009-13:56:29,207 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191009-13:56:29,236 nipype.workflow DEBUG:
+	 Performing depth first search
+191009-13:56:29,246 nipype.workflow INFO:
+	 Running in parallel.
+191009-13:56:29,250 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 0/0/2 (done/running/ready), 0/16 (pending_tasks/waiting).
+191009-13:56:29,250 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+191009-13:56:29,251 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 226.11/226.11, Free processors: 2/2.
+191009-13:56:29,294 nipype.workflow DEBUG:
+	 Allocating tract_flow.sf ID=0 (0.20GB, 1 threads). Free: 225.91GB, 1 threads.
+191009-13:56:29,295 nipype.workflow DEBUG:
+	 Setting node inputs
+191009-13:56:29,298 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A201')], 16cf75beb791f23e56aa9bb292de8992, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_0x16cf75beb791f23e56aa9bb292de8992.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_0x16cf75beb791f23e56aa9bb292de8992.json']
+191009-13:56:29,298 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191009-13:56:29,298 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.sf" locally: cached=True, updated=True.
+191009-13:56:29,316 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.sf (taskid=1).
+191009-13:56:29,316 nipype.workflow DEBUG:
+	 Allocating tract_flow.sf ID=8 (0.20GB, 1 threads). Free: 225.71GB, 0 threads.
+191009-13:56:29,316 nipype.workflow DEBUG:
+	 Setting node inputs
+191009-13:56:29,322 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf".
+191009-13:56:29,323 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A201')], 16cf75beb791f23e56aa9bb292de8992, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_0x16cf75beb791f23e56aa9bb292de8992.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_0x16cf75beb791f23e56aa9bb292de8992.json']
+191009-13:56:29,323 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191009-13:56:29,323 nipype.workflow DEBUG:
+	 [Node] Rerunning cached, up-to-date node "tract_flow.sf"
+191009-13:56:29,323 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A200')], 9868cc5e94fad4f0aa2c74f928d06cae, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_0x9868cc5e94fad4f0aa2c74f928d06cae.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_0x9868cc5e94fad4f0aa2c74f928d06cae.json']
+191009-13:56:29,324 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191009-13:56:29,324 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.sf" locally: cached=True, updated=True.
+191009-13:56:29,325 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.sf (taskid=2).
+191009-13:56:29,327 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf".
+191009-13:56:29,327 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A200')], 9868cc5e94fad4f0aa2c74f928d06cae, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_0x9868cc5e94fad4f0aa2c74f928d06cae.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_0x9868cc5e94fad4f0aa2c74f928d06cae.json']
+191009-13:56:29,327 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191009-13:56:29,327 nipype.workflow DEBUG:
+	 [Node] Rerunning cached, up-to-date node "tract_flow.sf"
+191009-13:56:29,329 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf
+191009-13:56:29,333 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf
+191009-13:56:29,353 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_report
+191009-13:56:29,354 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_report/report.rst"
+191009-13:56:29,357 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_report
+191009-13:56:29,358 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_report/report.rst"
+191009-13:56:29,361 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191009-13:56:29,366 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191009-13:56:29,396 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/hcp_pipeline_preproc/shapes/sub-A201/MNINonLinear/aparc.a2009s+aseg.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_0x16cf75beb791f23e56aa9bb292de8992_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_node.pklz
+191009-13:56:29,396 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_report
+191009-13:56:29,397 nipype.workflow DEBUG:
+	 Removing files: 
+191009-13:56:29,397 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz'
+191009-13:56:29,400 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A200/eddy_corrected_resample.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A200/ses-shapesV1/dwi/sub-A200_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A200/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A200/sub-A200_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/hcp_pipeline_preproc/shapes/sub-A200/MNINonLinear/aparc.a2009s+aseg.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_0x9868cc5e94fad4f0aa2c74f928d06cae_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_node.pklz
+191009-13:56:29,400 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_report
+191009-13:56:29,400 nipype.workflow DEBUG:
+	 Removing files: 
+191009-13:56:29,400 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/result_sf.pklz'
+191009-13:56:29,407 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/_report/report.rst"
+191009-13:56:29,407 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A200/sf/result_sf.pklz
+191009-13:56:29,409 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/_report/report.rst"
+191009-13:56:29,409 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:29,412 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-13:56:29,414 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-13:56:29,417 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.sf".
+191009-13:56:29,419 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.sf".
+191009-13:56:31,253 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 0/2/0 (done/running/ready), 2/14 (pending_tasks/waiting).
+191009-13:56:31,254 nipype.workflow INFO:
+	 [Job 0] Completed (tract_flow.sf).
+191009-13:56:31,259 nipype.workflow INFO:
+	 [Job 8] Completed (tract_flow.sf).
+191009-13:56:31,261 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+191009-13:56:31,263 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 6 jobs ready. Free memory (GB): 226.11/226.11, Free processors: 2/2.
+191009-13:56:31,353 nipype.workflow DEBUG:
+	 Allocating tract_flow.dwiresp ID=1 (0.20GB, 1 threads). Free: 225.91GB, 1 threads.
+191009-13:56:31,353 nipype.workflow DEBUG:
+	 Setting node inputs
+191009-13:56:31,353 nipype.workflow DEBUG:
+	 input: in_file
+191009-13:56:31,354 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,354 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,358 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-13:56:31,358 nipype.workflow DEBUG:
+	 output: dti
+191009-13:56:31,358 nipype.workflow DEBUG:
+	 [Node] dwiresp - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz
+191009-13:56:31,358 nipype.workflow DEBUG:
+	 input: in_bval
+191009-13:56:31,359 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,359 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,361 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-13:56:31,361 nipype.workflow DEBUG:
+	 output: bval
+191009-13:56:31,362 nipype.workflow DEBUG:
+	 [Node] dwiresp - setting input in_bval = /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval
+191009-13:56:31,362 nipype.workflow DEBUG:
+	 input: in_bvec
+191009-13:56:31,362 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,362 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,364 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-13:56:31,365 nipype.workflow DEBUG:
+	 output: bvec
+191009-13:56:31,365 nipype.workflow DEBUG:
+	 [Node] dwiresp - setting input in_bvec = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs
+191009-13:56:31,368 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'dhollander'), ('csf_file', 'csf_response.txt'), ('gm_file', 'gm_response.txt'), ('in_bval', ('/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval', '491229ee49ec51038771c213c2a66dee')), ('in_bvec', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs', 'da7a8c0e28e86066b3895df819dceebd')), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz', '6d8d046ef253a1d50cb4c13318c71483')), ('max_sh', [0, 2, 4, 4, 8]), ('wm_file', 'wm_response.txt')], 4eaad82637bc20efd5373dd7c286598a, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/_0x4eaad82637bc20efd5373dd7c286598a.json, []
+191009-13:56:31,369 nipype.workflow DEBUG:
+	 [Node] No hashfiles found in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp".
+191009-13:56:31,369 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.dwiresp" locally: cached=False, updated=False.
+191009-13:56:31,373 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.dwiresp" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp".
+191009-13:56:31,373 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'dhollander'), ('csf_file', 'csf_response.txt'), ('gm_file', 'gm_response.txt'), ('in_bval', ('/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval', '491229ee49ec51038771c213c2a66dee')), ('in_bvec', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs', 'da7a8c0e28e86066b3895df819dceebd')), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz', '6d8d046ef253a1d50cb4c13318c71483')), ('max_sh', [0, 2, 4, 4, 8]), ('wm_file', 'wm_response.txt')], 4eaad82637bc20efd5373dd7c286598a, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/_0x4eaad82637bc20efd5373dd7c286598a.json, []
+191009-13:56:31,373 nipype.workflow DEBUG:
+	 [Node] No hashfiles found in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp".
+191009-13:56:31,373 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp
+191009-13:56:31,374 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.dwiresp (taskid=3).
+191009-13:56:31,374 nipype.workflow DEBUG:
+	 Allocating tract_flow.seg5tt ID=3 (0.20GB, 1 threads). Free: 225.71GB, 0 threads.
+191009-13:56:31,374 nipype.workflow DEBUG:
+	 Setting node inputs
+191009-13:56:31,374 nipype.workflow DEBUG:
+	 input: in_file
+191009-13:56:31,374 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,375 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/sf/result_sf.pklz
+191009-13:56:31,377 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-13:56:31,377 nipype.workflow DEBUG:
+	 output: t1
+191009-13:56:31,378 nipype.workflow DEBUG:
+	 [Node] seg5tt - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz
+191009-13:56:31,380 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'fsl'), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz', 'afa11f2f6736869581c2d1340415052d')), ('out_file', 'T1s_5tt_segmented.nii.gz')], 3ac3b5c3ace6538f8e8b0f2d8838d59e, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_0x3ac3b5c3ace6538f8e8b0f2d8838d59e.json, []
+191009-13:56:31,380 nipype.workflow DEBUG:
+	 [Node] No hashfiles found in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt".
+191009-13:56:31,380 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.seg5tt" locally: cached=False, updated=False.
+191009-13:56:31,383 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.seg5tt" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt".
+191009-13:56:31,383 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'fsl'), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz', 'afa11f2f6736869581c2d1340415052d')), ('out_file', 'T1s_5tt_segmented.nii.gz')], 3ac3b5c3ace6538f8e8b0f2d8838d59e, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_0x3ac3b5c3ace6538f8e8b0f2d8838d59e.json, []
+191009-13:56:31,384 nipype.workflow DEBUG:
+	 [Node] No hashfiles found in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt".
+191009-13:56:31,384 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt
+191009-13:56:31,384 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.seg5tt (taskid=4).
+191009-13:56:31,385 nipype.workflow DEBUG:
+	 Cannot allocate job 4 (0.20GB, 1 threads).
+191009-13:56:31,385 nipype.workflow DEBUG:
+	 Cannot allocate job 9 (0.20GB, 1 threads).
+191009-13:56:31,385 nipype.workflow DEBUG:
+	 Cannot allocate job 11 (0.20GB, 1 threads).
+191009-13:56:31,385 nipype.workflow DEBUG:
+	 Cannot allocate job 12 (0.20GB, 1 threads).
+191009-13:56:31,402 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/_report
+191009-13:56:31,403 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/_report/report.rst"
+191009-13:56:31,410 nipype.interface DEBUG:
+	 algorithm_dhollander
+191009-13:56:31,410 nipype.interface DEBUG:
+	 csf_file_csf_response.txt
+191009-13:56:31,410 nipype.interface DEBUG:
+	 gm_file_gm_response.txt
+191009-13:56:31,410 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz
+191009-13:56:31,410 nipype.interface DEBUG:
+	 max_sh_[0, 2, 4, 4, 8]
+191009-13:56:31,410 nipype.interface DEBUG:
+	 wm_file_wm_response.txt
+191009-13:56:31,411 nipype.workflow INFO:
+	 [Node] Running "dwiresp" ("nipype.interfaces.mrtrix3.preprocess.ResponseSD"), a CommandLine Interface with command:
+dwi2response dhollander -fslgrad /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval -lmax 0,2,4,4,8 /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz wm_response.txt gm_response.txt csf_response.txt
+191009-13:56:31,414 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_report
+191009-13:56:31,414 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_report/report.rst"
+191009-13:56:31,420 nipype.interface DEBUG:
+	 algorithm_fsl
+191009-13:56:31,420 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz
+191009-13:56:31,421 nipype.interface DEBUG:
+	 out_file_T1s_5tt_segmented.nii.gz
+191009-13:56:31,426 nipype.workflow INFO:
+	 [Node] Running "seg5tt" ("nipype.interfaces.mrtrix3.utils.Generate5tt"), a CommandLine Interface with command:
+5ttgen fsl /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz T1s_5tt_segmented.nii.gz
+191009-13:56:31,792 nipype.interface DEBUG:
+	 algorithm_fsl
+191009-13:56:31,792 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz
+191009-13:56:31,792 nipype.interface DEBUG:
+	 out_file_T1s_5tt_segmented.nii.gz
+191009-13:56:31,821 nipype.interface DEBUG:
+	 algorithm_dhollander
+191009-13:56:31,821 nipype.interface DEBUG:
+	 csf_file_csf_response.txt
+191009-13:56:31,821 nipype.interface DEBUG:
+	 gm_file_gm_response.txt
+191009-13:56:31,821 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz
+191009-13:56:31,821 nipype.interface DEBUG:
+	 max_sh_[0, 2, 4, 4, 8]
+191009-13:56:31,822 nipype.interface DEBUG:
+	 wm_file_wm_response.txt
+191009-13:56:33,252 nipype.workflow DEBUG:
+	 Progress: 16 jobs, 2/2/4 (done/running/ready), 2/12 (pending_tasks/waiting).
+191009-13:56:33,253 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+191009-13:56:33,253 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 4 jobs ready. Free memory (GB): 225.71/226.11, Free processors: 0/2.
+                     Currently running:
+                       * tract_flow.seg5tt
+                       * tract_flow.dwiresp
+191009-13:56:33,253 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:35,255 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:37,257 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:39,259 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:41,261 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:43,263 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:45,265 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:47,267 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:49,269 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:51,271 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:53,273 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:55,275 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:57,277 nipype.workflow DEBUG:
+	 No resources available
+191009-13:56:59,279 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:01,281 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:03,283 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:05,285 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:07,287 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:09,289 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:11,291 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:13,293 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:15,295 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:17,297 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:19,299 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:21,301 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:23,303 nipype.workflow DEBUG:
+	 No resources available
+191009-13:57:25,232 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/result_dwiresp.pklz'
+191009-13:57:25,233 nipype.workflow WARNING:
+	 Storing result file without outputs
+191009-13:57:25,236 nipype.workflow WARNING:
+	 [Node] Error on "tract_flow.dwiresp" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp)
+191009-13:57:25,240 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/result_dwiresp.pklz
+191009-13:57:25,304 nipype.workflow DEBUG:
+	 Clearing 1 from queue
+191009-13:57:25,305 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/result_dwiresp.pklz
+191009-13:57:25,306 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/result_dwiresp.pklz
+191009-13:57:25,307 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/result_dwiresp.pklz
+191009-13:57:25,308 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/result_dwiresp.pklz
+191009-13:57:25,309 nipype.workflow ERROR:
+	 Node dwiresp.a1 failed to run on host c04n06.milgram.hpc.yale.internal.
+191009-13:57:25,310 nipype.workflow ERROR:
+	 Saving crash info to /gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/crash-20191009-135725-lms233-dwiresp.a1-35764699-c1e9-4def-9bdb-c04b31452c1c.pklz
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+dwi2response dhollander -fslgrad /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval -lmax 0,2,4,4,8 /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz wm_response.txt gm_response.txt csf_response.txt
+Standard output:
+
+Standard error:
+dwi2response: 
+dwi2response: Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.
+dwi2response: 
+dwi2response: Generated temporary directory: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/
+Command:  mrconvert /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/dwi.mif -strides 0,0,0,1 -fslgrad /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval
+Command:  dwi2mask /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/mask.mif
+dwi2response: 
+dwi2response: [ERROR] Command failed: dwi2mask /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/mask.mif (dwi2response:90)
+dwi2response: Output of failed command:
+              dwi2mask: uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz"...  [==================================================]
+              dwi2mask: preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz"...  [==================================================]
+              dwi2mask: [ERROR] no diffusion encoding information found in image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz"
+dwi2response: 
+dwi2response: Script failed while executing the command: dwi2mask /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/mask.mif
+dwi2response: For debugging, inspect contents of temporary directory: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/
+Return code: 1
+
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+191009-14:02:59,611 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/T1s_5tt_segmented.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A201/sub-A201_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_0x3ac3b5c3ace6538f8e8b0f2d8838d59e_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/command.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_node.pklz
+191009-14:02:59,611 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_report
+191009-14:02:59,611 nipype.workflow DEBUG:
+	 Removing files: 
+191009-14:02:59,611 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/result_seg5tt.pklz'
+191009-14:02:59,615 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/_report/report.rst"
+191009-14:02:59,615 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/seg5tt/result_seg5tt.pklz
+191009-14:02:59,616 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191009-14:02:59,622 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.seg5tt".
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/3_Tractography_Pipeline.py", line 173, in <module>
+    dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 2})
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/workflows.py", line 599, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 160, in run
+    self._clean_queue(jobid, graph, result=result))
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 223, in _clean_queue
+    raise RuntimeError("".join(result['traceback']))
+RuntimeError: Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+dwi2response dhollander -fslgrad /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval -lmax 0,2,4,4,8 /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz wm_response.txt gm_response.txt csf_response.txt
+Standard output:
+
+Standard error:
+dwi2response: 
+dwi2response: Note that this script makes use of commands / algorithms that have relevant articles for citation. Please consult the help page (-help option) for more information.
+dwi2response: 
+dwi2response: Generated temporary directory: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/
+Command:  mrconvert /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/dwi.mif -strides 0,0,0,1 -fslgrad /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected.eddy_rotated_bvecs /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A201/ses-shapesV1/dwi/sub-A201_ses-shapesV1_dwi.bval
+Command:  dwi2mask /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/mask.mif
+dwi2response: 
+dwi2response: [ERROR] Command failed: dwi2mask /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/mask.mif (dwi2response:90)
+dwi2response: Output of failed command:
+              dwi2mask: uncompressing image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz"...  [==================================================]
+              dwi2mask: preloading data for "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz"...  [==================================================]
+              dwi2mask: [ERROR] no diffusion encoding information found in image "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz"
+dwi2response: 
+dwi2response: Script failed while executing the command: dwi2mask /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A201/eddy_corrected_resample.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/mask.mif
+dwi2response: For debugging, inspect contents of temporary directory: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A201/dwiresp/dwi2response-tmp-UUG2SQ/
+Return code: 1
+
