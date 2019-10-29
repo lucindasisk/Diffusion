@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
+# In[12]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[8]:
+# In[13]:
 
 
 #Set user and path variables
@@ -57,7 +57,7 @@ else:
 subject_list = ['sub-A200', 'sub-A201']
 
 
-# In[9]:
+# In[14]:
 
 
 #Setup Datasink, Infosource, Selectfiles
@@ -88,7 +88,7 @@ sf = Node(SelectFiles(template,
 
 # ### Nodes for Diffusion workflow
 
-# In[6]:
+# In[15]:
 
 
 #Generate binary mask
@@ -124,7 +124,7 @@ mscsd = Node(mtx.EstimateFOD(algorithm = 'msmt_csd',
 
 #Perform Tractography - ACT using iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html) 
 tract = Node(mtx.Tractography(algorithm='iFOD2',
-                              select=100000000, #Jiook has done 100 million streamlines
+                              select=10000, #Jiook has done 100 million streamlines
                               n_trials=10000, 
                               out_file='whole_brain_trcktography.tck'),
             name='tract')
@@ -133,7 +133,7 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
                  name='trkconvert')
 
 
-# In[7]:
+# In[ ]:
 
 
 tract_flow = Workflow(name = 'tract_flow')
@@ -173,7 +173,7 @@ tract_flow.write_graph(graph2use = 'flat')
 dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 2})
 
 
-# In[28]:
+# In[ ]:
 
 
 import os.path as op
@@ -198,14 +198,14 @@ import AFQ.segmentation as seg
 from AFQ.utils.volume import patch_up_roi
 
 
-# In[29]:
+# In[ ]:
 
 
 # Create Nodes for AFQ Tractography Workflow
 # Load processed data
 
 
-# In[30]:
+# In[ ]:
 
 
 origin = '/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200'
