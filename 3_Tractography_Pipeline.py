@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[12]:
+# In[6]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[13]:
+# In[7]:
 
 
 #Set user and path variables
@@ -57,7 +57,7 @@ else:
 subject_list = ['sub-A200', 'sub-A201']
 
 
-# In[14]:
+# In[8]:
 
 
 #Setup Datasink, Infosource, Selectfiles
@@ -88,7 +88,7 @@ sf = Node(SelectFiles(template,
 
 # ### Nodes for Diffusion workflow
 
-# In[15]:
+# In[9]:
 
 
 #Generate binary mask
@@ -176,26 +176,44 @@ dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 2})
 # In[ ]:
 
 
-import os.path as op
-import matplotlib.pyplot as plt
-import numpy as np
-import nibabel as nib
-import dipy.data as dpd
-from dipy.data import fetcher
-import dipy.tracking.utils as dtu
-import dipy.tracking.streamline as dts
-from dipy.io.streamline import save_tractogram, load_tractogram
-from dipy.stats.analysis import afq_profile, gaussian_weights
-from dipy.io.stateful_tractogram import StatefulTractogram
-from dipy.io.stateful_tractogram import Space
 
-import AFQ.utils.streamlines as aus
-import AFQ.data as afd
-import AFQ.tractography as aft
-import AFQ.registration as reg
-import AFQ.dti as dti
-import AFQ.segmentation as seg
-from AFQ.utils.volume import patch_up_roi
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+# import os.path as op
+# import matplotlib.pyplot as plt
+# import numpy as np
+# import nibabel as nib
+# import dipy.data as dpd
+# from dipy.data import fetcher
+# import dipy.tracking.utils as dtu
+# import dipy.tracking.streamline as dts
+# from dipy.io.streamline import save_tractogram, load_tractogram
+# from dipy.stats.analysis import afq_profile, gaussian_weights
+# from dipy.io.stateful_tractogram import StatefulTractogram
+# from dipy.io.stateful_tractogram import Space
+
+# import AFQ.utils.streamlines as aus
+# import AFQ.data as afd
+# import AFQ.tractography as aft
+# import AFQ.registration as reg
+# import AFQ.dti as dti
+# import AFQ.segmentation as seg
+# from AFQ.utils.volume import patch_up_roi
 
 
 # In[ ]:
@@ -208,96 +226,96 @@ from AFQ.utils.volume import patch_up_roi
 # In[ ]:
 
 
-origin = '/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200'
-bval = join(raw_dir, 'sub-A200/ses-shapesV1/dwi/sub-A200_ses-shapesV1_dwi.bval')
-bvec = join(proc_dir,'eddyCUDA_data/3_Eddy_Corrected/sub-A200/eddy_corrected.eddy_rotated_bvecs')
-dtifile = join(proc_dir,'eddyCUDA_data/3_Eddy_Corrected/sub-A200/eddy_corrected.nii.gz')
-img = nib.load(proc_dir +'/eddyCUDA_data/3_Eddy_Corrected/sub-A200/eddy_corrected.nii.gz')
+# origin = '/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200'
+# bval = join(raw_dir, 'sub-A200/ses-shapesV1/dwi/sub-A200_ses-shapesV1_dwi.bval')
+# bvec = join(proc_dir,'eddyCUDA_data/3_Eddy_Corrected/sub-A200/eddy_corrected.eddy_rotated_bvecs')
+# dtifile = join(proc_dir,'eddyCUDA_data/3_Eddy_Corrected/sub-A200/eddy_corrected.nii.gz')
+# img = nib.load(proc_dir +'/eddyCUDA_data/3_Eddy_Corrected/sub-A200/eddy_corrected.nii.gz')
 
-print("Calculating DTI...")
-if not op.exists(origin + '/dti_FA.nii.gz'):
-    dti_params = dti.fit_dti(dtifile, bval, bvec,
-                             out_dir=origin)
-else:
-    dti_params = {'FA': './dti_FA.nii.gz',
-                  'params': './dti_params.nii.gz'}
-FA_img = nib.load(dti_params['FA'])
-FA_data = FA_img.get_fdata()
+# print("Calculating DTI...")
+# if not op.exists(origin + '/dti_FA.nii.gz'):
+#     dti_params = dti.fit_dti(dtifile, bval, bvec,
+#                              out_dir=origin)
+# else:
+#     dti_params = {'FA': './dti_FA.nii.gz',
+#                   'params': './dti_params.nii.gz'}
+# FA_img = nib.load(dti_params['FA'])
+# FA_data = FA_img.get_fdata()
 
-tg = load_tractogram(origin + '/whole_brain_tractography_converted.trk', img)
-streamlines = tg.streamlines
+# tg = load_tractogram(origin + '/whole_brain_tractography_converted.trk', img)
+# streamlines = tg.streamlines
+
+# # streamlines = dts.Streamlines(
+# #     dtu.transform_tracking_output(streamlines,
+# #                                   np.linalg.inv(img.affine)))
+
+# templates = afd.read_templates()
+# bundle_names = ["UNC", "CGC"]
+
+# bundles = {}
+# for name in bundle_names:
+#     for hemi in ['_R', '_L']:
+#         bundles[name + hemi] = {
+#             'ROIs': [templates[name + '_roi1' + hemi],
+#                      templates[name + '_roi2' + hemi]],
+#             'rules': [True, True],
+#             'prob_map': templates[name + hemi + '_prob_map'],
+#             'cross_midline': False}
+
+# print("Registering to template...")
+# MNI_T2_img = dpd.read_mni_template()
+# if not op.exists('mapping.nii.gz'):
+#     import dipy.core.gradients as dpg
+#     gtab = dpg.gradient_table(bval, bvec)
+#     warped_hardi, mapping = reg.syn_register_dwi(dtifile, gtab)
+#     reg.write_mapping(mapping, './mapping.nii.gz')
+# else:
+#     mapping = reg.read_mapping('./mapping.nii.gz', img, MNI_T2_img)
+
+# tg = load_tractogram('/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200/whole_brain_tractography_converted.trk', img)     
+# streamlines = tg.streamlines
 
 # streamlines = dts.Streamlines(
-#     dtu.transform_tracking_output(streamlines,
-#                                   np.linalg.inv(img.affine)))
+# dtu.transform_tracking_output(streamlines,
+#                               np.linalg.inv(img.affine)))
 
-templates = afd.read_templates()
-bundle_names = ["UNC", "CGC"]
-
-bundles = {}
-for name in bundle_names:
-    for hemi in ['_R', '_L']:
-        bundles[name + hemi] = {
-            'ROIs': [templates[name + '_roi1' + hemi],
-                     templates[name + '_roi2' + hemi]],
-            'rules': [True, True],
-            'prob_map': templates[name + hemi + '_prob_map'],
-            'cross_midline': False}
-
-print("Registering to template...")
-MNI_T2_img = dpd.read_mni_template()
-if not op.exists('mapping.nii.gz'):
-    import dipy.core.gradients as dpg
-    gtab = dpg.gradient_table(bval, bvec)
-    warped_hardi, mapping = reg.syn_register_dwi(dtifile, gtab)
-    reg.write_mapping(mapping, './mapping.nii.gz')
-else:
-    mapping = reg.read_mapping('./mapping.nii.gz', img, MNI_T2_img)
-
-tg = load_tractogram('/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200/whole_brain_tractography_converted.trk', img)     
-streamlines = tg.streamlines
-
-streamlines = dts.Streamlines(
-dtu.transform_tracking_output(streamlines,
-                              np.linalg.inv(img.affine)))
-
-print("Segmenting fiber groups...")
-segmentation = seg.Segmentation()
-segmentation.segment(bundles,
-                     streamlines,
-                     fdata=dti,
-                     fbval=bval,
-                     fbvec=bvec,
-                     mapping=mapping,
-                     reg_template=MNI_T2_img)
+# print("Segmenting fiber groups...")
+# segmentation = seg.Segmentation()
+# segmentation.segment(bundles,
+#                      streamlines,
+#                      fdata=dti,
+#                      fbval=bval,
+#                      fbvec=bvec,
+#                      mapping=mapping,
+#                      reg_template=MNI_T2_img)
 
 
-fiber_groups = segmentation.fiber_groups
+# fiber_groups = segmentation.fiber_groups
 
-print("Cleaning fiber groups...")
-for bundle in bundles:
-    fiber_groups[bundle] = seg.clean_fiber_group(fiber_groups[bundle])
+# print("Cleaning fiber groups...")
+# for bundle in bundles:
+#     fiber_groups[bundle] = seg.clean_fiber_group(fiber_groups[bundle])
 
-for kk in fiber_groups:
-    print(kk, len(fiber_groups[kk]))
+# for kk in fiber_groups:
+#     print(kk, len(fiber_groups[kk]))
 
-    sft = StatefulTractogram(
-        dtu.transform_tracking_output(fiber_groups[kk], img.affine),
-        img, Space.RASMM)
+#     sft = StatefulTractogram(
+#         dtu.transform_tracking_output(fiber_groups[kk], img.affine),
+#         img, Space.RASMM)
 
-    save_tractogram(sft, origin + '/%s_afq.trk'%kk,
-                    bbox_valid_check=False)
+#     save_tractogram(sft, origin + '/%s_afq.trk'%kk,
+#                     bbox_valid_check=False)
 
-print("Extracting tract profiles...")
-for bundle in bundles:
-    fig, ax = plt.subplots(1)
-    weights = gaussian_weights(fiber_groups[bundle])
-    profile = afq_profile(FA_data, fiber_groups[bundle],
-                          np.eye(4), weights=weights)
-    ax.plot(profile)
-    ax.set_title(bundle)
+# print("Extracting tract profiles...")
+# for bundle in bundles:
+#     fig, ax = plt.subplots(1)
+#     weights = gaussian_weights(fiber_groups[bundle])
+#     profile = afq_profile(FA_data, fiber_groups[bundle],
+#                           np.eye(4), weights=weights)
+#     ax.plot(profile)
+#     ax.set_title(bundle)
 
-plt.show()
+# plt.show()
 
 
 # In[ ]:
