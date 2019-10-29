@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[ ]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[7]:
+# In[ ]:
 
 
 #Set user and path variables
@@ -57,7 +57,7 @@ else:
 subject_list = ['sub-A200', 'sub-A201']
 
 
-# In[8]:
+# In[ ]:
 
 
 #Setup Datasink, Infosource, Selectfiles
@@ -88,13 +88,17 @@ sf = Node(SelectFiles(template,
 
 # ### Nodes for Diffusion workflow
 
-# In[9]:
+# In[ ]:
 
 
 #Generate binary mask
 bet=Node(fsl.BET(frac=0.2,
                 mask=True),
         name='bet')
+
+#Convert bvals and bvecs to fslgrad
+gradconv = Node(mtx.MRConvert(out_file = 'dwi_converted.mif'),
+               name = 'gradconv')
 
 #Generate 5 tissue type (5tt) segmentation using FAST algorithm
 seg5tt = Node(mtx.Generate5tt(algorithm = 'fsl',
@@ -141,9 +145,10 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (sf, bet, [('t1', 'in_file')]),
                     (sf, seg5tt, [('t1', 'in_file')]),
                     (seg5tt, datasink, [('out_file', '4_tract_Reconstruction')]),
-                    (sf, dwiresp, [('dti', 'in_file'),
+                    (sf, gradconv, [('dti', 'in_file'),
                                    ('bval','in_bval'),
                                    ('bvec', 'in_bvec')]),
+                    (gradconv, dwiresp, [('out_file', 'in_file')]),
                     (dwiresp, datasink, [('wm_file', '4_tract_Reconstruction.@par'),
                                         ('gm_file', '4_tract_Reconstruction.@par.@par'),
                                         ('csf_file', '4_tract_Reconstruction.@par.@par.@par')]),
@@ -170,7 +175,7 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                    ])
 tract_flow.base_dir = workflow_dir
 tract_flow.write_graph(graph2use = 'flat')
-dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 2})
+dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 1})
 
 
 # In[ ]:
