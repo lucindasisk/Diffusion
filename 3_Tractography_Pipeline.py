@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[2]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[ ]:
+# In[14]:
 
 
 #Set user and path variables
@@ -49,12 +49,12 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-subject_info = read_csv(
-    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_info[0].tolist()
+# subject_info = read_csv(
+#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subject_list = subject_info[0].tolist()
 
 # Manual subject list
-#subject_list = ['sub-A200', 'sub-A201']
+subject_list = ['sub-A200', 'sub-A201']
 
 
 # In[ ]:
