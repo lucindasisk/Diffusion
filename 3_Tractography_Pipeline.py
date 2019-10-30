@@ -55,7 +55,7 @@ subject_info = read_csv(
 subject_list = subject_info[0].tolist()
 
 # Manual subject list
-#subject_list = ['sub-A202', 'sub-A204']
+# subject_list = ['sub-A202', 'sub-A204']
 
 
 # In[ ]:
@@ -140,7 +140,7 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
 
 #convert eddy-corrected raw DTI to tensor format
 dwi2tensor = Node(mtxp.DWI2Tensor(),
-                name='dwitensor')
+                name='dwi2tensor')
 
 #Compute FA from tensor files
 tensor2fa = Node(mtxp.Tensor2FractionalAnisotropy(),
@@ -189,8 +189,8 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                     #Nodes to create tensor FA files
                     (sf, dwi2tensor, [('dwi', 'in_file')]),
-                    (dwi2tensor, datasink, [('out_file', '6_Tensor_Data')]),
-                    (dwi2tensor, tensor2fa, [('out_file', 'in_file')]),
+                    (dwi2tensor, datasink, [('tensor', '6_Tensor_Data')]),
+                    (dwi2tensor, tensor2fa, [('tensor', 'in_file')]),
                     (tensor2fa, datasink, [('FA', '6_Tensor_Data.@par')]),
                    ])
 tract_flow.base_dir = workflow_dir
