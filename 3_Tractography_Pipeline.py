@@ -50,12 +50,12 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-subject_info = read_csv(
-    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_info[0].tolist()
+# subject_info = read_csv(
+#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subject_list = subject_info[0].tolist()
 
 # Manual subject list
-# subject_list = ['sub-A202', 'sub-A204']
+subject_list = ['sub-A202', 'sub-A204']
 
 
 # In[ ]:
@@ -139,7 +139,7 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
                  name='trkconvert')
 
 #convert eddy-corrected raw DTI to tensor format
-dwi2tensor = Node(mtx.FitTensor(),
+dwi2tensor = Node(mtx.FitTensor(out_file = 'whole_brain_tensorfile.mif'),
                 name='dwi2tensor')
 
 #Compute FA from tensor files
