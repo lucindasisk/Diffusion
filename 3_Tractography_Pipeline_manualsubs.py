@@ -128,9 +128,9 @@ mscsd = Node(mtx.EstimateFOD(algorithm = 'msmt_csd',
 
 #Perform Tractography - ACT using iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html) 
 tract = Node(mtx.Tractography(algorithm='iFOD2',
-                              select=10000, #Jiook has done 100 million streamlines
+                              select=100000, #Jiook has done 100 million streamlines
                               n_trials=10000, 
-                              out_file='whole_brain_trcktography.tck'),
+                              out_file='whole_brain_tracktography.tck'),
             name='tract')
 
 trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
