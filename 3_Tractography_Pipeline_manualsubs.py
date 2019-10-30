@@ -133,8 +133,17 @@ tract = Node(mtx.Tractography(algorithm='iFOD2',
                               out_file='whole_brain_tracktography.tck'),
             name='tract')
 
-trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
+#Convert whole-brain tractography from MrTrix format to TrackVis
+trkconvert = Node(mtx.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
                  name='trkconvert')
+
+#convert eddy-corrected raw DTI to tensor format
+dwi2tensor = Node(mtx.DWI2Tensor(),
+                name='dwitensor')
+
+#Compute FA from tensor files
+tensor2fa = Node(mtx.Tensor2FractionalAnisotropy(),
+                name='tensor2fa')
 
 
 # In[ ]:
@@ -142,12 +151,16 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
 
 tract_flow = Workflow(name = 'tract_flow')
 tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
+                    #Skullstrip T1
                     (sf, bet, [('t1', 'in_file')]),
+                    #Segment T1 image with FSL 5tt algorithm
                     (sf, seg5tt, [('t1', 'in_file')]),
                     (seg5tt, datasink, [('out_file', '5_tract_Reconstruction')]),
+                    #Convert bval/bvec to gradient tables
                     (sf, gradconv, [('dti', 'in_file'),
                                    ('bval','in_bval'),
                                    ('bvec', 'in_bvec')]),
+                    #Compute FOD response functions
                     (gradconv, dwiresp, [('out_file', 'in_file')]),
                     (dwiresp, datasink, [('wm_file', '5_tract_Reconstruction.@par'),
                                         ('gm_file', '5_tract_Reconstruction.@par.@par'),
@@ -155,10 +168,10 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (sf, mscsd, [('dti', 'in_file'),
                                 ('bval', 'in_bval'),
                                 ('bvec', 'in_bvec')]),
+                    #Perform multi-shell constrained spherical deconvolution
                     (dwiresp, mscsd, [('wm_file', 'wm_txt'),
                                       ('gm_file', 'gm_txt'),
                                       ('csf_file', 'csf_txt')]),
-                    #(seg5tt, tract, [('out_file', 'act_file')]),
                     (mscsd, tract, [('wm_odf', 'in_file')]),
                     (mscsd, datasink, [('wm_odf', '5_tract_Reconstruction.@par.@par.@par.@par'),
                                        ('gm_odf', '5_tract_Reconstruction.@par.@par.@par.@par.@par'),
@@ -166,12 +179,18 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (sf, tract, [('bval', 'in_bval'),
                                  ('bvec', 'in_bvec')]),
                     (bet, tract, [('mask_file', 'seed_image')]),
+                    #Convert ms-csd files to global tractography
                     (tract, trkconvert, [('out_file', 'in_file')]),
                     (sf, trkconvert, [('t1','image_file')]),
                     (sf, trkconvert, [('t1','registration_image_file')]),
                     (trkconvert, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par')]),
                     (tract, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]),      
-                    (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
+                    (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                    #Nodes to create tensor FA files
+                    (sf, dwi2tensor, [('dwi', 'in_file')]),
+                    (dwi2tensor, datasink, [('out_file', '6_Tensor_Data')]),
+                    (dwi2tensor, tensor2fa, [('out_file', 'in_file')]),
+                    (tensor2fa, datasink, [('FA', '6_Tensor_Data.@par')]),
                    ])
 tract_flow.base_dir = workflow_dir
 tract_flow.write_graph(graph2use = 'flat')
