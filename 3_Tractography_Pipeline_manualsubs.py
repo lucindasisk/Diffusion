@@ -188,7 +188,7 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (tract, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]),      
                     (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                     #Nodes to create tensor FA files
-                    (sf, dwi2tensor, [('dwi', 'in_file')]),
+                    (sf, dwi2tensor, [('dti', 'in_file')]),
                     (dwi2tensor, datasink, [('tensor', '6_Tensor_Data')]),
                     (dwi2tensor, tensor2fa, [('tensor', 'in_file')]),
                     (tensor2fa, datasink, [('FA', '6_Tensor_Data.@par')]),
