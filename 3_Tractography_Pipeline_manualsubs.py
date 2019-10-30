@@ -139,11 +139,11 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
                  name='trkconvert')
 
 #convert eddy-corrected raw DTI to tensor format
-dwi2tensor = Node(mtxp.DWI2Tensor(),
+dwi2tensor = Node(mtx.FitTensor(),
                 name='dwi2tensor')
 
 #Compute FA from tensor files
-tensor2fa = Node(mtxp.Tensor2FractionalAnisotropy(),
+tensor2fa = Node(mtx.TensorMetrics(out_FA='whole_brain_FA.mif'),
                 name='tensor2fa')
 
 
