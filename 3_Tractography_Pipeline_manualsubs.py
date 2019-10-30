@@ -4,8 +4,8 @@
 # In[2]:
 
 
-from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
-from nipype.interfaces.utility import IdentityInterface, Function    
+from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
+from nipype.interfaces.utility import IdentityInterface, Function
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 import nipype.interfaces.mrtrix3 as mtx
 import nipype.interfaces.mrtrix.convert as mtxc
@@ -25,8 +25,8 @@ config.enable_debug_mode()
 # In[16]:
 
 
-#Set user and path variables
-local='False'
+# Set user and path variables
+local = 'False'
 user = expanduser('~')
 if user == '/Users/lucindasisk':
     if local == 'True':
@@ -48,7 +48,7 @@ else:
     proc_dir = join(home, 'analyses/shapes/dwi/data')
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
     data_dir = join(home, 'analyses/shapes/dwi/data')
-    
+
 # Read in subject subject_list
 # subject_info = read_csv(
 #     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
@@ -61,30 +61,33 @@ subject_list = ['sub-A202', 'sub-A204']
 # In[ ]:
 
 
-#Setup Datasink, Infosource, Selectfiles
+# Setup Datasink, Infosource, Selectfiles
 
-datasink = Node(DataSink(base_directory = data_dir,
-                        substitutions = [('_subject_id_', '')]),
-                   name='datasink')
+datasink = Node(DataSink(base_directory=data_dir,
+                         substitutions=[('_subject_id_', '')]),
+                name='datasink')
 
-#Set infosource iterables
+# Set infosource iterables
 infosource = Node(IdentityInterface(fields=['subject_id']),
                   name="infosource")
 infosource.iterables = [('subject_id', subject_list)]
 
-#SelectFiles
-template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected_resample.nii.gz'),
-                bval = join(raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
-                bvec = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
-                t1 = join(proc_dir, '2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_brain.nii.gz'),
-                aseg = join(home, 'data/mri/hcp_pipeline_preproc/shapes/{subject_id}/MNINonLinear/aparc.a2009s+aseg.nii.gz'),
+# SelectFiles
+template = dict(dti=join(proc_dir, '3_Eddy_Corrected/{subject_id}/eddy_corrected_resample.nii.gz'),
+                bval=join(
+                    raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
+                bvec=join(
+                    proc_dir, '3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
+                t1=join(
+                    proc_dir, '2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_brain.nii.gz'),
+                aseg=join(
+                    home, 'data/mri/hcp_pipeline_preproc/shapes/{subject_id}/MNINonLinear/aparc.a2009s+aseg.nii.gz'),
                 mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
-               )
+                )
 
-sf = Node(SelectFiles(template, 
-                      base_directory = home),
-          name = 'sf')
-                
+sf = Node(SelectFiles(template,
+                      base_directory=home),
+          name='sf')
 
 
 # ### Nodes for Diffusion workflow
@@ -92,129 +95,124 @@ sf = Node(SelectFiles(template,
 # In[ ]:
 
 
-#Generate binary mask
-bet=Node(fsl.BET(frac=0.2,
-                mask=True),
-        name='bet')
+# Generate binary mask
+bet = Node(fsl.BET(frac=0.2,
+                   mask=True),
+           name='bet')
 
-#Convert bvals and bvecs to fslgrad
-gradconv = Node(mtx.MRConvert(out_file = 'dwi_converted.mif'),
-               name = 'gradconv')
+# Convert bvals and bvecs to fslgrad
+gradconv = Node(mtx.MRConvert(out_file='dwi_converted.mif'),
+                name='gradconv')
 
-#Generate 5 tissue type (5tt) segmentation using FAST algorithm
-seg5tt = Node(mtx.Generate5tt(algorithm = 'fsl',
-                             out_file = 'T1s_5tt_segmented.nii.gz'),
-             name='seg5tt')
+# Generate 5 tissue type (5tt) segmentation using FAST algorithm
+seg5tt = Node(mtx.Generate5tt(algorithm='fsl',
+                              out_file='T1s_5tt_segmented.nii.gz'),
+              name='seg5tt')
 
-#Estimate response functions for spherical deconvolution using the specified algorithm (Dhollander)
-#https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/preprocess.html#responsesd
-#https://mrtrix.readthedocs.io/en/latest/constrained_spherical_deconvolution/response_function_estimation.html#response-function-estimation
-#Max_sh (lmax variable) determined in shell order from here: https://mrtrix.readthedocs.io/en/3.0_rc2/constrained_spherical_deconvolution/lmax.html
-#DWI has 5 shells: 7 b0 volumes, 6 b500 vols, 15 b1000 vols, 15 b2000 bols, 60 b3000 vols
-dwiresp = Node(mtx.ResponseSD(algorithm = 'dhollander',
-                              max_sh=[0,2,4,4,8],
-                              wm_file = 'wm_response.txt',
-                              gm_file = 'gm_response.txt',
-                              csf_file = 'csf_response.txt'),
-              name='dwiresp')
+# Estimate response functions for spherical deconvolution using the specified algorithm (Dhollander)
+# https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/preprocess.html#responsesd
+# https://mrtrix.readthedocs.io/en/latest/constrained_spherical_deconvolution/response_function_estimation.html#response-function-estimation
+# Max_sh (lmax variable) determined in shell order from here: https://mrtrix.readthedocs.io/en/3.0_rc2/constrained_spherical_deconvolution/lmax.html
+# DWI has 5 shells: 7 b0 volumes, 6 b500 vols, 15 b1000 vols, 15 b2000 bols, 60 b3000 vols
+dwiresp = Node(mtx.ResponseSD(algorithm='dhollander',
+                              max_sh=[0, 2, 4, 4, 8],
+                              wm_file='wm_response.txt',
+                              gm_file='gm_response.txt',
+                              csf_file='csf_response.txt'),
+               name='dwiresp')
 
-#Estimate fiber orientation distributions from diffusion data sing spherical deconvolution
-#https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/reconst.html
-#https://mrtrix.readthedocs.io/en/latest/constrained_spherical_deconvolution/multi_shell_multi_tissue_csd.html
-#Max SH here determined by tissue type - chose 8,8,8 per forum recommendations
-mscsd = Node(mtx.EstimateFOD(algorithm = 'msmt_csd',
-                             bval_scale = 'yes',
-                            max_sh = [8,8,8]),
-            name='mscsd')
+# Estimate fiber orientation distributions from diffusion data sing spherical deconvolution
+# https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/reconst.html
+# https://mrtrix.readthedocs.io/en/latest/constrained_spherical_deconvolution/multi_shell_multi_tissue_csd.html
+# Max SH here determined by tissue type - chose 8,8,8 per forum recommendations
+mscsd = Node(mtx.EstimateFOD(algorithm='msmt_csd',
+                             bval_scale='yes',
+                             max_sh=[8, 8, 8]),
+             name='mscsd')
 
-#Perform Tractography - ACT using iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html) 
+# Perform Tractography - ACT using iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html)
 tract = Node(mtx.Tractography(algorithm='iFOD2',
-                              select=100000, #Jiook has done 100 million streamlines
-                              n_trials=10000, 
+                              select=100000,  # Jiook has done 100 million streamlines
+                              n_trials=10000,
                               out_file='whole_brain_tracktography.tck'),
-            name='tract')
+             name='tract')
 
-#Convert whole-brain tractography from MrTrix format to TrackVis
-trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
-                 name='trkconvert')
+# Convert whole-brain tractography from MrTrix format to TrackVis
+trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename='whole_brain_tractography_converted.trk'),
+                  name='trkconvert')
 
-#convert eddy-corrected raw DTI to tensor format
-dwi2tensor = Node(mtx.FitTensor(out_file = 'whole_brain_tensorfile.mif',
-                               bval_scale='yes'),
-                name='dwi2tensor')
+# convert eddy-corrected raw DTI to tensor format
+dwi2tensor = Node(mtx.FitTensor(out_file='whole_brain_tensorfile.mif',
+                                bval_scale='yes'),
+                  name='dwi2tensor')
 
-#Compute FA from tensor files
+# Compute FA from tensor files
 tensor2fa = Node(mtx.TensorMetrics(out_fa='whole_brain_FA.mif'),
-                name='tensor2fa')
+                 name='tensor2fa')
 
 
 # In[ ]:
 
 
-tract_flow = Workflow(name = 'tract_flow')
-tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
-                    #Skullstrip T1
+tract_flow = Workflow(name='tract_flow')
+tract_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
+                    # Skullstrip T1
                     (sf, bet, [('t1', 'in_file')]),
-                    #Segment T1 image with FSL 5tt algorithm
+                    # Segment T1 image with FSL 5tt algorithm
                     (sf, seg5tt, [('t1', 'in_file')]),
-                    (seg5tt, datasink, [('out_file', '5_tract_Reconstruction')]),
-                    #Convert bval/bvec to gradient tables
+                    (seg5tt, datasink, [
+                     ('out_file', '5_tract_Reconstruction')]),
+                    # Convert bval/bvec to gradient tables
                     (sf, gradconv, [('dti', 'in_file'),
-                                   ('bval','in_bval'),
-                                   ('bvec', 'in_bvec')]),
-                    #Compute FOD response functions
+                                    ('bval', 'in_bval'),
+                                    ('bvec', 'in_bvec')]),
+                    # Compute FOD response functions
                     (gradconv, dwiresp, [('out_file', 'in_file')]),
                     (dwiresp, datasink, [('wm_file', '5_tract_Reconstruction.@par'),
-                                        ('gm_file', '5_tract_Reconstruction.@par.@par'),
-                                        ('csf_file', '5_tract_Reconstruction.@par.@par.@par')]),
+                                         ('gm_file', '5_tract_Reconstruction.@par.@par'),
+                                         ('csf_file', '5_tract_Reconstruction.@par.@par.@par')]),
                     (sf, mscsd, [('dti', 'in_file'),
-                                ('bval', 'in_bval'),
-                                ('bvec', 'in_bvec')]),
-                    #Perform multi-shell constrained spherical deconvolution
+                                 ('bval', 'in_bval'),
+                                 ('bvec', 'in_bvec')]),
+                    # Perform multi-shell constrained spherical deconvolution
                     (dwiresp, mscsd, [('wm_file', 'wm_txt'),
                                       ('gm_file', 'gm_txt'),
                                       ('csf_file', 'csf_txt')]),
                     (mscsd, tract, [('wm_odf', 'in_file')]),
                     (mscsd, datasink, [('wm_odf', '5_tract_Reconstruction.@par.@par.@par.@par'),
                                        ('gm_odf', '5_tract_Reconstruction.@par.@par.@par.@par.@par'),
-                                       ('csf_odf','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par')]),
+                                       ('csf_odf', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par')]),
                     (sf, tract, [('bval', 'in_bval'),
                                  ('bvec', 'in_bvec')]),
                     (bet, tract, [('mask_file', 'seed_image')]),
-                    #Convert ms-csd files to global tractography
+                    # Convert ms-csd files to global tractography
                     (tract, trkconvert, [('out_file', 'in_file')]),
-                    (sf, trkconvert, [('t1','image_file')]),
-                    (sf, trkconvert, [('t1','registration_image_file')]),
-                    (trkconvert, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par')]),
-                    (tract, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]),      
-                    (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
-                    #Nodes to create tensor FA files
+                    (sf, trkconvert, [('t1', 'image_file')]),
+                    (sf, trkconvert, [('t1', 'registration_image_file')]),
+                    (trkconvert, datasink, [
+                     ('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par')]),
+                    (tract, datasink, [
+                     ('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                    (bet, datasink, [
+                     ('mask_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                    # Nodes to create tensor FA files
                     (gradconv, dwi2tensor, [('out_file', 'in_file')]),
                     (dwi2tensor, datasink, [('out_file', '6_Tensor_Data')]),
                     (dwi2tensor, tensor2fa, [('out_file', 'in_file')]),
                     (tensor2fa, datasink, [('out_fa', '6_Tensor_Data.@par')]),
-                   ])
+                    ])
 tract_flow.base_dir = workflow_dir
-tract_flow.write_graph(graph2use = 'flat')
+tract_flow.write_graph(graph2use='flat')
 dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
 # In[ ]:
 
 
-
-
-
 # In[ ]:
 
 
-
-
-
 # In[ ]:
-
-
-
 
 
 # In[ ]:
@@ -298,7 +296,7 @@ dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
 # else:
 #     mapping = reg.read_mapping('./mapping.nii.gz', img, MNI_T2_img)
 
-# tg = load_tractogram('/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200/whole_brain_tractography_converted.trk', img)     
+# tg = load_tractogram('/Users/lucindasisk/Desktop/DATA/tractography_data/4_tract_Reconstruction/sub-A200/whole_brain_tractography_converted.trk', img)
 # streamlines = tg.streamlines
 
 # streamlines = dts.Streamlines(
@@ -347,13 +345,7 @@ dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
 # In[ ]:
 
 
-
-
-
 # In[ ]:
-
-
-
 
 
 # In[ ]:
@@ -382,9 +374,8 @@ dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
 #                                      ('csf_file', 'csf_txt')]),
 #                   (ms_csd, datasink, [('wm_odf', '4_DWI_Reconstruction.@par.@par.@par.@par'),
 #                                      ('gm_odf','4_DWI_Reconstruction.@par.@par.@par.@par.@par'),
-#                                      ('csf_odf', '4_DWI_Reconstruction.@par.@par.@par.@par.@par.@par')]) 
+#                                      ('csf_odf', '4_DWI_Reconstruction.@par.@par.@par.@par.@par.@par')])
 #                  ])
 # dwi_flow.base_dir = workflow_dir
 # dwi_flow.write_graph(graph2use = 'flat')
 # dwi = dwi_flow.run('MultiProc', plugin_args={'n_procs': 4})
-

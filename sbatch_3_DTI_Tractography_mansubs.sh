@@ -11,7 +11,6 @@
  ml load StdEnv
  ml load FreeSurfer/6.0.0
  ml load FSL/6.0.1-centos7_64
- ml load MRtrix3/3.0_RC3-foss-2018a
  ml load Python/miniconda
  ml load ANTs/2.3.1-foss-2018a
 
