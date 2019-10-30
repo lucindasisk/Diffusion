@@ -143,7 +143,7 @@ dwi2tensor = Node(mtx.FitTensor(),
                 name='dwi2tensor')
 
 #Compute FA from tensor files
-tensor2fa = Node(mtx.TensorMetrics(out_FA='whole_brain_FA.mif'),
+tensor2fa = Node(mtx.TensorMetrics(out_fa='whole_brain_FA.mif'),
                 name='tensor2fa')
 
 
@@ -189,9 +189,9 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                     #Nodes to create tensor FA files
                     (gradconv, dwi2tensor, [('out_file', 'in_file')]),
-                    (dwi2tensor, datasink, [('tensor', '6_Tensor_Data')]),
-                    (dwi2tensor, tensor2fa, [('tensor', 'in_file')]),
-                    (tensor2fa, datasink, [('FA', '6_Tensor_Data.@par')]),
+                    (dwi2tensor, datasink, [('out_file', '6_Tensor_Data')]),
+                    (dwi2tensor, tensor2fa, [('out_file', 'in_file')]),
+                    (tensor2fa, datasink, [('out_fa', '6_Tensor_Data.@par')]),
                    ])
 tract_flow.base_dir = workflow_dir
 tract_flow.write_graph(graph2use = 'flat')
