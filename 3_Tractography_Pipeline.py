@@ -9,6 +9,7 @@ from nipype.interfaces.utility import IdentityInterface, Function
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 import nipype.interfaces.mrtrix3 as mtx
 import nipype.interfaces.mrtrix.convert as mtxc
+import nipype.interfaces.mrtrix.preprocess as mtxp
 import nipype.interfaces.fsl as fsl
 from pandas import Series, read_csv, to_numeric
 from glob import glob
@@ -138,11 +139,11 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
                  name='trkconvert')
 
 #convert eddy-corrected raw DTI to tensor format
-dwi2tensor = Node(mtxc.DWI2Tensor(),
+dwi2tensor = Node(mtxp.DWI2Tensor(),
                 name='dwitensor')
 
 #Compute FA from tensor files
-tensor2fa = Node(mtxc.Tensor2FractionalAnisotropy(),
+tensor2fa = Node(mtxp.Tensor2FractionalAnisotropy(),
                 name='tensor2fa')
 
 
