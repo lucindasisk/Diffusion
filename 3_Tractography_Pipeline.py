@@ -54,7 +54,7 @@ subject_info = read_csv(
 subject_list = subject_info[0].tolist()
 
 # Manual subject list
-# subject_list = ['sub-A200', 'sub-A201']
+#subject_list = ['sub-A202', 'sub-A204']
 
 
 # In[ ]:
@@ -138,11 +138,11 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
                  name='trkconvert')
 
 #convert eddy-corrected raw DTI to tensor format
-dwi2tensor = Node(mtx.DWI2Tensor(),
+dwi2tensor = Node(mtxc.DWI2Tensor(),
                 name='dwitensor')
 
 #Compute FA from tensor files
-tensor2fa = Node(mtx.Tensor2FractionalAnisotropy(),
+tensor2fa = Node(mtxc.Tensor2FractionalAnisotropy(),
                 name='tensor2fa')
 
 
