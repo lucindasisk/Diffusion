@@ -55,7 +55,7 @@ else:
 # subject_list = subject_info[0].tolist()
 
 # Manual subject list
-subject_list = ['sub-A200', 'sub-A201']
+subject_list = ['sub-A202', 'sub-A204']
 
 
 # In[ ]:
