@@ -54,7 +54,7 @@ else:
 # subject_list = subject_info[0].tolist()
 
 # Manual subject list
-subject_list = ['sub-A200', 'sub-A201']
+subject_list = ['sub-A202', 'sub-A204']
 
 
 # In[ ]:
@@ -134,7 +134,7 @@ tract = Node(mtx.Tractography(algorithm='iFOD2',
             name='tract')
 
 #Convert whole-brain tractography from MrTrix format to TrackVis
-trkconvert = Node(mtx.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
+trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
                  name='trkconvert')
 
 #convert eddy-corrected raw DTI to tensor format

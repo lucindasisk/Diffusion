@@ -47,6 +47,6 @@ for sub in $subs; do
     tcksift -act -force $actfile $dwi $wmfod $home'/out_tracks.tck'
   fi
   echo 'Generating connectome for '$sub
-  tck2connectome -force -assignment_radial_search 30 $home'/out_tracks.tck' $home'/combined_connectome_rois.nii.gz' $home'/out_connectome.csv'
+  tck2connectome -force -assignment_end_voxels $home'/out_tracks.tck' $home'/registered_aparc.a2009s+aseg.nii.gz' $home'/out_connectome.csv'
 
 done
