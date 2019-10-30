@@ -156,9 +156,9 @@ tract_flow = Workflow(name = 'tract_flow')
 tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     #Skullstrip T1
                     (sf, bet, [('t1', 'in_file')]),
-                    #Segment T1 image with FSL 5tt algorithm
-                    (sf, seg5tt, [('t1', 'in_file')]),
-                    (seg5tt, datasink, [('out_file', '5_tract_Reconstruction')]),
+#                     #Segment T1 image with FSL 5tt algorithm
+#                     (sf, seg5tt, [('t1', 'in_file')]),
+#                     (seg5tt, datasink, [('out_file', '5_tract_Reconstruction')]),
                     #Convert bval/bvec to gradient tables
                     (sf, gradconv, [('dti', 'in_file'),
                                    ('bval','in_bval'),
