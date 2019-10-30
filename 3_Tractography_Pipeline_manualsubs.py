@@ -139,7 +139,7 @@ trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_
                  name='trkconvert')
 
 #convert eddy-corrected raw DTI to tensor format
-dwi2tensor = Node(mtx.FitTensor(),
+dwi2tensor = Node(mtx.FitTensor(out_file = 'whole_brain_tensorfile.mif'),
                 name='dwi2tensor')
 
 #Compute FA from tensor files
