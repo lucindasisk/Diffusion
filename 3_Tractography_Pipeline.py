@@ -77,7 +77,6 @@ template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_correcte
                 bval = join(raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
                 t1 = join(proc_dir, '2_Preprocessed/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_brain.nii.gz'),
-                aseg = join(home, 'data/mri/hcp_pipeline_preproc/shapes/{subject_id}/MNINonLinear/aparc.a2009s+aseg.nii.gz'),
                 mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
                )
 
