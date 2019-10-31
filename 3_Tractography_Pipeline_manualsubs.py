@@ -55,7 +55,7 @@ subject_info = read_csv(
 subject_list = subject_info[0].tolist()
 
 # Manual subject list
-subject_list = ['sub-A208', 'sub-A207']
+subject_list = ['sub-A200', 'sub-A201']
 
 
 # In[ ]:

@@ -1,0 +1,2800 @@
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.1-centos7_64/etc/fslconf/fsl.sh
+191030-19:18:22,730 nipype.workflow DEBUG:
+	 (tract_flow.infosource, tract_flow.sf): No edge data
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.infosource, tract_flow.sf): new edge data: {'connect': [('subject_id', 'subject_id')]}
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.bet): No edge data
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.bet): new edge data: {'connect': [('t1', 'in_file')]}
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.seg5tt): No edge data
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.seg5tt): new edge data: {'connect': [('t1', 'in_file')]}
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.seg5tt, tract_flow.datasink): No edge data
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.seg5tt, tract_flow.datasink): new edge data: {'connect': [('out_file', '5_tract_Reconstruction')]}
+191030-19:18:22,731 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.gradconv): No edge data
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.gradconv): new edge data: {'connect': [('dti', 'in_file'), ('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.gradconv, tract_flow.dwiresp): No edge data
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.gradconv, tract_flow.dwiresp): new edge data: {'connect': [('out_file', 'in_file')]}
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.datasink): No edge data
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.datasink): new edge data: {'connect': [('wm_file', '5_tract_Reconstruction.@par'), ('gm_file', '5_tract_Reconstruction.@par.@par'), ('csf_file', '5_tract_Reconstruction.@par.@par.@par')]}
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.mscsd): No edge data
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.mscsd): new edge data: {'connect': [('dti', 'in_file'), ('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.mscsd): No edge data
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.dwiresp, tract_flow.mscsd): new edge data: {'connect': [('wm_file', 'wm_txt'), ('gm_file', 'gm_txt'), ('csf_file', 'csf_txt')]}
+191030-19:18:22,732 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.tract): No edge data
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.tract): new edge data: {'connect': [('wm_odf', 'in_file')]}
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.datasink): No edge data
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.mscsd, tract_flow.datasink): new edge data: {'connect': [('wm_odf', '5_tract_Reconstruction.@par.@par.@par.@par'), ('gm_odf', '5_tract_Reconstruction.@par.@par.@par.@par.@par'), ('csf_odf', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par')]}
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.tract): No edge data
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.tract): new edge data: {'connect': [('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.tract): No edge data
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.tract): new edge data: {'connect': [('mask_file', 'seed_image')]}
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.trkconvert): No edge data
+191030-19:18:22,733 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.trkconvert): new edge data: {'connect': [('out_file', 'in_file')]}
+191030-19:18:22,734 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): No edge data
+191030-19:18:22,734 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): new edge data: {'connect': [('t1', 'image_file')]}
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): Edge data exists: {'connect': [('t1', 'image_file')]}
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.sf, tract_flow.trkconvert): new edge data: {'connect': [('t1', 'image_file'), ('t1', 'registration_image_file')]}
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.trkconvert, tract_flow.datasink): No edge data
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.trkconvert, tract_flow.datasink): new edge data: {'connect': [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par')]}
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.datasink): No edge data
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.tract, tract_flow.datasink): new edge data: {'connect': [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]}
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.datasink): No edge data
+191030-19:18:22,739 nipype.workflow DEBUG:
+	 (tract_flow.bet, tract_flow.datasink): new edge data: {'connect': [('mask_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]}
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.gradconv, tract_flow.dwi2tensor): No edge data
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.gradconv, tract_flow.dwi2tensor): new edge data: {'connect': [('out_file', 'in_file')]}
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.dwi2tensor, tract_flow.datasink): No edge data
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.dwi2tensor, tract_flow.datasink): new edge data: {'connect': [('out_file', '6_Tensor_Data')]}
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.dwi2tensor, tract_flow.tensor2fa): No edge data
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.dwi2tensor, tract_flow.tensor2fa): new edge data: {'connect': [('out_file', 'in_file')]}
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.tensor2fa, tract_flow.datasink): No edge data
+191030-19:18:22,740 nipype.workflow DEBUG:
+	 (tract_flow.tensor2fa, tract_flow.datasink): new edge data: {'connect': [('out_fa', '6_Tensor_Data.@par')]}
+191030-19:18:22,747 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: tract_flow
+191030-19:18:22,757 nipype.workflow DEBUG:
+	 expanding workflow: tract_flow
+191030-19:18:22,759 nipype.workflow DEBUG:
+	 processing node: tract_flow.infosource
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.sf
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.gradconv
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.dwi2tensor
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.tensor2fa
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.dwiresp
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.mscsd
+191030-19:18:22,760 nipype.workflow DEBUG:
+	 processing node: tract_flow.seg5tt
+191030-19:18:22,761 nipype.workflow DEBUG:
+	 processing node: tract_flow.bet
+191030-19:18:22,761 nipype.workflow DEBUG:
+	 processing node: tract_flow.tract
+191030-19:18:22,761 nipype.workflow DEBUG:
+	 processing node: tract_flow.trkconvert
+191030-19:18:22,761 nipype.workflow DEBUG:
+	 processing node: tract_flow.datasink
+191030-19:18:22,761 nipype.workflow DEBUG:
+	 finished expanding workflow: tract_flow
+191030-19:18:22,767 nipype.workflow DEBUG:
+	 using input graph
+191030-19:18:23,561 nipype.workflow DEBUG:
+	 creating dot graph
+191030-19:18:23,774 nipype.workflow INFO:
+	 Generated workflow graph: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/graph.png (graph2use=flat, simple_form=True).
+191030-19:18:25,50 nipype.workflow DEBUG:
+	 [MultiProc] Starting (n_procs=4, mem_gb=226.11, cwd=/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion)
+191030-19:18:25,55 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: tract_flow
+191030-19:18:25,61 nipype.workflow DEBUG:
+	 expanding workflow: tract_flow
+191030-19:18:25,62 nipype.workflow DEBUG:
+	 processing node: tract_flow.infosource
+191030-19:18:25,62 nipype.workflow DEBUG:
+	 processing node: tract_flow.sf
+191030-19:18:25,62 nipype.workflow DEBUG:
+	 processing node: tract_flow.gradconv
+191030-19:18:25,62 nipype.workflow DEBUG:
+	 processing node: tract_flow.dwi2tensor
+191030-19:18:25,62 nipype.workflow DEBUG:
+	 processing node: tract_flow.tensor2fa
+191030-19:18:25,62 nipype.workflow DEBUG:
+	 processing node: tract_flow.dwiresp
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 processing node: tract_flow.mscsd
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 processing node: tract_flow.seg5tt
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 processing node: tract_flow.bet
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 processing node: tract_flow.tract
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 processing node: tract_flow.trkconvert
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 processing node: tract_flow.datasink
+191030-19:18:25,63 nipype.workflow DEBUG:
+	 finished expanding workflow: tract_flow
+191030-19:18:25,63 nipype.workflow INFO:
+	 Workflow tract_flow settings: ['check', 'execution', 'logging', 'monitoring']
+191030-19:18:25,67 nipype.workflow DEBUG:
+	 PE: expanding iterables
+191030-19:18:25,68 nipype.workflow DEBUG:
+	 Detected iterable nodes [tract_flow.infosource]
+191030-19:18:25,68 nipype.workflow DEBUG:
+	 Expanding the iterable node tract_flow.infosource...
+191030-19:18:25,68 nipype.workflow DEBUG:
+	 node: tract_flow.infosource iterables: {'subject_id': <function _standardize_iterables.<locals>.make_field_func.<locals>.<lambda> at 0x2ad43cff26a8>}
+191030-19:18:25,69 nipype.workflow DEBUG:
+	 ('subnodes:', [tract_flow.infosource, tract_flow.sf, tract_flow.bet, tract_flow.tract, tract_flow.trkconvert, tract_flow.datasink, tract_flow.seg5tt, tract_flow.gradconv, tract_flow.dwiresp, tract_flow.mscsd, tract_flow.dwi2tensor, tract_flow.tensor2fa])
+191030-19:18:25,74 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A200
+191030-19:18:25,74 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A200
+191030-19:18:25,78 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A201
+191030-19:18:25,78 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A201
+191030-19:18:25,82 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A202
+191030-19:18:25,82 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A202
+191030-19:18:25,87 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A204
+191030-19:18:25,87 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A204
+191030-19:18:25,92 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A206
+191030-19:18:25,92 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A206
+191030-19:18:25,96 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A207
+191030-19:18:25,96 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A207
+191030-19:18:25,100 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A208
+191030-19:18:25,100 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A208
+191030-19:18:25,105 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A210
+191030-19:18:25,105 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A210
+191030-19:18:25,109 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A211
+191030-19:18:25,109 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A211
+191030-19:18:25,113 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A212
+191030-19:18:25,113 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A212
+191030-19:18:25,117 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A213
+191030-19:18:25,117 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A213
+191030-19:18:25,122 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A214
+191030-19:18:25,122 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A214
+191030-19:18:25,126 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A215
+191030-19:18:25,126 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A215
+191030-19:18:25,130 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A216
+191030-19:18:25,130 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A216
+191030-19:18:25,135 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A217
+191030-19:18:25,135 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A217
+191030-19:18:25,139 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A218
+191030-19:18:25,139 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A218
+191030-19:18:25,143 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A222
+191030-19:18:25,143 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A222
+191030-19:18:25,147 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A223
+191030-19:18:25,148 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A223
+191030-19:18:25,152 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A225
+191030-19:18:25,152 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A225
+191030-19:18:25,156 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A228
+191030-19:18:25,156 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A228
+191030-19:18:25,160 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A229
+191030-19:18:25,160 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A229
+191030-19:18:25,165 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A230
+191030-19:18:25,165 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A230
+191030-19:18:25,169 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A231
+191030-19:18:25,169 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A231
+191030-19:18:25,173 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A232
+191030-19:18:25,173 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A232
+191030-19:18:25,177 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A233
+191030-19:18:25,178 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A233
+191030-19:18:25,182 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A234
+191030-19:18:25,182 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A234
+191030-19:18:25,186 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A235
+191030-19:18:25,187 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A235
+191030-19:18:25,191 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A236
+191030-19:18:25,191 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A236
+191030-19:18:25,195 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A237
+191030-19:18:25,195 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A237
+191030-19:18:25,199 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A238
+191030-19:18:25,199 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A238
+191030-19:18:25,204 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A240
+191030-19:18:25,204 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A240
+191030-19:18:25,208 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A241
+191030-19:18:25,208 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A241
+191030-19:18:25,212 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A242
+191030-19:18:25,212 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A242
+191030-19:18:25,216 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A246
+191030-19:18:25,216 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A246
+191030-19:18:25,221 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A247
+191030-19:18:25,221 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A247
+191030-19:18:25,225 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A248
+191030-19:18:25,225 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A248
+191030-19:18:25,229 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A250
+191030-19:18:25,229 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A250
+191030-19:18:25,234 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A251
+191030-19:18:25,234 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A251
+191030-19:18:25,238 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A253
+191030-19:18:25,238 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A253
+191030-19:18:25,242 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A255
+191030-19:18:25,242 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A255
+191030-19:18:25,246 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A256
+191030-19:18:25,247 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A256
+191030-19:18:25,251 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A257
+191030-19:18:25,251 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A257
+191030-19:18:25,255 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A258
+191030-19:18:25,255 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A258
+191030-19:18:25,259 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A260
+191030-19:18:25,259 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A260
+191030-19:18:25,264 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A261
+191030-19:18:25,264 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A261
+191030-19:18:25,268 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A262
+191030-19:18:25,268 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A262
+191030-19:18:25,272 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A266
+191030-19:18:25,272 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A266
+191030-19:18:25,276 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A268
+191030-19:18:25,276 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A268
+191030-19:18:25,281 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A270
+191030-19:18:25,281 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A270
+191030-19:18:25,285 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A271
+191030-19:18:25,285 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A271
+191030-19:18:25,290 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A272
+191030-19:18:25,290 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A272
+191030-19:18:25,294 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A273
+191030-19:18:25,294 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A273
+191030-19:18:25,298 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A276
+191030-19:18:25,298 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A276
+191030-19:18:25,302 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A279
+191030-19:18:25,303 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A279
+191030-19:18:25,307 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A280
+191030-19:18:25,307 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A280
+191030-19:18:25,311 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A281
+191030-19:18:25,311 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A281
+191030-19:18:25,315 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A283
+191030-19:18:25,315 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A283
+191030-19:18:25,320 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A285
+191030-19:18:25,320 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A285
+191030-19:18:25,325 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A286
+191030-19:18:25,325 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A286
+191030-19:18:25,329 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A288
+191030-19:18:25,329 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A288
+191030-19:18:25,334 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A291
+191030-19:18:25,334 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A291
+191030-19:18:25,338 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A293
+191030-19:18:25,338 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A293
+191030-19:18:25,342 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A294
+191030-19:18:25,342 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A294
+191030-19:18:25,346 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A328
+191030-19:18:25,346 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A328
+191030-19:18:25,351 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A348
+191030-19:18:25,351 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A348
+191030-19:18:25,355 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A351
+191030-19:18:25,355 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A351
+191030-19:18:25,359 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A363
+191030-19:18:25,359 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A363
+191030-19:18:25,364 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A374
+191030-19:18:25,364 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A374
+191030-19:18:25,368 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A383
+191030-19:18:25,368 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A383
+191030-19:18:25,372 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A401
+191030-19:18:25,372 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A401
+191030-19:18:25,377 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A415
+191030-19:18:25,377 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A415
+191030-19:18:25,382 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A417
+191030-19:18:25,382 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A417
+191030-19:18:25,386 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A420
+191030-19:18:25,386 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A420
+191030-19:18:25,436 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A427
+191030-19:18:25,436 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A427
+191030-19:18:25,441 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A429
+191030-19:18:25,441 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A429
+191030-19:18:25,445 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A437
+191030-19:18:25,445 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A437
+191030-19:18:25,449 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A438
+191030-19:18:25,449 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A438
+191030-19:18:25,453 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A439
+191030-19:18:25,454 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A439
+191030-19:18:25,458 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A459
+191030-19:18:25,458 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A459
+191030-19:18:25,462 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A480
+191030-19:18:25,462 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A480
+191030-19:18:25,466 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A526
+191030-19:18:25,466 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A526
+191030-19:18:25,471 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A546
+191030-19:18:25,471 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A546
+191030-19:18:25,475 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A548
+191030-19:18:25,475 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A548
+191030-19:18:25,479 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A554
+191030-19:18:25,479 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A554
+191030-19:18:25,483 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A555
+191030-19:18:25,484 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A555
+191030-19:18:25,488 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A556
+191030-19:18:25,488 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A556
+191030-19:18:25,492 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A559
+191030-19:18:25,492 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A559
+191030-19:18:25,496 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A583
+191030-19:18:25,496 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A583
+191030-19:18:25,501 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A585
+191030-19:18:25,501 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A585
+191030-19:18:25,505 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A587
+191030-19:18:25,505 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A587
+191030-19:18:25,509 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A591
+191030-19:18:25,509 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A591
+191030-19:18:25,514 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A592
+191030-19:18:25,514 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A592
+191030-19:18:25,518 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A593
+191030-19:18:25,518 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A593
+191030-19:18:25,522 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A597
+191030-19:18:25,522 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A597
+191030-19:18:25,526 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A598
+191030-19:18:25,526 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A598
+191030-19:18:25,531 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A600
+191030-19:18:25,531 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A600
+191030-19:18:25,535 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A603
+191030-19:18:25,536 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A603
+191030-19:18:25,540 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A609
+191030-19:18:25,540 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A609
+191030-19:18:25,544 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A611
+191030-19:18:25,633 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A611
+191030-19:18:25,637 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A617
+191030-19:18:25,638 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A617
+191030-19:18:25,642 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A618
+191030-19:18:25,642 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A618
+191030-19:18:25,646 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A619
+191030-19:18:25,646 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A619
+191030-19:18:25,650 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A620
+191030-19:18:25,650 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A620
+191030-19:18:25,655 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A621
+191030-19:18:25,655 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A621
+191030-19:18:25,659 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A622
+191030-19:18:25,659 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A622
+191030-19:18:25,663 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A625
+191030-19:18:25,663 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A625
+191030-19:18:25,667 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A629
+191030-19:18:25,668 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A629
+191030-19:18:25,672 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A631
+191030-19:18:25,672 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A631
+191030-19:18:25,676 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A632
+191030-19:18:25,676 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A632
+191030-19:18:25,680 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A633
+191030-19:18:25,680 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A633
+191030-19:18:25,685 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A634
+191030-19:18:25,685 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A634
+191030-19:18:25,689 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A636
+191030-19:18:25,689 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A636
+191030-19:18:25,693 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A637
+191030-19:18:25,693 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A637
+191030-19:18:25,697 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A639
+191030-19:18:25,698 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A639
+191030-19:18:25,702 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A640
+191030-19:18:25,702 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A640
+191030-19:18:25,706 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A641
+191030-19:18:25,706 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A641
+191030-19:18:25,711 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A642
+191030-19:18:25,711 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A642
+191030-19:18:25,715 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A643
+191030-19:18:25,715 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A643
+191030-19:18:25,720 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A646
+191030-19:18:25,720 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A646
+191030-19:18:25,724 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A647
+191030-19:18:25,724 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A647
+191030-19:18:25,728 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A648
+191030-19:18:25,728 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A648
+191030-19:18:25,732 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A649
+191030-19:18:25,732 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A649
+191030-19:18:25,737 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A650
+191030-19:18:25,737 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A650
+191030-19:18:25,741 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A651
+191030-19:18:25,741 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A651
+191030-19:18:25,745 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A653
+191030-19:18:25,745 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A653
+191030-19:18:25,749 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A656
+191030-19:18:25,749 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A656
+191030-19:18:25,754 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A660
+191030-19:18:25,754 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A660
+191030-19:18:25,758 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A661
+191030-19:18:25,758 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A661
+191030-19:18:25,762 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A663
+191030-19:18:25,762 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A663
+191030-19:18:25,767 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A664
+191030-19:18:25,767 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A664
+191030-19:18:25,771 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A665
+191030-19:18:25,771 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A665
+191030-19:18:25,775 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A666
+191030-19:18:25,775 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A666
+191030-19:18:25,779 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A671
+191030-19:18:25,779 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A671
+191030-19:18:25,784 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A675
+191030-19:18:25,784 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A675
+191030-19:18:25,788 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A677
+191030-19:18:25,788 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A677
+191030-19:18:25,792 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A680
+191030-19:18:25,792 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A680
+191030-19:18:25,796 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A682
+191030-19:18:25,797 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A682
+191030-19:18:25,801 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A686
+191030-19:18:25,801 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A686
+191030-19:18:25,805 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A687
+191030-19:18:25,805 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A687
+191030-19:18:25,809 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A694
+191030-19:18:25,809 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A694
+191030-19:18:25,814 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A695
+191030-19:18:25,814 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A695
+191030-19:18:25,818 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A698
+191030-19:18:25,818 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A698
+191030-19:18:25,836 nipype.workflow DEBUG:
+	 PE: expanding iterables ... done
+191030-19:18:25,852 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A698
+191030-19:18:25,852 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,852 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A695
+191030-19:18:25,852 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A694
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A687
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A686
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A682
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A680
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A677
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A675
+191030-19:18:25,853 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A671
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A666
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A665
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A664
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A663
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A661
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A660
+191030-19:18:25,854 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A656
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A653
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A651
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A650
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A649
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A648
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A647
+191030-19:18:25,855 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A646
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A643
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A642
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A641
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A640
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A639
+191030-19:18:25,856 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A637
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A636
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A634
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A633
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A632
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A631
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A629
+191030-19:18:25,857 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A625
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A622
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A621
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A620
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A619
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A618
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A617
+191030-19:18:25,858 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A611
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A609
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A603
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A600
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A598
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A597
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A593
+191030-19:18:25,859 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A592
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A591
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A587
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A585
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A583
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A559
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A556
+191030-19:18:25,860 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A555
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A554
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A548
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A546
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A526
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A480
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A459
+191030-19:18:25,861 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A439
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A438
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A437
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A429
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A427
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A420
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A417
+191030-19:18:25,862 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A415
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A401
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A383
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A374
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A363
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A351
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A348
+191030-19:18:25,863 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A328
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A294
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A293
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A291
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A288
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A286
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,864 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A285
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A283
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A281
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A280
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A279
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A276
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A273
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,865 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A272
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A271
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A270
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A268
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A266
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A262
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,866 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A261
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A260
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A258
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A257
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A256
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A255
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A253
+191030-19:18:25,867 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A251
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A250
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A248
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A247
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A246
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A242
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A241
+191030-19:18:25,868 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A240
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A238
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A237
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A236
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A235
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A234
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A233
+191030-19:18:25,869 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A232
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A231
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A230
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A229
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A228
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A225
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A223
+191030-19:18:25,870 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A222
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A218
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A217
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A216
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A215
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A214
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A213
+191030-19:18:25,871 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A212
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A211
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A210
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A208
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A207
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A206
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A204
+191030-19:18:25,872 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,873 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A202
+191030-19:18:25,873 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,873 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A201
+191030-19:18:25,873 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:25,873 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A200
+191030-19:18:25,873 nipype.workflow DEBUG:
+	 Removed the identity node tract_flow.infosource from the graph.
+191030-19:18:26,327 nipype.workflow DEBUG:
+	 Performing depth first search
+191030-19:18:26,887 nipype.workflow INFO:
+	 Running in parallel.
+191030-19:18:26,935 nipype.workflow DEBUG:
+	 Progress: 1562 jobs, 0/0/142 (done/running/ready), 0/1562 (pending_tasks/waiting).
+191030-19:18:26,935 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+191030-19:18:26,942 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 142 jobs ready. Free memory (GB): 226.11/226.11, Free processors: 4/4.
+191030-19:18:27,9 nipype.workflow DEBUG:
+	 Allocating tract_flow.sf ID=0 (0.20GB, 1 threads). Free: 225.91GB, 3 threads.
+191030-19:18:27,10 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:27,11 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A698')], 8c56187b4326759eb69854b93afb159f, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_0x8c56187b4326759eb69854b93afb159f.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_0x8c56187b4326759eb69854b93afb159f.json']
+191030-19:18:27,11 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,11 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.sf" locally: cached=True, updated=True.
+191030-19:18:27,48 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.sf (taskid=1).
+191030-19:18:27,49 nipype.workflow DEBUG:
+	 Allocating tract_flow.sf ID=11 (0.20GB, 1 threads). Free: 225.71GB, 2 threads.
+191030-19:18:27,49 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:27,52 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A695')], c075a76c00e1dd9bbccc9b77560536b0, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_0xc075a76c00e1dd9bbccc9b77560536b0.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_0xc075a76c00e1dd9bbccc9b77560536b0.json']
+191030-19:18:27,52 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,53 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.sf" locally: cached=True, updated=True.
+191030-19:18:27,54 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.sf (taskid=2).
+191030-19:18:27,54 nipype.workflow DEBUG:
+	 Allocating tract_flow.sf ID=22 (0.20GB, 1 threads). Free: 225.51GB, 1 threads.
+191030-19:18:27,54 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:27,58 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf".
+191030-19:18:27,59 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A698')], 8c56187b4326759eb69854b93afb159f, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_0x8c56187b4326759eb69854b93afb159f.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_0x8c56187b4326759eb69854b93afb159f.json']
+191030-19:18:27,59 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,59 nipype.workflow DEBUG:
+	 [Node] Rerunning cached, up-to-date node "tract_flow.sf"
+191030-19:18:27,59 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A694')], c6ff026b09d9773e128222f460b69c5a, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_0xc6ff026b09d9773e128222f460b69c5a.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_0xc6ff026b09d9773e128222f460b69c5a.json']
+191030-19:18:27,59 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,59 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.sf" locally: cached=True, updated=True.
+191030-19:18:27,60 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.sf (taskid=3).
+191030-19:18:27,60 nipype.workflow DEBUG:
+	 Allocating tract_flow.sf ID=33 (0.20GB, 1 threads). Free: 225.31GB, 0 threads.
+191030-19:18:27,60 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:27,64 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf".
+191030-19:18:27,64 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A695')], c075a76c00e1dd9bbccc9b77560536b0, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_0xc075a76c00e1dd9bbccc9b77560536b0.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_0xc075a76c00e1dd9bbccc9b77560536b0.json']
+191030-19:18:27,65 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,65 nipype.workflow DEBUG:
+	 [Node] Rerunning cached, up-to-date node "tract_flow.sf"
+191030-19:18:27,65 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A687')], f77a24a247c7a1541c06aa3450761222, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_0xf77a24a247c7a1541c06aa3450761222.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_0xf77a24a247c7a1541c06aa3450761222.json']
+191030-19:18:27,65 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,65 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.sf" locally: cached=True, updated=True.
+191030-19:18:27,66 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf
+191030-19:18:27,66 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.sf (taskid=4).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 44 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 55 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 66 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 77 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 88 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 99 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 110 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 121 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 132 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 143 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 154 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 165 (0.20GB, 1 threads).
+191030-19:18:27,67 nipype.workflow DEBUG:
+	 Cannot allocate job 176 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 187 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 198 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 209 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 220 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 231 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 242 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 253 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 264 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 275 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 286 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 297 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 308 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 319 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 330 (0.20GB, 1 threads).
+191030-19:18:27,68 nipype.workflow DEBUG:
+	 Cannot allocate job 341 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 352 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 363 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 374 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 385 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 396 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 407 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 418 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 429 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 440 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 451 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 462 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 473 (0.20GB, 1 threads).
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 484 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf
+191030-19:18:27,69 nipype.workflow DEBUG:
+	 Cannot allocate job 495 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.workflow DEBUG:
+	 Cannot allocate job 506 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.workflow DEBUG:
+	 Cannot allocate job 517 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.workflow DEBUG:
+	 Cannot allocate job 528 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.workflow DEBUG:
+	 Cannot allocate job 539 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.workflow DEBUG:
+	 Cannot allocate job 550 (0.20GB, 1 threads).
+191030-19:18:27,70 nipype.workflow DEBUG:
+	 Cannot allocate job 561 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 572 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 583 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 594 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 605 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 616 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 627 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 638 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 649 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 660 (0.20GB, 1 threads).
+191030-19:18:27,71 nipype.workflow DEBUG:
+	 Cannot allocate job 671 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 682 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 693 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 704 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 715 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 726 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 737 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 748 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 759 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 770 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 781 (0.20GB, 1 threads).
+191030-19:18:27,72 nipype.workflow DEBUG:
+	 Cannot allocate job 792 (0.20GB, 1 threads).
+191030-19:18:27,73 nipype.workflow DEBUG:
+	 Cannot allocate job 803 (0.20GB, 1 threads).
+191030-19:18:27,73 nipype.workflow DEBUG:
+	 Cannot allocate job 814 (0.20GB, 1 threads).
+191030-19:18:27,73 nipype.workflow DEBUG:
+	 Cannot allocate job 825 (0.20GB, 1 threads).
+191030-19:18:27,73 nipype.workflow DEBUG:
+	 Cannot allocate job 836 (0.20GB, 1 threads).
+191030-19:18:27,73 nipype.workflow DEBUG:
+	 Cannot allocate job 847 (0.20GB, 1 threads).
+191030-19:18:27,73 nipype.workflow DEBUG:
+	 Cannot allocate job 858 (0.20GB, 1 threads).
+191030-19:18:27,76 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf".
+191030-19:18:27,77 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A694')], c6ff026b09d9773e128222f460b69c5a, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_0xc6ff026b09d9773e128222f460b69c5a.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_0xc6ff026b09d9773e128222f460b69c5a.json']
+191030-19:18:27,77 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,77 nipype.workflow DEBUG:
+	 [Node] Rerunning cached, up-to-date node "tract_flow.sf"
+191030-19:18:27,78 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf".
+191030-19:18:27,79 nipype.workflow DEBUG:
+	 [Node] Hashes: [('base_directory', '/gpfs/milgram/project/gee_dylan/candlab'), ('force_lists', False), ('raise_on_empty', True), ('sort_filelist', True), ('subject_id', 'sub-A687')], f77a24a247c7a1541c06aa3450761222, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_0xf77a24a247c7a1541c06aa3450761222.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_0xf77a24a247c7a1541c06aa3450761222.json']
+191030-19:18:27,79 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.sf".
+191030-19:18:27,79 nipype.workflow DEBUG:
+	 [Node] Rerunning cached, up-to-date node "tract_flow.sf"
+191030-19:18:27,80 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf
+191030-19:18:27,79 nipype.workflow DEBUG:
+	 Cannot allocate job 869 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 880 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 891 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 902 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 913 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 924 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 935 (0.20GB, 1 threads).
+191030-19:18:27,80 nipype.workflow DEBUG:
+	 Cannot allocate job 946 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 957 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 968 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 979 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 990 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 1001 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 1012 (0.20GB, 1 threads).
+191030-19:18:27,81 nipype.workflow DEBUG:
+	 Cannot allocate job 1023 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1034 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1045 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1056 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1067 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1078 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1089 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1100 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1111 (0.20GB, 1 threads).
+191030-19:18:27,82 nipype.workflow DEBUG:
+	 Cannot allocate job 1122 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1133 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1144 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1155 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1166 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1177 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1188 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1199 (0.20GB, 1 threads).
+191030-19:18:27,83 nipype.workflow DEBUG:
+	 Cannot allocate job 1210 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1221 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1232 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1243 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1254 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1265 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1276 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1287 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1298 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1309 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1320 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1331 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1342 (0.20GB, 1 threads).
+191030-19:18:27,84 nipype.workflow DEBUG:
+	 Cannot allocate job 1353 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1364 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1375 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1386 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1397 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1408 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1419 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1430 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1441 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1452 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1463 (0.20GB, 1 threads).
+191030-19:18:27,85 nipype.workflow DEBUG:
+	 Cannot allocate job 1474 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1485 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1496 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1507 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1518 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1529 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1540 (0.20GB, 1 threads).
+191030-19:18:27,86 nipype.workflow DEBUG:
+	 Cannot allocate job 1551 (0.20GB, 1 threads).
+191030-19:18:27,90 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_report
+191030-19:18:27,91 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_report
+191030-19:18:27,91 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_report/report.rst"
+191030-19:18:27,92 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_report/report.rst"
+191030-19:18:27,98 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191030-19:18:27,101 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191030-19:18:27,106 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_report
+191030-19:18:27,106 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_report
+191030-19:18:27,107 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_report/report.rst"
+191030-19:18:27,107 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_report/report.rst"
+191030-19:18:27,112 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191030-19:18:27,116 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191030-19:18:27,327 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A698/eddy_corrected_resample.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A698/ses-shapesV1/dwi/sub-A698_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A698/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/hcp_pipeline_preproc/shapes/sub-A698/MNINonLinear/aparc.a2009s+aseg.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_0x8c56187b4326759eb69854b93afb159f_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_node.pklz
+191030-19:18:27,327 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_report
+191030-19:18:27,327 nipype.workflow DEBUG:
+	 Removing files: 
+191030-19:18:27,327 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz'
+191030-19:18:27,331 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A687/eddy_corrected_resample.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A687/ses-shapesV1/dwi/sub-A687_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A687/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A687/sub-A687_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/hcp_pipeline_preproc/shapes/sub-A687/MNINonLinear/aparc.a2009s+aseg.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_0xf77a24a247c7a1541c06aa3450761222_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_node.pklz
+191030-19:18:27,331 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_report
+191030-19:18:27,331 nipype.workflow DEBUG:
+	 Removing files: 
+191030-19:18:27,331 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/result_sf.pklz'
+191030-19:18:27,337 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/_report/report.rst"
+191030-19:18:27,337 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:27,337 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/_report/report.rst"
+191030-19:18:27,340 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A687/sf/result_sf.pklz
+191030-19:18:27,343 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:27,349 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A694/eddy_corrected_resample.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A694/ses-shapesV1/dwi/sub-A694_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A694/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A694/sub-A694_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/hcp_pipeline_preproc/shapes/sub-A694/MNINonLinear/aparc.a2009s+aseg.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_0xc6ff026b09d9773e128222f460b69c5a_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_node.pklz
+191030-19:18:27,349 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_report
+191030-19:18:27,349 nipype.workflow DEBUG:
+	 Removing files: 
+191030-19:18:27,349 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/result_sf.pklz'
+191030-19:18:27,353 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:27,357 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A695/eddy_corrected_resample.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A695/ses-shapesV1/dwi/sub-A695_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A695/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A695/sub-A695_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/hcp_pipeline_preproc/shapes/sub-A695/MNINonLinear/aparc.a2009s+aseg.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_0xc075a76c00e1dd9bbccc9b77560536b0_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_node.pklz
+191030-19:18:27,357 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_report
+191030-19:18:27,357 nipype.workflow DEBUG:
+	 Removing files: 
+191030-19:18:27,358 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz'
+191030-19:18:27,361 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/_report/report.rst"
+191030-19:18:27,361 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A694/sf/result_sf.pklz
+191030-19:18:27,366 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:27,366 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/_report/report.rst"
+191030-19:18:27,367 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:27,370 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:27,371 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.sf".
+191030-19:18:27,372 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.sf".
+191030-19:18:27,374 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.sf".
+191030-19:18:27,376 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.sf".
+191030-19:18:28,945 nipype.workflow DEBUG:
+	 Progress: 1562 jobs, 0/4/138 (done/running/ready), 4/1558 (pending_tasks/waiting).
+191030-19:18:28,945 nipype.workflow INFO:
+	 [Job 0] Completed (tract_flow.sf).
+191030-19:18:28,953 nipype.workflow INFO:
+	 [Job 11] Completed (tract_flow.sf).
+191030-19:18:28,958 nipype.workflow INFO:
+	 [Job 22] Completed (tract_flow.sf).
+191030-19:18:28,962 nipype.workflow INFO:
+	 [Job 33] Completed (tract_flow.sf).
+191030-19:18:28,966 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+191030-19:18:28,979 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 150 jobs ready. Free memory (GB): 226.11/226.11, Free processors: 4/4.
+191030-19:18:29,87 nipype.workflow DEBUG:
+	 Allocating tract_flow.gradconv ID=1 (0.20GB, 1 threads). Free: 225.91GB, 3 threads.
+191030-19:18:29,87 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:29,87 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:29,87 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,88 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,90 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,91 nipype.workflow DEBUG:
+	 output: dti
+191030-19:18:29,91 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A698/eddy_corrected_resample.nii.gz
+191030-19:18:29,91 nipype.workflow DEBUG:
+	 input: in_bval
+191030-19:18:29,91 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,92 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,93 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,94 nipype.workflow DEBUG:
+	 output: bval
+191030-19:18:29,94 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_bval = /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A698/ses-shapesV1/dwi/sub-A698_ses-shapesV1_dwi.bval
+191030-19:18:29,94 nipype.workflow DEBUG:
+	 input: in_bvec
+191030-19:18:29,94 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,94 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,96 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,96 nipype.workflow DEBUG:
+	 output: bvec
+191030-19:18:29,96 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_bvec = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A698/eddy_corrected.eddy_rotated_bvecs
+191030-19:18:29,99 nipype.workflow DEBUG:
+	 [Node] Hashes: [('in_bval', ('/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A698/ses-shapesV1/dwi/sub-A698_ses-shapesV1_dwi.bval', '63118941d51961368ee0d8c3c514ad07')), ('in_bvec', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A698/eddy_corrected.eddy_rotated_bvecs', '7cd290f3e25b9da33e9f3fb65ad1ffc6')), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A698/eddy_corrected_resample.nii.gz', '6f57465018e2f7e9a050a2167dbe389a')), ('out_file', 'dwi_converted.mif')], 2bbb0422e25e20ef36c9914729a2f17c, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/_0x2bbb0422e25e20ef36c9914729a2f17c.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/_0x2bbb0422e25e20ef36c9914729a2f17c.json']
+191030-19:18:29,100 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.gradconv".
+191030-19:18:29,100 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.gradconv" locally: cached=True, updated=True.
+191030-19:18:29,100 nipype.workflow DEBUG:
+	 Skipping cached node tract_flow.gradconv with ID 1.
+191030-19:18:29,100 nipype.workflow INFO:
+	 [Job 1] Cached (tract_flow.gradconv).
+191030-19:18:29,104 nipype.workflow DEBUG:
+	 Allocating tract_flow.seg5tt ID=6 (0.20GB, 1 threads). Free: 225.71GB, 2 threads.
+191030-19:18:29,104 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:29,104 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:29,104 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,104 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,105 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,106 nipype.workflow DEBUG:
+	 output: t1
+191030-19:18:29,106 nipype.workflow DEBUG:
+	 [Node] seg5tt - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191030-19:18:29,108 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'fsl'), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz', '0db145b157709171936af727945652c6')), ('out_file', 'T1s_5tt_segmented.nii.gz')], 078d5e89153666c04a22a5f66ca97319, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_0x078d5e89153666c04a22a5f66ca97319.json, []
+191030-19:18:29,108 nipype.workflow DEBUG:
+	 [Node] No hashfiles found in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt".
+191030-19:18:29,108 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.seg5tt" locally: cached=False, updated=False.
+191030-19:18:29,110 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.seg5tt" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt".
+191030-19:18:29,111 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'fsl'), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz', '0db145b157709171936af727945652c6')), ('out_file', 'T1s_5tt_segmented.nii.gz')], 078d5e89153666c04a22a5f66ca97319, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_0x078d5e89153666c04a22a5f66ca97319.json, []
+191030-19:18:29,111 nipype.workflow DEBUG:
+	 [Node] No hashfiles found in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt".
+191030-19:18:29,111 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt
+191030-19:18:29,111 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.seg5tt (taskid=5).
+191030-19:18:29,111 nipype.workflow DEBUG:
+	 Allocating tract_flow.bet ID=7 (0.20GB, 1 threads). Free: 225.51GB, 1 threads.
+191030-19:18:29,112 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:29,112 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:29,112 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,112 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191030-19:18:29,113 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,114 nipype.workflow DEBUG:
+	 output: t1
+191030-19:18:29,114 nipype.workflow DEBUG:
+	 [Node] bet - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191030-19:18:29,115 nipype.workflow DEBUG:
+	 [Node] Hashes: [('frac', '0.2000000000'), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz', '0db145b157709171936af727945652c6')), ('mask', True), ('output_type', 'NIFTI_GZ')], e1329c4e67140ae6d9a453fce13aaea4, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/bet/_0xe1329c4e67140ae6d9a453fce13aaea4.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/bet/_0xe1329c4e67140ae6d9a453fce13aaea4.json']
+191030-19:18:29,115 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.bet".
+191030-19:18:29,115 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.bet" locally: cached=True, updated=True.
+191030-19:18:29,116 nipype.workflow DEBUG:
+	 Skipping cached node tract_flow.bet with ID 7.
+191030-19:18:29,116 nipype.workflow INFO:
+	 [Job 7] Cached (tract_flow.bet).
+191030-19:18:29,119 nipype.workflow DEBUG:
+	 Allocating tract_flow.gradconv ID=12 (0.20GB, 1 threads). Free: 225.31GB, 0 threads.
+191030-19:18:29,119 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:29,119 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:29,119 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:29,119 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:29,120 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,120 nipype.workflow DEBUG:
+	 output: dti
+191030-19:18:29,121 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A695/eddy_corrected_resample.nii.gz
+191030-19:18:29,121 nipype.workflow DEBUG:
+	 input: in_bval
+191030-19:18:29,121 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:29,121 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:29,122 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,122 nipype.workflow DEBUG:
+	 output: bval
+191030-19:18:29,122 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_bval = /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A695/ses-shapesV1/dwi/sub-A695_ses-shapesV1_dwi.bval
+191030-19:18:29,123 nipype.workflow DEBUG:
+	 input: in_bvec
+191030-19:18:29,123 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:29,123 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/sf/result_sf.pklz
+191030-19:18:29,124 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:29,124 nipype.workflow DEBUG:
+	 output: bvec
+191030-19:18:29,124 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_bvec = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A695/eddy_corrected.eddy_rotated_bvecs
+191030-19:18:29,127 nipype.workflow DEBUG:
+	 [Node] Hashes: [('in_bval', ('/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A695/ses-shapesV1/dwi/sub-A695_ses-shapesV1_dwi.bval', '99801a7bd2208f11cec6727c5ac45c6e')), ('in_bvec', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A695/eddy_corrected.eddy_rotated_bvecs', 'aa1d3cedb9c93951cb686f1132e144e8')), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A695/eddy_corrected_resample.nii.gz', '78d1d66f9dfe53b2ade5237c1b21b396')), ('out_file', 'dwi_converted.mif')], 25e0ebc02350f8fce41ef410ea2854f4, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/_0x25e0ebc02350f8fce41ef410ea2854f4.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/_0x25e0ebc02350f8fce41ef410ea2854f4.json']
+191030-19:18:29,127 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.gradconv".
+191030-19:18:29,127 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.gradconv" locally: cached=True, updated=True.
+191030-19:18:29,127 nipype.workflow DEBUG:
+	 Skipping cached node tract_flow.gradconv with ID 12.
+191030-19:18:29,127 nipype.workflow INFO:
+	 [Job 12] Cached (tract_flow.gradconv).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 17 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 18 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 23 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 28 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 29 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 34 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 39 (0.20GB, 1 threads).
+191030-19:18:29,130 nipype.workflow DEBUG:
+	 Cannot allocate job 40 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 44 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 55 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 66 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 77 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 88 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 99 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 110 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 121 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 132 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 143 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 154 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 165 (0.20GB, 1 threads).
+191030-19:18:29,131 nipype.workflow DEBUG:
+	 Cannot allocate job 176 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 187 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 198 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 209 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 220 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 231 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 242 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 253 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 264 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 275 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 286 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 297 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 308 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 319 (0.20GB, 1 threads).
+191030-19:18:29,132 nipype.workflow DEBUG:
+	 Cannot allocate job 330 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 341 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 352 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 363 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 374 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 385 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 396 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 407 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 418 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 429 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 440 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 451 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 462 (0.20GB, 1 threads).
+191030-19:18:29,133 nipype.workflow DEBUG:
+	 Cannot allocate job 473 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 484 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 495 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 506 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 517 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 528 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 539 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 550 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 561 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 572 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 583 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 594 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 605 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 616 (0.20GB, 1 threads).
+191030-19:18:29,134 nipype.workflow DEBUG:
+	 Cannot allocate job 627 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 638 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 649 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 660 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 671 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 682 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 693 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 704 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 715 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 726 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 737 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 748 (0.20GB, 1 threads).
+191030-19:18:29,135 nipype.workflow DEBUG:
+	 Cannot allocate job 759 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 770 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 781 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 792 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 803 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 814 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 825 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 836 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 847 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 858 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 869 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 880 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 891 (0.20GB, 1 threads).
+191030-19:18:29,136 nipype.workflow DEBUG:
+	 Cannot allocate job 902 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 913 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 924 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 935 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 946 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 957 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 968 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 979 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 990 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 1001 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 1012 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 1023 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 1034 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 1045 (0.20GB, 1 threads).
+191030-19:18:29,137 nipype.workflow DEBUG:
+	 Cannot allocate job 1056 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1067 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1078 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1089 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1100 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1111 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1122 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1133 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1144 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1155 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1166 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1177 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1188 (0.20GB, 1 threads).
+191030-19:18:29,138 nipype.workflow DEBUG:
+	 Cannot allocate job 1199 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1210 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1221 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1232 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1243 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1254 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1265 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1276 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1287 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1298 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1309 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1320 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1331 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1342 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1353 (0.20GB, 1 threads).
+191030-19:18:29,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1364 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1375 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1386 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1397 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1408 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1419 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1430 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1441 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1452 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1463 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1474 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1485 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1496 (0.20GB, 1 threads).
+191030-19:18:29,140 nipype.workflow DEBUG:
+	 Cannot allocate job 1507 (0.20GB, 1 threads).
+191030-19:18:29,141 nipype.workflow DEBUG:
+	 Cannot allocate job 1518 (0.20GB, 1 threads).
+191030-19:18:29,141 nipype.workflow DEBUG:
+	 Cannot allocate job 1529 (0.20GB, 1 threads).
+191030-19:18:29,141 nipype.workflow DEBUG:
+	 Cannot allocate job 1540 (0.20GB, 1 threads).
+191030-19:18:29,141 nipype.workflow DEBUG:
+	 Cannot allocate job 1551 (0.20GB, 1 threads).
+191030-19:18:29,206 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_report
+191030-19:18:29,207 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_report/report.rst"
+191030-19:18:29,212 nipype.interface DEBUG:
+	 algorithm_fsl
+191030-19:18:29,212 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191030-19:18:29,212 nipype.interface DEBUG:
+	 out_file_T1s_5tt_segmented.nii.gz
+191030-19:18:29,213 nipype.workflow INFO:
+	 [Node] Running "seg5tt" ("nipype.interfaces.mrtrix3.utils.Generate5tt"), a CommandLine Interface with command:
+5ttgen fsl /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz T1s_5tt_segmented.nii.gz
+191030-19:18:29,406 nipype.interface DEBUG:
+	 algorithm_fsl
+191030-19:18:29,406 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191030-19:18:29,406 nipype.interface DEBUG:
+	 out_file_T1s_5tt_segmented.nii.gz
+191030-19:18:30,937 nipype.workflow DEBUG:
+	 Progress: 1562 jobs, 7/1/150 (done/running/ready), 1/1554 (pending_tasks/waiting).
+191030-19:18:30,938 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+191030-19:18:30,957 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 150 jobs ready. Free memory (GB): 225.91/226.11, Free processors: 3/4.
+                     Currently running:
+                       * tract_flow.seg5tt
+191030-19:18:31,47 nipype.workflow DEBUG:
+	 Allocating tract_flow.dwi2tensor ID=2 (0.20GB, 1 threads). Free: 225.71GB, 2 threads.
+191030-19:18:31,47 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:31,47 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:31,47 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/result_gradconv.pklz
+191030-19:18:31,60 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/result_gradconv.pklz
+191030-19:18:31,71 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:31,71 nipype.workflow DEBUG:
+	 output: out_file
+191030-19:18:31,71 nipype.workflow DEBUG:
+	 [Node] dwi2tensor - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif
+191030-19:18:31,72 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor".
+191030-19:18:31,72 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.dwi2tensor" locally: cached=False, updated=False.
+191030-19:18:31,73 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.dwi2tensor (taskid=6).
+191030-19:18:31,73 nipype.workflow DEBUG:
+	 Allocating tract_flow.dwiresp ID=4 (0.20GB, 1 threads). Free: 225.51GB, 1 threads.
+191030-19:18:31,73 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:31,73 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:31,73 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/result_gradconv.pklz
+191030-19:18:31,73 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/result_gradconv.pklz
+191030-19:18:31,74 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.dwi2tensor" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor".
+191030-19:18:31,75 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor".
+191030-19:18:31,75 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor
+191030-19:18:31,75 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor
+191030-19:18:31,76 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:31,77 nipype.workflow DEBUG:
+	 output: out_file
+191030-19:18:31,77 nipype.workflow DEBUG:
+	 [Node] dwiresp - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif
+191030-19:18:31,78 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/_report
+191030-19:18:31,78 nipype.workflow DEBUG:
+	 [Node] Hashes: [('algorithm', 'dhollander'), ('csf_file', 'csf_response.txt'), ('gm_file', 'gm_response.txt'), ('in_file', ('/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif', 'a9c5591581344e1bdc3c9d0c76b96ed1')), ('max_sh', [0, 2, 4, 4, 8]), ('wm_file', 'wm_response.txt')], 43f4f4faae7db28c56d807a9b107dc19, /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwiresp/_0x43f4f4faae7db28c56d807a9b107dc19.json, ['/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwiresp/_0x43f4f4faae7db28c56d807a9b107dc19.json']
+191030-19:18:31,78 nipype.workflow DEBUG:
+	 [Node] Up-to-date cache found for "tract_flow.dwiresp".
+191030-19:18:31,78 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.dwiresp" locally: cached=True, updated=True.
+191030-19:18:31,78 nipype.workflow DEBUG:
+	 Skipping cached node tract_flow.dwiresp with ID 4.
+191030-19:18:31,79 nipype.workflow INFO:
+	 [Job 4] Cached (tract_flow.dwiresp).
+191030-19:18:31,79 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/_report/report.rst"
+191030-19:18:31,81 nipype.workflow DEBUG:
+	 Allocating tract_flow.dwi2tensor ID=13 (0.20GB, 1 threads). Free: 225.31GB, 0 threads.
+191030-19:18:31,82 nipype.workflow DEBUG:
+	 Setting node inputs
+191030-19:18:31,82 nipype.workflow DEBUG:
+	 input: in_file
+191030-19:18:31,82 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/result_gradconv.pklz
+191030-19:18:31,83 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/result_gradconv.pklz
+191030-19:18:31,85 nipype.interface DEBUG:
+	 bval_scale_yes
+191030-19:18:31,85 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif
+191030-19:18:31,85 nipype.interface DEBUG:
+	 method_nonlinear
+191030-19:18:31,85 nipype.interface DEBUG:
+	 out_file_whole_brain_tensorfile.mif
+191030-19:18:31,86 nipype.workflow INFO:
+	 [Node] Running "dwi2tensor" ("nipype.interfaces.mrtrix3.reconst.FitTensor"), a CommandLine Interface with command:
+dwi2tensor -bvalue_scaling yes -method nonlinear /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif whole_brain_tensorfile.mif
+191030-19:18:31,116 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:18:31,116 nipype.workflow DEBUG:
+	 output: out_file
+191030-19:18:31,116 nipype.workflow DEBUG:
+	 [Node] dwi2tensor - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/dwi_converted.mif
+191030-19:18:31,117 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor".
+191030-19:18:31,117 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.dwi2tensor" locally: cached=False, updated=False.
+191030-19:18:31,117 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.dwi2tensor (taskid=7).
+191030-19:18:31,117 nipype.workflow DEBUG:
+	 Cannot allocate job 15 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 17 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 18 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 23 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 28 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 29 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 34 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 39 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 40 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 44 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 55 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 66 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 77 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 88 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 99 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 110 (0.20GB, 1 threads).
+191030-19:18:31,118 nipype.workflow DEBUG:
+	 Cannot allocate job 121 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 132 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 143 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 154 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 165 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 176 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 187 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 198 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 209 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 220 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 231 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 242 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 253 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 264 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 275 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 286 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 297 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 308 (0.20GB, 1 threads).
+191030-19:18:31,119 nipype.workflow DEBUG:
+	 Cannot allocate job 319 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 330 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 341 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 352 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 363 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 374 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 385 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 396 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 407 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 418 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 429 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 440 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 451 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 462 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 473 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 484 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 495 (0.20GB, 1 threads).
+191030-19:18:31,120 nipype.workflow DEBUG:
+	 Cannot allocate job 506 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 517 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 528 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 539 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 550 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 561 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 572 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 583 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 594 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 605 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 616 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 627 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 638 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 649 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 660 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 671 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 682 (0.20GB, 1 threads).
+191030-19:18:31,121 nipype.workflow DEBUG:
+	 Cannot allocate job 693 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 704 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 715 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 726 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 737 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 748 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 759 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 770 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 781 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 792 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 803 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 814 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 825 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 836 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 847 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 858 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 869 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 880 (0.20GB, 1 threads).
+191030-19:18:31,122 nipype.workflow DEBUG:
+	 Cannot allocate job 891 (0.20GB, 1 threads).
+191030-19:18:31,123 nipype.workflow DEBUG:
+	 Cannot allocate job 902 (0.20GB, 1 threads).
+191030-19:18:31,123 nipype.workflow DEBUG:
+	 Cannot allocate job 913 (0.20GB, 1 threads).
+191030-19:18:31,124 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.dwi2tensor" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor".
+191030-19:18:31,124 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor".
+191030-19:18:31,124 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor
+191030-19:18:31,124 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor
+191030-19:18:31,123 nipype.workflow DEBUG:
+	 Cannot allocate job 924 (0.20GB, 1 threads).
+191030-19:18:31,124 nipype.workflow DEBUG:
+	 Cannot allocate job 935 (0.20GB, 1 threads).
+191030-19:18:31,124 nipype.workflow DEBUG:
+	 Cannot allocate job 946 (0.20GB, 1 threads).
+191030-19:18:31,124 nipype.workflow DEBUG:
+	 Cannot allocate job 957 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 968 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 979 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 990 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1001 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1012 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1023 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1034 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1045 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1056 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1067 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1078 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1089 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1100 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1111 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1122 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1133 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1144 (0.20GB, 1 threads).
+191030-19:18:31,125 nipype.workflow DEBUG:
+	 Cannot allocate job 1155 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1166 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1177 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1188 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1199 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1210 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1221 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1232 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1243 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1254 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1265 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1276 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1287 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1298 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1309 (0.20GB, 1 threads).
+191030-19:18:31,126 nipype.workflow DEBUG:
+	 Cannot allocate job 1320 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1331 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1342 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1353 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1364 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1375 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1386 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor/_report
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1397 (0.20GB, 1 threads).
+191030-19:18:31,127 nipype.workflow DEBUG:
+	 Cannot allocate job 1408 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1419 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1430 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1441 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1452 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor/_report/report.rst"
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1463 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1474 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1485 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1496 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1507 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1518 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1529 (0.20GB, 1 threads).
+191030-19:18:31,128 nipype.workflow DEBUG:
+	 Cannot allocate job 1540 (0.20GB, 1 threads).
+191030-19:18:31,129 nipype.workflow DEBUG:
+	 Cannot allocate job 1551 (0.20GB, 1 threads).
+191030-19:18:31,132 nipype.interface DEBUG:
+	 bval_scale_yes
+191030-19:18:31,132 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/dwi_converted.mif
+191030-19:18:31,132 nipype.interface DEBUG:
+	 method_nonlinear
+191030-19:18:31,132 nipype.interface DEBUG:
+	 out_file_whole_brain_tensorfile.mif
+191030-19:18:31,133 nipype.workflow INFO:
+	 [Node] Running "dwi2tensor" ("nipype.interfaces.mrtrix3.reconst.FitTensor"), a CommandLine Interface with command:
+dwi2tensor -bvalue_scaling yes -method nonlinear /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/dwi_converted.mif whole_brain_tensorfile.mif
+191030-19:18:31,528 nipype.interface DEBUG:
+	 bval_scale_yes
+191030-19:18:31,529 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif
+191030-19:18:31,529 nipype.interface DEBUG:
+	 method_nonlinear
+191030-19:18:31,529 nipype.interface DEBUG:
+	 out_file_whole_brain_tensorfile.mif
+191030-19:18:31,551 nipype.interface DEBUG:
+	 bval_scale_yes
+191030-19:18:31,551 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/gradconv/dwi_converted.mif
+191030-19:18:31,551 nipype.interface DEBUG:
+	 method_nonlinear
+191030-19:18:31,551 nipype.interface DEBUG:
+	 out_file_whole_brain_tensorfile.mif
+191030-19:18:31,909 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/result_dwi2tensor.pklz'
+191030-19:18:31,909 nipype.workflow WARNING:
+	 Storing result file without outputs
+191030-19:18:31,911 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor/result_dwi2tensor.pklz'
+191030-19:18:31,911 nipype.workflow WARNING:
+	 Storing result file without outputs
+191030-19:18:31,914 nipype.workflow WARNING:
+	 [Node] Error on "tract_flow.dwi2tensor" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor)
+191030-19:18:31,915 nipype.workflow WARNING:
+	 [Node] Error on "tract_flow.dwi2tensor" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor)
+191030-19:18:31,919 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A695/dwi2tensor/result_dwi2tensor.pklz
+191030-19:18:31,919 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/result_dwi2tensor.pklz
+191030-19:18:32,938 nipype.workflow DEBUG:
+	 Progress: 1562 jobs, 8/3/148 (done/running/ready), 3/1551 (pending_tasks/waiting).
+191030-19:18:32,939 nipype.workflow DEBUG:
+	 Clearing 2 from queue
+191030-19:18:32,939 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/result_dwi2tensor.pklz
+191030-19:18:32,940 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/result_dwi2tensor.pklz
+191030-19:18:32,941 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/result_dwi2tensor.pklz
+191030-19:18:32,942 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/dwi2tensor/result_dwi2tensor.pklz
+191030-19:18:32,943 nipype.workflow ERROR:
+	 Node dwi2tensor.a141 failed to run on host c02n06.milgram.hpc.yale.internal.
+191030-19:18:32,943 nipype.workflow ERROR:
+	 Saving crash info to /gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/crash-20191030-191832-lms233-dwi2tensor.a141-823650e3-3a61-4c8b-9577-5105f6d724d6.pklz
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+dwi2tensor -bvalue_scaling yes -method nonlinear /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif whole_brain_tensorfile.mif
+Standard output:
+
+Standard error:
+dwi2tensor: [01;31m[ERROR] unknown option "-method"[0m
+Return code: 1
+
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/scipy/sparse/lil.py:510: FutureWarning: future versions will not create a writeable array from broadcast_array. Set the writable flag explicitly to avoid this warning.
+  if not x.flags.writeable:
+191030-19:26:16,265 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/T1s_5tt_segmented.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_0x078d5e89153666c04a22a5f66ca97319_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/command.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_node.pklz
+191030-19:26:16,265 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_report
+191030-19:26:16,265 nipype.workflow DEBUG:
+	 Removing files: 
+191030-19:26:16,265 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/result_seg5tt.pklz'
+191030-19:26:16,268 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/_report/report.rst"
+191030-19:26:16,269 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/seg5tt/result_seg5tt.pklz
+191030-19:26:16,270 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191030-19:26:16,277 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.seg5tt".
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/3_Tractography_Pipeline.py", line 200, in <module>
+    dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/workflows.py", line 599, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 160, in run
+    self._clean_queue(jobid, graph, result=result))
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 223, in _clean_queue
+    raise RuntimeError("".join(result['traceback']))
+RuntimeError: Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+dwi2tensor -bvalue_scaling yes -method nonlinear /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi_converted.mif whole_brain_tensorfile.mif
+Standard output:
+
+Standard error:
+dwi2tensor: [01;31m[ERROR] unknown option "-method"[0m
+Return code: 1
+
