@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1 --nodes=1
 #SBATCH --mem-per-cpu=10G
 #SBATCH --time=12:00:00
-#SBATCH --partition=long
+#SBATCH --partition=gpu
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=lucinda.sisk@yale.edu
 
