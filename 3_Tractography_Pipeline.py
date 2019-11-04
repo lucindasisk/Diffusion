@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -22,7 +22,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[16]:
+# In[2]:
 
 
 #Set user and path variables
@@ -58,7 +58,7 @@ subject_list = subject_info[0].tolist()
 # subject_list = ['sub-A208', 'sub-A207']
 
 
-# In[ ]:
+# In[3]:
 
 
 #Setup Datasink, Infosource, Selectfiles
@@ -88,7 +88,7 @@ sf = Node(SelectFiles(template,
 
 # ### Nodes for Diffusion workflow
 
-# In[ ]:
+# In[6]:
 
 
 #Generate binary mask
@@ -126,16 +126,26 @@ mscsd = Node(mtx.EstimateFOD(algorithm = 'msmt_csd',
                             max_sh = [8,8,8]),
             name='mscsd')
 
-#Perform Tractography - ACT using iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html) 
+#Perform Tractography - iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html) 
 tract = Node(mtx.Tractography(algorithm='iFOD2',
                               select=100000, #Jiook has done 100 million streamlines
                               n_trials=10000, 
-                              out_file='whole_brain_tracktography.tck'),
+                              out_file='msCSD_brain_tracktography.tck'),
             name='tract')
 
+#Perform probabilistic tractography (Tensor_Prob)
+tract_prob = Node(mtx.Tractography(algorithm='Tensor_Prob',
+                              select=100000, #Jiook has done 100 million streamlines
+                              n_trials=10000, 
+                              out_file='tensorProb_brain_tracktography.tck'),
+                  name='tract_prob')
+
 #Convert whole-brain tractography from MrTrix format to TrackVis
-trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'whole_brain_tractography_converted.trk'),
+trkconvert = Node(mtxc.MRTrix2TrackVis(out_filename = 'msCSD_tractography_converted.trk'),
                  name='trkconvert')
+
+trkconvert2 = Node(mtxc.MRTrix2TrackVis(out_filename = 'tensorProb_tractography_converted.trk'),
+                 name='trkconvert2')
 
 #convert eddy-corrected raw DTI to tensor format
 dwi2tensor = Node(mtx.FitTensor(out_file = 'whole_brain_tensorfile.mif',
@@ -147,7 +157,7 @@ tensor2fa = Node(mtx.TensorMetrics(out_fa='whole_brain_FA.mif'),
                 name='tensor2fa')
 
 
-# In[ ]:
+# In[7]:
 
 
 tract_flow = Workflow(name = 'tract_flow')
@@ -187,6 +197,13 @@ tract_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     (trkconvert, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par')]),
                     (tract, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par')]),      
                     (bet, datasink, [('mask_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                    (gradconv, tract_prob, [('out_file', 'in_file')]),
+                    (bet, tract_prob, [('mask_file', 'seed_image')]),
+                    (tract_prob, datasink, [('out_file','5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),   
+                    (tract_prob, trkconvert2, [('out_file', 'in_file')]),
+                    (sf, trkconvert2, [('t1','image_file')]),
+                    (sf, trkconvert2, [('t1','registration_image_file')]),
+                    (trkconvert2, datasink, [('out_file', '5_tract_Reconstruction.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),   
                     #Nodes to create tensor FA files
                     (gradconv, dwi2tensor, [('out_file', 'in_file')]),
                     (dwi2tensor, datasink, [('out_file', '6_Tensor_Data')]),
