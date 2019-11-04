@@ -6,5 +6,5 @@ subs=$(ls)
 
 for sub in $subs ; do
   cd $home
-  rm -R $sub'/trkconvert'
+  rm -R $sub'/mscsd'
 done
