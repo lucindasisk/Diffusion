@@ -55,7 +55,7 @@ else
 fi
 
 echo 'Generating connectome for '$sub
-tck2connectome -force -assignment_end_voxels \
+tck2connectome -force -zero_diagonal \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz' \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
