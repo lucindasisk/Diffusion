@@ -6,7 +6,7 @@ subs='sub-A698'
 
 for sub in $subs; do
 
-  home='/Users/lucindasisk/Desktop/Milgram/candlab'
+  home='/gpfs/milgram/project/gee_dylan/candlab'
   dwi=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/msCSD_brain_tracktography.tck'
   actfile=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/T1s_5tt_segmented.nii.gz'
   wmfod=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/wm.mif'
