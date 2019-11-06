@@ -1,19 +1,19 @@
 #! /bin/bash
 
 #home='/Users/lucindasisk/Desktop/Milgram/candlab/analyses/shapes/dwi'
-base='/Users/lucindasisk/Box/LS_Folders/CANDLab_LS/DATA'
+base='/Users/lucindasisk/Desktop/Milgram/candlab'
 
 subs='sub-A201'
 
 for sub in $subs; do
 
   home=$base'/tractography_data/5_tract_Reconstruction/'$sub
-  dwi=$home'/whole_brain_trcktography.tck'
+  dwi=$home'//analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/whole_brain_trcktography.tck'
   actfile=$home'/T1s_5tt_segmented.nii.gz'
   wmfod=$home'/wm.mif'
-  fsraseg=$home'/aparc.a2009s+aseg.nii.gz'
+  fsraseg=$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
   t1=$home'/sub-A201_ses-shapesV1_T1w_resample_brain_brain.nii.gz'
-
+ candlab/data/mri/shapes_freesurfer/sub-A698/mri
   echo 'Starting '$sub'!'
 
   #Registering Freesurfer parcellation to T1 image
