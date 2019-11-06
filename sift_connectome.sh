@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=SIFT_connectome
 #SBATCH --ntasks=1 --nodes=1
-#SBATCH --mem-per-cpu=10G
+#SBATCH --mem-per-cpu=4G
 #SBATCH --time=1:00:00
 #SBATCH --partition=long
 #SBATCH --mail-type=ALL
@@ -18,17 +18,11 @@ wmfod=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/wm.mif'
 t1=$home'/data/mri/shapes_freesurfer/'$sub'/mri/brain.mgz'
 echo 'Starting '$sub'!'
 
-#Registering Freesurfer parcellation to T1 image
-# echo 'Registering parcellation to T1'
-# if [ -e $home'/registered_aparc.a2009s+aseg.nii.gz' ] ; then
-#   echo 'Registered parcellation already exists for '$sub
-# else
-#   flirt -noresampblur -in $fsraseg -ref $t1 -out $home'/registered_aparc.a2009s+aseg.nii.gz'
-# fi
-
 # Convert .mgz brain to .nii
 mri_convert $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.mgz' \
 $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
+
+#Set freesurfer variable
 fsraseg=$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
 
 # Extract ROIs of interest
@@ -67,7 +61,7 @@ $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz' \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
 
 echo 'Generating shortened connectome for '$sub
-tck2connectome -force -assignment_end_voxels \
+tck2connectome -force -zero_diagonal \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/combined_connectome_rois.nii.gz' \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'_ROI_SIFT_msCSD_connectome.csv'
