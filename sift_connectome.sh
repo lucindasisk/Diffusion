@@ -8,6 +8,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=lucinda.sisk@yale.edu
 
+ml load FreeSurfer/6.0.0
 sub=$1
 
 home='/gpfs/milgram/project/gee_dylan/candlab'
@@ -69,4 +70,4 @@ echo 'Generating shortened connectome for '$sub
 tck2connectome -force -assignment_end_voxels \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/combined_connectome_rois.nii.gz' \
-$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
+$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'_ROI_SIFT_msCSD_connectome.csv'
