@@ -10,7 +10,7 @@ for sub in $subs; do
   dwi=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/msCSD_brain_tracktography.tck'
   actfile=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/T1s_5tt_segmented.nii.gz'
   wmfod=$home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/wm.mif'
-  fsraseg=$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
+  fsraseg=$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.mgz'
   t1=$home'/data/mri/shapes_freesurfer/'$sub'/mri/brain.mgz'
   echo 'Starting '$sub'!'
 
@@ -31,8 +31,8 @@ for sub in $subs; do
   # fslmaths $home'/registered_aparc.a2009s+aseg.nii.gz' -thr 46.5 -uthr 48.5 -bin $home/'left_cerebellum.nii.gz'
   # fslmaths $home'/registered_aparc.a2009s+aseg.nii.gz' -thr 7.5 -uthr 8.5 -bin $home/'right_cerebellum.nii.gz'
 
-  #Convert .mgz brain to .nii
-#mri_convert $t1 $home'/data/mri/shapes_freesurfer/'$sub'/mri/brain.nii.gz'
+  # Convert .mgz brain to .nii
+  mri_convert $fsraseg $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
 
   #Combine binarized ROIs into one file for connectome analysis
   # echo 'Creating combined mask of all 4 ROIs for '$sub
@@ -51,6 +51,7 @@ for sub in $subs; do
   echo 'Generating connectome for '$sub
   tck2connectome -force -assignment_end_voxels \
   $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
-  $fsraseg $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'SIFT_msCSD_connectome.csv'
+  $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz' \
+  $home'/analyses/shapes/dwi/data/5_tract_Reconstruction/'$sub'/'$sub'SIFT_msCSD_connectome.csv'
 
 done
