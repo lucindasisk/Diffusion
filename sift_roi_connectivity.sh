@@ -10,7 +10,7 @@
 
 ml load FreeSurfer/6.0.0
 sub=$1
-laptop='true'
+laptop='false'
 
 if $laptop == 'true'; then
   home='/Users/lucindasisk/Desktop/Milgram/candlab'
