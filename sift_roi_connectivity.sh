@@ -57,7 +57,7 @@ $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/left_amyg_cortex_c
 
 fslmaths $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_amyg.nii.gz' \
  -add $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_cortex.nii.gz' \
-$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/rightt_amyg_cortex_connectome_rois.nii.gz'
+$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_amyg_cortex_connectome_rois.nii.gz'
 
 #Perform SIFT for tract data
 if [ -e $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' ] ; then
