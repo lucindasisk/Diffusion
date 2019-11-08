@@ -69,13 +69,13 @@ else
 fi
 
 echo 'Generating connectome for '$sub
-tckedit -force  \
+tckedit -force -ends_only \
 -include $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/left_amyg_cortex_connectome_rois.nii.gz' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/left_SIFT_msCSD_ROI_connectivity.tck'
 
 echo 'Generating connectome for '$sub
-tckedit -force  \
+tckedit -force -ends_only \
 -include $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_amyg_cortex_connectome_rois.nii.gz' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_SIFT_msCSD_ROI_connectivity.tck'
