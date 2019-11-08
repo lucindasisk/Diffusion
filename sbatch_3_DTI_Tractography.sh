@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #SBATCH --job-name=shapes_tractography
-#SBATCH --ntasks=1 --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --gres=gpu:1
 #SBATCH --mem-per-cpu=10G
 #SBATCH --time=12:00:00
 #SBATCH --partition=gpu
