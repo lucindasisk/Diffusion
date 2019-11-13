@@ -63,11 +63,11 @@ fi
 echo 'Generating connectome for '$sub
 tck2connectome -force -zero_diagonal \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
-$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz' \
+$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_parcellation_LUT.mif' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
 
-echo 'Generating shortened connectome for '$sub
-tck2connectome -force -zero_diagonal \
-$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
-$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/combined_connectome_rois.nii.gz' \
-$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_ROI_SIFT_msCSD_connectome.csv'
+# echo 'Generating shortened connectome for '$sub
+# tck2connectome -force -zero_diagonal \
+# $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
+# $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/combined_connectome_rois.nii.gz' \
+# $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_ROI_SIFT_msCSD_connectome.csv'
