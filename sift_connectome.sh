@@ -19,15 +19,12 @@ wmfod=$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/wm.mif'
 t1=$home'/data/mri/shapes_freesurfer/'$sub'/mri/brain.mgz'
 echo 'Starting '$sub'!'
 
-# Convert .mgz brain to .nii
-mri_convert $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.mgz' \
-$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
-
-#Set freesurfer variable
-fsraseg=$home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
+# # Convert .mgz brain to .nii
+# mri_convert $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.mgz' \
+# $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz'
 
 #Rename FreeSurfer LUT nodes
-labelconvert -force $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc.a2009s+aseg.nii.gz' \
+labelconvert -force $home'/data/mri/shapes_freesurfer/'$sub'/mri/aparc+aseg.mgz' \
 $fbin'/FreeSurferColorLUT.txt' $fbin'/fs_default.txt' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_parcellation_LUT.mif'
 
