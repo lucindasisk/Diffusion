@@ -1,0 +1,14 @@
+---
+title: "Connectome_Analysis"
+author: "Lucinda Sisk"
+date: "11/13/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE} 
+library(tidyverse)
+library(here)
+
+data <- read_delim('/Users/lucindasisk/Desktop/Milgram/candlab/analyses/shapes/dwi/data/5_Tract_Reconstruction/sub-A687/sub-A687_wholeseg_SIFT_msCSD_connectome.txt', ' ', col_names=FALSE)
+
+```

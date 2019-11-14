@@ -58,10 +58,14 @@ else
 fi
 
 echo 'Generating connectome for '$sub
-tck2connectome -force -zero_diagonal \
+tck2connectome -force -zero_diagonal -out_assignments \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_parcellation_LUT.mif' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
+
+connectome2tck -exclusive -files -per_node \
+$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.txt' \
+$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/mrtrix_out/out_amygdala_connectome'
 
 # echo 'Generating shortened connectome for '$sub
 # tck2connectome -force -zero_diagonal \
