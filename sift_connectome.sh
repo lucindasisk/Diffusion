@@ -58,7 +58,7 @@ else
 fi
 
 echo 'Generating connectome for '$sub
-tck2connectome -force -zero_diagonal -out_assignments \
+tck2connectome -force -zero_diagonal -out_assignments $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/mrtrix_out/out_files' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_parcellation_LUT.mif' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
