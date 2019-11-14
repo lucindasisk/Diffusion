@@ -64,7 +64,7 @@ $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_t
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_parcellation_LUT.mif' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/'$sub'_wholeseg_SIFT_msCSD_connectome.csv'
 
-connectome2tck -exclusive -files per_node -nodes 40,41,48,47 \
+connectome2tck -exclusive  -nodes 40,41,48,47 \ #-files per_node
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/mrtrix_out/out_connectome_assignment.txt' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/mrtrix_out/out_amygdala_connectome'
