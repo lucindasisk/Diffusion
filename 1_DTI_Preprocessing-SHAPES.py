@@ -36,9 +36,10 @@ else:
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
     data_dir = join(home, 'analyses/shapes/dwi/data')
-    
+
 # Read in subject subject_list
-subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_csv = read_csv(
+    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_11.15.2019.txt', sep=' ', header=None)
 subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
@@ -114,7 +115,6 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 # In[ ]:
 
 
-
 # Drop bottom slice (S/I) to create even # of slices
 drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
                            y_min=0, y_size=140,
@@ -163,16 +163,16 @@ register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
 
 # apply topup from merged file to rest of pe0 scan
 apptop = Node(fsl.ApplyTOPUP(method='jac',
-                             in_index=[2], 
+                             in_index=[2],
                              output_type='NIFTI_GZ',
-                            out_corrected = 'preprocessed_dwi.nii.gz'),
+                             out_corrected='preprocessed_dwi.nii.gz'),
               name='apptop')
 
 # Skullstrip the T1w image
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
-#Eddy_CUDA Node
+# Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
 eddy = Node(fsl.Eddy(is_shelled=True,
@@ -189,7 +189,6 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 # In[ ]:
 
 
-
 preproc_flow = Workflow(name='preproc_flow')
 preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Select AP and PA encoded fieldmaps; merge niftis
@@ -202,19 +201,19 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, topup, [('aps', 'encoding_file')]),
                       (topup, datasink, [
                        ('out_corrected', '1_Check_Unwarped.@par'),
-                      ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
+                       ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
-                      #Register T1 to b0 brain
+                      # Register T1 to b0 brain
                       (sf, register1, [('t1', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
-                      #skullstrip T1
+                      # skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par'),
                                            ('mask_file', '2_Preprocessed.@par.@par')]),
                       (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par'),
-                                             ('out_file', '2_Preprocessed.@par.@par.@par')]),
+                                           ('out_file', '2_Preprocessed.@par.@par.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       # Local PCA to denoise DTI data
@@ -229,11 +228,12 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, bias, [('bval', 'in_bval')]),
                       # Apply topup to bias corrected DTI data
                       (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                      ('out_movpar','in_topup_movpar')]),
+                                       ('out_movpar', 'in_topup_movpar')]),
                       (bias, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
-                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
+                          ('out_corrected',
+                           '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
                           ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')])
                       ])
 preproc_flow.base_dir = workflow_dir
@@ -244,17 +244,7 @@ preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
 # In[ ]:
 
 
-
-
-
 # In[ ]:
 
 
-
-
-
 # In[ ]:
-
-
-
-
