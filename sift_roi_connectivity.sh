@@ -75,7 +75,7 @@ $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_t
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/left_SIFT_msCSD_ROI_connectivity.tck'
 
 echo 'Generating connectome for '$sub
-tckedit -force -ends_only \
+tckedit -force -ends_onlywe’re just going to replace the missing values for thai with what is considered normal. Next, we’re going to drop the rows where ca is missing. \
 -include $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_amyg_cortex_connectome_rois.nii.gz' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/SIFT_msCSD_brain_tracktography.tck' \
 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/right_SIFT_msCSD_ROI_connectivity.tck'
