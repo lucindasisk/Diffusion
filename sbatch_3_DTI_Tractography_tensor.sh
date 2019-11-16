@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=shapes_tractography_manualsubs
+#SBATCH --job-name=shapes_tractography_tensor
 #SBATCH --ntasks=1 --nodes=1
 #SBATCH --mem-per-cpu=10G
 #SBATCH --time=12:00:00
