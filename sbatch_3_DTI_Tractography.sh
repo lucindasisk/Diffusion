@@ -2,7 +2,7 @@
 
 #SBATCH --job-name=shapes_tractography
 #SBATCH --ntasks=10
-#SBATCH --gres=gpu:10
+#SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=10
 #SBATCH --mem-per-gpu=10G
 #SBATCH --time=12:00:00
