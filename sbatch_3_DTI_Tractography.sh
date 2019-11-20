@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SBATCH --job-name=shapes_tractography
-#SBATCH --ntasks=1
-#SBATCH --gres=gpu:5
-#SBATCH --cpus-per-gpu=10
+#SBATCH --ntasks=10
+#SBATCH --gres=gpu:10
+#SBATCH --cpus-per-task=10
 #SBATCH --mem-per-gpu=10G
 #SBATCH --time=12:00:00
 #SBATCH --partition=gpu
