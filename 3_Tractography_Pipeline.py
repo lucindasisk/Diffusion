@@ -110,9 +110,9 @@ gradconv = Node(mtx.MRConvert(),
                 name='gradconv')
 
 # Generate 5 tissue type (5tt) segmentation using FAST algorithm
-seg5tt = Node(mtx.Generate5tt(algorithm='fsl',
-                              out_file='T1s_5tt_segmented.nii.gz'),
-              name='seg5tt')
+# seg5tt = Node(mtx.Generate5tt(algorithm='fsl',
+#                               out_file='T1s_5tt_segmented.nii.gz'),
+#               name='seg5tt')
 
 # Estimate response functions for spherical deconvolution using the specified algorithm (Dhollander)
 # https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/preprocess.html#responsesd
@@ -173,10 +173,6 @@ tract_flow = Workflow(name='tract_flow')
 tract_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                     # Skullstrip T1
                     (sf, bet, [('t1', 'in_file')]),
-                    # Segment T1 image with FSL 5tt algorithm
-                    (sf, seg5tt, [('t1', 'in_file')]),
-                    (seg5tt, datasink, [
-                     ('out_file', '5_Tract_Reconstruction')]),
                     # Convert bval/bvec to gradient tables
                     (sf, gradconv, [('dti', 'in_file'),
                                     ('bval', 'in_bval'),
