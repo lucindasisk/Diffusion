@@ -28,7 +28,7 @@ else
 fi
 
 #Perform 5tt segmentation (FAST FSL algorithm)
-5ttgen fsl $rawt1 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/T1s_5tt_segmented.nii.gz'
+5ttgen fsl -force $rawt1 $home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/T1s_5tt_segmented.nii.gz'
 
 #Set ACTfile for easy calling
 actfile=$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/T1s_5tt_segmented.nii.gz'
