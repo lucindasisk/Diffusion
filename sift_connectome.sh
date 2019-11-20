@@ -15,7 +15,7 @@ home='/gpfs/milgram/project/gee_dylan/candlab'
 fbin='/gpfs/milgram/project/gee_dylan/lms233/fsr_bin'
 dwi=$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/msCSD_brain_tracktography.tck'
 wmfod=$home'/analyses/shapes/dwi/data/5_Tract_Reconstruction/'$sub'/wm.mif'
-rawt1=$home'/data/mri/mri/bids_recon/shapes/'$sub'/ses-shapesV1/anat/'${sub}'_ses-shapesV1_T1w.nii.gz'
+rawt1=$home'/data/mri/bids_recon/shapes/'$sub'/ses-shapesV1/anat/'${sub}'_ses-shapesV1_T1w.nii.gz'
 t1=$home'/data/mri/shapes_freesurfer/'$sub'/mri/brain.mgz'
 echo 'Starting '$sub'!'
 
