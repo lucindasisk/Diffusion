@@ -1,0 +1,61 @@
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.1-centos7_64/etc/fslconf/fsl.sh
+191120-09:52:23,689 nipype.workflow INFO:
+	 Generated workflow graph: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/graph.png (graph2use=flat, simple_form=True).
+191120-09:52:24,361 nipype.workflow INFO:
+	 Workflow eddy_flow settings: ['check', 'execution', 'logging', 'monitoring']
+191120-09:52:24,524 nipype.workflow INFO:
+	 Running in parallel.
+191120-09:52:24,530 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 27 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-09:52:24,606 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A733/sf".
+191120-09:52:24,609 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A730/sf".
+191120-09:52:24,612 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A726/sf".
+191120-09:52:24,614 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A724/sf".
+191120-09:52:24,623 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-09:52:24,631 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-09:52:24,633 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-09:52:24,640 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-09:52:24,659 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-09:52:24,662 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-09:52:24,666 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-09:52:24,668 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-09:52:26,535 nipype.workflow INFO:
+	 [Job 0] Completed (eddy_flow.sf).
+191120-09:52:26,540 nipype.workflow INFO:
+	 [Job 6] Completed (eddy_flow.sf).
+191120-09:52:26,541 nipype.workflow INFO:
+	 [Job 12] Completed (eddy_flow.sf).
+191120-09:52:26,541 nipype.workflow INFO:
+	 [Job 18] Completed (eddy_flow.sf).
+191120-09:52:26,543 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 27 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-09:52:26,600 nipype.workflow INFO:
+	 [Job 1] Cached (eddy_flow.fslroi).
+191120-09:52:26,603 nipype.workflow INFO:
+	 [Job 7] Cached (eddy_flow.fslroi).
+191120-09:52:26,605 nipype.workflow INFO:
+	 [Job 13] Cached (eddy_flow.fslroi).
+191120-09:52:26,606 nipype.workflow INFO:
+	 [Job 19] Cached (eddy_flow.fslroi).
+191120-09:52:28,574 nipype.workflow INFO:
+	 [Job 2] Cached (eddy_flow.stripb0).
+191120-09:52:28,576 nipype.workflow INFO:
+	 [Job 8] Cached (eddy_flow.stripb0).
+191120-09:52:28,578 nipype.workflow INFO:
+	 [Job 14] Cached (eddy_flow.stripb0).
+191120-09:52:28,580 nipype.workflow INFO:
+	 [Job 20] Cached (eddy_flow.stripb0).
+slurmstepd: error: *** JOB 10553173 ON gpu01 CANCELLED AT 2019-11-20T09:52:30 ***

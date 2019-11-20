@@ -1,0 +1,1 @@
+/gpfs/milgram/project/gee_dylan/progs/mrtrix3/bin/5ttgen fsl -force /gpfs/milgram/project/gee_dylan/candlab/data/mri/mri/bids_recon/shapes/sub-A698/ses-shapesV1/anat/sub-A698_ses-shapesV1_T1w.nii.gz /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/5_Tract_Reconstruction/sub-A698/T1s_5tt_segmented.nii.gz

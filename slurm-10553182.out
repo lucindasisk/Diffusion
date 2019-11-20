@@ -1,0 +1,10 @@
+
+Currently Loaded Modules:
+  1) StdEnv (S)   2) miniconda/4.6.14
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/bin/python

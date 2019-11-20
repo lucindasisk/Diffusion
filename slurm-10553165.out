@@ -1,0 +1,874 @@
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.1-centos7_64/etc/fslconf/fsl.sh
+191120-08:40:44,58 nipype.workflow INFO:
+	 Generated workflow graph: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/graph.png (graph2use=flat, simple_form=True).
+191120-08:40:48,994 nipype.workflow INFO:
+	 Workflow eddy_flow settings: ['check', 'execution', 'logging', 'monitoring']
+191120-08:40:50,2 nipype.workflow INFO:
+	 Running in parallel.
+191120-08:40:50,9 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 27 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-08:40:50,88 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A733/sf".
+191120-08:40:50,93 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A730/sf".
+191120-08:40:50,97 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A726/sf".
+191120-08:40:50,99 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A724/sf".
+191120-08:40:50,128 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:40:50,135 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:40:50,137 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:40:50,142 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:40:50,293 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:40:50,312 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:40:50,325 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:40:50,336 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:40:52,13 nipype.workflow INFO:
+	 [Job 0] Completed (eddy_flow.sf).
+191120-08:40:52,35 nipype.workflow INFO:
+	 [Job 6] Completed (eddy_flow.sf).
+191120-08:40:52,37 nipype.workflow INFO:
+	 [Job 12] Completed (eddy_flow.sf).
+191120-08:40:52,39 nipype.workflow INFO:
+	 [Job 18] Completed (eddy_flow.sf).
+191120-08:40:52,44 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 27 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-08:40:52,109 nipype.workflow INFO:
+	 [Job 1] Cached (eddy_flow.fslroi).
+191120-08:40:52,113 nipype.workflow INFO:
+	 [Job 7] Cached (eddy_flow.fslroi).
+191120-08:40:52,125 nipype.workflow INFO:
+	 [Job 13] Cached (eddy_flow.fslroi).
+191120-08:40:52,129 nipype.workflow INFO:
+	 [Job 19] Cached (eddy_flow.fslroi).
+191120-08:40:54,92 nipype.workflow INFO:
+	 [Job 2] Cached (eddy_flow.stripb0).
+191120-08:40:54,160 nipype.workflow INFO:
+	 [Job 8] Cached (eddy_flow.stripb0).
+191120-08:40:54,189 nipype.workflow INFO:
+	 [Job 14] Cached (eddy_flow.stripb0).
+191120-08:40:54,216 nipype.workflow INFO:
+	 [Job 20] Cached (eddy_flow.stripb0).
+191120-08:40:56,103 nipype.workflow INFO:
+	 [Job 3] Cached (eddy_flow.eddy).
+191120-08:40:56,143 nipype.workflow INFO:
+	 [Job 9] Cached (eddy_flow.eddy).
+191120-08:40:56,195 nipype.workflow INFO:
+	 [Job 15] Cached (eddy_flow.eddy).
+191120-08:40:56,223 nipype.workflow INFO:
+	 [Job 21] Cached (eddy_flow.eddy).
+191120-08:40:58,136 nipype.workflow INFO:
+	 [Job 4] Cached (eddy_flow.resample).
+191120-08:40:58,182 nipype.workflow INFO:
+	 [Job 10] Cached (eddy_flow.resample).
+191120-08:40:58,209 nipype.workflow INFO:
+	 [Job 16] Cached (eddy_flow.resample).
+191120-08:40:58,242 nipype.workflow INFO:
+	 [Job 22] Cached (eddy_flow.resample).
+191120-08:41:00,100 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A733/datasink".
+191120-08:41:00,138 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:00,140 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/b0_img_brain_mask.nii.gz
+191120-08:41:00,145 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.nii.gz
+191120-08:41:00,145 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:00,145 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_movement_rms
+191120-08:41:00,146 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_parameters
+191120-08:41:00,146 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:00,146 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:00,147 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:00,147 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:00,147 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected.eddy_outlier_report
+191120-08:41:00,147 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A733/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A733/eddy_corrected_resample.nii.gz
+191120-08:41:00,158 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:00,172 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A730/datasink".
+191120-08:41:00,195 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:00,197 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/b0_img_brain_mask.nii.gz
+191120-08:41:00,199 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.nii.gz
+191120-08:41:00,199 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:00,200 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_movement_rms
+191120-08:41:00,200 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_parameters
+191120-08:41:00,200 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:00,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:00,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:00,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:00,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected.eddy_outlier_report
+191120-08:41:00,202 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A730/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A730/eddy_corrected_resample.nii.gz
+191120-08:41:00,213 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:00,215 nipype.utils ERROR:
+	 No metadata was found in the pkl file. Make sure you are currently using the same Nipype version from the generated pkl.
+191120-08:41:00,267 nipype.workflow WARNING:
+	 Error while checking node hash, forcing re-run. Although this error may not prevent the workflow from running, it could indicate a major problem. Please report a new issue at https://github.com/nipy/nipype/issues adding the following information:
+
+	Node: eddy_flow.datasink
+	Interface: nipype.interfaces.io.DataSink
+	Traceback:
+Traceback (most recent call last):
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 337, in _local_hash_check
+    cached, updated = self.procs[jobid].is_cached()
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 297, in is_cached
+    hashed_inputs, hashvalue = self._get_hashval()
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 494, in _get_hashval
+    self._get_inputs()
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 521, in _get_inputs
+    outputs = _load_resultfile(results_file)[0].outputs
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 311, in load_resultfile
+    if resolve and result.outputs:
+
+AttributeError: 'NoneType' object has no attribute 'outputs'
+
+191120-08:41:00,272 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A726/datasink".
+191120-08:41:00,309 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A724/datasink".
+191120-08:41:00,319 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:00,321 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/b0_img_brain_mask.nii.gz
+191120-08:41:00,322 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.nii.gz
+191120-08:41:00,323 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:00,323 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_movement_rms
+191120-08:41:00,324 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_parameters
+191120-08:41:00,325 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:00,325 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:00,326 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:00,327 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:00,330 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:00,331 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/b0_img_brain_mask.nii.gz
+191120-08:41:00,332 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected.eddy_outlier_report
+191120-08:41:00,332 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A726/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A726/eddy_corrected_resample.nii.gz
+191120-08:41:00,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.nii.gz
+191120-08:41:00,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:00,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_movement_rms
+191120-08:41:00,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_parameters
+191120-08:41:00,335 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:00,335 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:00,335 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:00,336 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:00,336 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected.eddy_outlier_report
+191120-08:41:00,336 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A724/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A724/eddy_corrected_resample.nii.gz
+191120-08:41:00,346 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:00,347 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:02,21 nipype.workflow INFO:
+	 [Job 5] Completed (eddy_flow.datasink).
+191120-08:41:02,25 nipype.workflow INFO:
+	 [Job 11] Completed (eddy_flow.datasink).
+191120-08:41:02,27 nipype.workflow INFO:
+	 [Job 17] Completed (eddy_flow.datasink).
+191120-08:41:02,29 nipype.workflow INFO:
+	 [Job 23] Completed (eddy_flow.datasink).
+191120-08:41:02,33 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 23 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-08:41:02,80 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A723/sf".
+191120-08:41:02,99 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A721/sf".
+191120-08:41:02,104 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A718/sf".
+191120-08:41:02,122 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:02,126 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A717/sf".
+191120-08:41:02,133 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:02,149 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:02,154 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:02,184 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:02,219 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:02,233 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:02,235 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:04,23 nipype.workflow INFO:
+	 [Job 24] Completed (eddy_flow.sf).
+191120-08:41:04,26 nipype.workflow INFO:
+	 [Job 30] Completed (eddy_flow.sf).
+191120-08:41:04,28 nipype.workflow INFO:
+	 [Job 36] Completed (eddy_flow.sf).
+191120-08:41:04,30 nipype.workflow INFO:
+	 [Job 42] Completed (eddy_flow.sf).
+191120-08:41:04,34 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 23 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-08:41:04,79 nipype.workflow INFO:
+	 [Job 25] Cached (eddy_flow.fslroi).
+191120-08:41:04,82 nipype.workflow INFO:
+	 [Job 31] Cached (eddy_flow.fslroi).
+191120-08:41:04,96 nipype.workflow INFO:
+	 [Job 37] Cached (eddy_flow.fslroi).
+191120-08:41:04,133 nipype.workflow INFO:
+	 [Job 43] Cached (eddy_flow.fslroi).
+191120-08:41:06,100 nipype.workflow INFO:
+	 [Job 26] Cached (eddy_flow.stripb0).
+191120-08:41:06,137 nipype.workflow INFO:
+	 [Job 32] Cached (eddy_flow.stripb0).
+191120-08:41:06,162 nipype.workflow INFO:
+	 [Job 38] Cached (eddy_flow.stripb0).
+191120-08:41:06,194 nipype.workflow INFO:
+	 [Job 44] Cached (eddy_flow.stripb0).
+191120-08:41:08,96 nipype.workflow INFO:
+	 [Job 27] Cached (eddy_flow.eddy).
+191120-08:41:08,132 nipype.workflow INFO:
+	 [Job 33] Cached (eddy_flow.eddy).
+191120-08:41:08,162 nipype.workflow INFO:
+	 [Job 39] Cached (eddy_flow.eddy).
+191120-08:41:08,180 nipype.workflow INFO:
+	 [Job 45] Cached (eddy_flow.eddy).
+191120-08:41:10,94 nipype.workflow INFO:
+	 [Job 28] Cached (eddy_flow.resample).
+191120-08:41:10,126 nipype.workflow INFO:
+	 [Job 34] Cached (eddy_flow.resample).
+191120-08:41:10,170 nipype.workflow INFO:
+	 [Job 40] Cached (eddy_flow.resample).
+191120-08:41:10,197 nipype.workflow INFO:
+	 [Job 46] Cached (eddy_flow.resample).
+191120-08:41:12,145 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A723/datasink".
+191120-08:41:12,174 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A721/datasink".
+191120-08:41:12,185 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:12,186 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/b0_img_brain_mask.nii.gz
+191120-08:41:12,194 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:12,195 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/b0_img_brain_mask.nii.gz
+191120-08:41:12,196 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.nii.gz
+191120-08:41:12,196 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:12,197 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_movement_rms
+191120-08:41:12,197 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_parameters
+191120-08:41:12,197 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:12,197 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:12,198 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:12,198 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:12,198 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected.eddy_outlier_report
+191120-08:41:12,198 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A721/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A721/eddy_corrected_resample.nii.gz
+191120-08:41:12,200 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.nii.gz
+191120-08:41:12,200 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:12,200 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_movement_rms
+191120-08:41:12,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_parameters
+191120-08:41:12,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:12,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:12,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:12,201 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:12,202 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected.eddy_outlier_report
+191120-08:41:12,202 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A723/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A723/eddy_corrected_resample.nii.gz
+191120-08:41:12,211 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:12,211 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:12,263 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A718/datasink".
+191120-08:41:12,281 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:12,282 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/b0_img_brain_mask.nii.gz
+191120-08:41:12,283 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.nii.gz
+191120-08:41:12,283 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:12,283 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_movement_rms
+191120-08:41:12,284 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_parameters
+191120-08:41:12,284 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:12,284 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:12,284 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:12,284 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:12,285 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected.eddy_outlier_report
+191120-08:41:12,285 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A718/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A718/eddy_corrected_resample.nii.gz
+191120-08:41:12,293 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:12,315 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A717/datasink".
+191120-08:41:12,337 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:12,339 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/b0_img_brain_mask.nii.gz
+191120-08:41:12,366 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.nii.gz
+191120-08:41:12,367 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:12,368 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_movement_rms
+191120-08:41:12,368 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_parameters
+191120-08:41:12,369 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:12,370 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:12,370 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:12,371 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:12,372 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected.eddy_outlier_report
+191120-08:41:12,372 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A717/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A717/eddy_corrected_resample.nii.gz
+191120-08:41:12,383 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:14,33 nipype.workflow INFO:
+	 [Job 29] Completed (eddy_flow.datasink).
+191120-08:41:14,36 nipype.workflow INFO:
+	 [Job 35] Completed (eddy_flow.datasink).
+191120-08:41:14,38 nipype.workflow INFO:
+	 [Job 41] Completed (eddy_flow.datasink).
+191120-08:41:14,40 nipype.workflow INFO:
+	 [Job 47] Completed (eddy_flow.datasink).
+191120-08:41:14,44 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 19 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-08:41:14,90 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A715/sf".
+191120-08:41:14,92 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A712/sf".
+191120-08:41:14,95 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A711/sf".
+191120-08:41:14,98 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/sf".
+191120-08:41:14,157 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:14,159 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:14,161 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:14,164 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:14,207 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:14,216 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:14,220 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:14,272 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:16,35 nipype.workflow INFO:
+	 [Job 48] Completed (eddy_flow.sf).
+191120-08:41:16,38 nipype.workflow INFO:
+	 [Job 54] Completed (eddy_flow.sf).
+191120-08:41:16,40 nipype.workflow INFO:
+	 [Job 60] Completed (eddy_flow.sf).
+191120-08:41:16,42 nipype.workflow INFO:
+	 [Job 66] Completed (eddy_flow.sf).
+191120-08:41:16,47 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 19 jobs ready. Free memory (GB): 338.91/338.91, Free processors: 4/4.
+191120-08:41:16,92 nipype.workflow INFO:
+	 [Job 49] Cached (eddy_flow.fslroi).
+191120-08:41:16,96 nipype.workflow INFO:
+	 [Job 55] Cached (eddy_flow.fslroi).
+191120-08:41:16,123 nipype.workflow INFO:
+	 [Job 61] Cached (eddy_flow.fslroi).
+191120-08:41:16,128 nipype.workflow INFO:
+	 [Job 67] Cached (eddy_flow.fslroi).
+191120-08:41:18,106 nipype.workflow INFO:
+	 [Job 50] Cached (eddy_flow.stripb0).
+191120-08:41:18,123 nipype.workflow INFO:
+	 [Job 56] Cached (eddy_flow.stripb0).
+191120-08:41:18,163 nipype.workflow INFO:
+	 [Job 62] Cached (eddy_flow.stripb0).
+191120-08:41:18,186 nipype.workflow INFO:
+	 [Job 68] Cached (eddy_flow.stripb0).
+191120-08:41:20,114 nipype.workflow INFO:
+	 [Job 51] Cached (eddy_flow.eddy).
+191120-08:41:20,148 nipype.workflow INFO:
+	 [Job 57] Cached (eddy_flow.eddy).
+191120-08:41:20,195 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.eddy" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A711/eddy".
+191120-08:41:20,270 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.eddy" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/eddy".
+191120-08:41:20,271 nipype.workflow INFO:
+	 [Node] Running "eddy" ("nipype.interfaces.fsl.epi.Eddy"), a CommandLine Interface with command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A711/ses-shapesV1/dwi/sub-A711_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A711/ses-shapesV1/dwi/sub-A711_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A711/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A711/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A711/eddy/eddy_corrected --repol --residuals
+191120-08:41:20,355 nipype.workflow INFO:
+	 [Node] Running "eddy" ("nipype.interfaces.fsl.epi.Eddy"), a CommandLine Interface with command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A710/ses-shapesV1/dwi/sub-A710_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A710/ses-shapesV1/dwi/sub-A710_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A710/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/eddy/eddy_corrected --repol --residuals
+191120-08:41:22,39 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 17 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:41:22,173 nipype.workflow INFO:
+	 [Job 52] Cached (eddy_flow.resample).
+191120-08:41:22,204 nipype.workflow INFO:
+	 [Job 58] Cached (eddy_flow.resample).
+191120-08:41:24,212 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A715/datasink".
+191120-08:41:24,232 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:24,233 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/b0_img_brain_mask.nii.gz
+191120-08:41:24,235 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.nii.gz
+191120-08:41:24,235 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:24,235 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_movement_rms
+191120-08:41:24,235 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_parameters
+191120-08:41:24,236 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:24,236 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:24,236 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:24,236 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:24,237 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected.eddy_outlier_report
+191120-08:41:24,237 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A715/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A715/eddy_corrected_resample.nii.gz
+191120-08:41:24,248 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:24,249 nipype.utils ERROR:
+	 No metadata was found in the pkl file. Make sure you are currently using the same Nipype version from the generated pkl.
+191120-08:41:24,254 nipype.workflow WARNING:
+	 Error while checking node hash, forcing re-run. Although this error may not prevent the workflow from running, it could indicate a major problem. Please report a new issue at https://github.com/nipy/nipype/issues adding the following information:
+
+	Node: eddy_flow.datasink
+	Interface: nipype.interfaces.io.DataSink
+	Traceback:
+Traceback (most recent call last):
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 337, in _local_hash_check
+    cached, updated = self.procs[jobid].is_cached()
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 297, in is_cached
+    hashed_inputs, hashvalue = self._get_hashval()
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 494, in _get_hashval
+    self._get_inputs()
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 521, in _get_inputs
+    outputs = _load_resultfile(results_file)[0].outputs
+
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 311, in load_resultfile
+    if resolve and result.outputs:
+
+AttributeError: 'NoneType' object has no attribute 'outputs'
+
+191120-08:41:24,256 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A712/datasink".
+191120-08:41:24,330 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:24,331 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/b0_img_brain_mask.nii.gz
+191120-08:41:24,332 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.nii.gz
+191120-08:41:24,332 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:24,333 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_movement_rms
+191120-08:41:24,333 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_parameters
+191120-08:41:24,333 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:24,333 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:24,333 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:24,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:24,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected.eddy_outlier_report
+191120-08:41:24,334 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A712/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A712/eddy_corrected_resample.nii.gz
+191120-08:41:24,342 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:26,41 nipype.workflow INFO:
+	 [Job 53] Completed (eddy_flow.datasink).
+191120-08:41:26,42 nipype.workflow INFO:
+	 [Job 59] Completed (eddy_flow.datasink).
+191120-08:41:26,43 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 15 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:41:26,182 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A708/sf".
+191120-08:41:26,184 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A707/sf".
+191120-08:41:26,207 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:26,224 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:26,227 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:26,316 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:28,42 nipype.workflow INFO:
+	 [Job 72] Completed (eddy_flow.sf).
+191120-08:41:28,43 nipype.workflow INFO:
+	 [Job 78] Completed (eddy_flow.sf).
+191120-08:41:28,45 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 15 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:41:28,164 nipype.workflow INFO:
+	 [Job 73] Cached (eddy_flow.fslroi).
+191120-08:41:28,173 nipype.workflow INFO:
+	 [Job 79] Cached (eddy_flow.fslroi).
+191120-08:41:30,187 nipype.workflow INFO:
+	 [Job 74] Cached (eddy_flow.stripb0).
+191120-08:41:30,211 nipype.workflow INFO:
+	 [Job 80] Cached (eddy_flow.stripb0).
+191120-08:41:32,193 nipype.workflow INFO:
+	 [Job 75] Cached (eddy_flow.eddy).
+191120-08:41:32,219 nipype.workflow INFO:
+	 [Job 81] Cached (eddy_flow.eddy).
+191120-08:41:34,137 nipype.workflow INFO:
+	 [Job 76] Cached (eddy_flow.resample).
+191120-08:41:34,160 nipype.workflow INFO:
+	 [Job 82] Cached (eddy_flow.resample).
+191120-08:41:36,223 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A708/datasink".
+191120-08:41:36,263 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:36,264 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/b0_img_brain_mask.nii.gz
+191120-08:41:36,265 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.datasink" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A707/datasink".
+191120-08:41:36,266 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.nii.gz
+191120-08:41:36,266 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:36,266 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_movement_rms
+191120-08:41:36,266 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_parameters
+191120-08:41:36,267 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:36,267 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:36,267 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:36,267 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:36,267 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected.eddy_outlier_report
+191120-08:41:36,268 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A708/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A708/eddy_corrected_resample.nii.gz
+191120-08:41:36,276 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:36,300 nipype.workflow INFO:
+	 [Node] Running "datasink" ("nipype.interfaces.io.DataSink")
+191120-08:41:36,301 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/b0_img_brain_mask.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/b0_img_brain_mask.nii.gz
+191120-08:41:36,302 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.nii.gz
+191120-08:41:36,302 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_rotated_bvecs -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_rotated_bvecs
+191120-08:41:36,302 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_movement_rms
+191120-08:41:36,302 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_parameters
+191120-08:41:36,303 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_restricted_movement_rms -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_restricted_movement_rms
+191120-08:41:36,303 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_post_eddy_shell_alignment_parameters -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_post_eddy_shell_alignment_parameters
+191120-08:41:36,303 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_cnr_maps.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_cnr_maps.nii.gz
+191120-08:41:36,303 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_residuals.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_residuals.nii.gz
+191120-08:41:36,303 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected.eddy_outlier_report -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected.eddy_outlier_report
+191120-08:41:36,304 nipype.interface INFO:
+	 sub: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/_subject_id_sub-A707/eddy_corrected_resample.nii.gz -> /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A707/eddy_corrected_resample.nii.gz
+191120-08:41:36,312 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.datasink".
+191120-08:41:38,48 nipype.workflow INFO:
+	 [Job 77] Completed (eddy_flow.datasink).
+191120-08:41:38,49 nipype.workflow INFO:
+	 [Job 83] Completed (eddy_flow.datasink).
+191120-08:41:38,50 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 13 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:41:38,181 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A704/sf".
+191120-08:41:38,183 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/sf".
+191120-08:41:38,198 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:38,213 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:41:38,274 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:38,286 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:41:40,49 nipype.workflow INFO:
+	 [Job 84] Completed (eddy_flow.sf).
+191120-08:41:40,51 nipype.workflow INFO:
+	 [Job 90] Completed (eddy_flow.sf).
+191120-08:41:40,53 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 13 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:41:40,188 nipype.workflow INFO:
+	 [Job 85] Cached (eddy_flow.fslroi).
+191120-08:41:40,190 nipype.workflow INFO:
+	 [Job 91] Cached (eddy_flow.fslroi).
+191120-08:41:42,174 nipype.workflow INFO:
+	 [Job 86] Cached (eddy_flow.stripb0).
+191120-08:41:42,191 nipype.workflow INFO:
+	 [Job 92] Cached (eddy_flow.stripb0).
+191120-08:41:44,200 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.eddy" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A704/eddy".
+191120-08:41:44,229 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.eddy" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/eddy".
+191120-08:41:44,235 nipype.workflow INFO:
+	 [Node] Running "eddy" ("nipype.interfaces.fsl.epi.Eddy"), a CommandLine Interface with command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A704/ses-shapesV1/dwi/sub-A704_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A704/ses-shapesV1/dwi/sub-A704_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A704/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A704/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A704/eddy/eddy_corrected --repol --residuals
+191120-08:41:44,301 nipype.workflow INFO:
+	 [Node] Running "eddy" ("nipype.interfaces.fsl.epi.Eddy"), a CommandLine Interface with command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A696/ses-shapesV1/dwi/sub-A696_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A696/ses-shapesV1/dwi/sub-A696_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A696/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/eddy/eddy_corrected --repol --residuals
+191120-08:41:46,52 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 11 jobs ready. Free memory (GB): 338.11/338.91, Free processors: 0/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:42:04,245 nipype.interface WARNING:
+	 Error decoding string: 'utf-8' codec can't decode byte 0x90 in position 717: invalid start byte
+191120-08:42:04,535 nipype.workflow WARNING:
+	 Storing result file without outputs
+191120-08:42:04,537 nipype.workflow WARNING:
+	 [Node] Error on "eddy_flow.eddy" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/eddy)
+191120-08:42:06,74 nipype.workflow ERROR:
+	 Node eddy.a11 failed to run on host gpu02.milgram.hpc.yale.internal.
+191120-08:42:06,74 nipype.workflow ERROR:
+	 Saving crash info to /gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/crash-20191120-084206-lms233-eddy.a11-2d1e6bf7-fd89-40d7-91a7-040101730fbc.pklz
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/fsl/epi.py", line 766, in _run_interface
+    runtime = super(Eddy, self)._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A696/ses-shapesV1/dwi/sub-A696_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A696/ses-shapesV1/dwi/sub-A696_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A696/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A696/eddy/eddy_corrected --repol --residuals
+Standard output:
+
+...................Allocated GPU # 0...................
+parallel_for failed: out of memory
+EDDY:::  cuda/CudaVolume.cu:::  void EDDY::CudaVolume::common_assignment_from_newimage_vol(const NEWIMAGE::volume<float>&, bool):  Exception thrown
+EDDY:::  cuda/CudaVolume.h:::  EDDY::CudaVolume::CudaVolume(const NEWIMAGE::volume<float>&, bool):  Exception thrown
+EDDY:::  cuda/EddyInternalGpuUtils.cu:::  static double EDDY::EddyInternalGpuUtils::param_update(const NEWIMAGE::volume<float>&, std::shared_ptr<const NEWIMAGE::volume<float> >, const NEWIMAGE::volume<float>&, EDDY::Parameters, bool, float, const EDDY::PolationPara&, unsigned int, unsigned int, unsigned int, EDDY::ECScan&, NEWMAT::ColumnVector*):  Exception �
+EDDY:::  cuda/EddyGpuUtils.cu:::  static double EDDY::EddyGpuUtils::MovAndECParamUpdate(const NEWIMAGE::volume<float>&, std::shared_ptr<const NEWIMAGE::volume<float> >, const NEWIMAGE::volume<float>&, bool, float, const EDDY::PolationPara&, EDDY::ECScan&):  Exception thrown
+EDDY:::  eddy.cpp:::  EDDY::ReplacementManager* EDDY::Register(const EDDY::EddyCommandLineOptions&, EDDY::ScanType, unsigned int, const std::vector<float, std::allocator<float> >&, EDDY::SecondLevelECModel, bool, EDDY::ECScanManager&, EDDY::ReplacementManager*, NEWMAT::Matrix&, NEWMAT::Matrix&):  Exception thrown
+EDDY::: Eddy failed with message EDDY:::  eddy.cpp:::  EDDY::ReplacementManager* EDDY::DoVolumeToVolumeRegistration(const EDDY::EddyCommandLineOptions&, EDDY::ECScanManager&):  Exception thrown
+Standard error:
+thrust::system_error thrown in CudaVolume::common_assignment_from_newimage_vol after resize() with message: parallel_for failed: out of memory
+Return code: 1
+
+191120-08:42:06,79 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 11 jobs ready. Free memory (GB): 338.31/338.91, Free processors: 1/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:42:06,248 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A692/sf".
+191120-08:42:06,294 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:42:06,361 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:42:08,73 nipype.workflow INFO:
+	 [Job 96] Completed (eddy_flow.sf).
+191120-08:42:08,74 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 11 jobs ready. Free memory (GB): 338.31/338.91, Free processors: 1/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:42:08,247 nipype.workflow INFO:
+	 [Job 97] Cached (eddy_flow.fslroi).
+191120-08:42:08,851 nipype.workflow WARNING:
+	 Storing result file without outputs
+191120-08:42:08,877 nipype.workflow WARNING:
+	 [Node] Error on "eddy_flow.eddy" (/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/eddy)
+191120-08:42:10,76 nipype.workflow ERROR:
+	 Node eddy.a15 failed to run on host gpu02.milgram.hpc.yale.internal.
+191120-08:42:10,77 nipype.workflow ERROR:
+	 Saving crash info to /gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion/crash-20191120-084210-lms233-eddy.a15-8c143c9e-ddca-448f-96e6-7a573f527588.pklz
+Traceback (most recent call last):
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 564, in _run_interface
+    return self._run_command(execute)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 649, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 376, in run
+    runtime = self._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/fsl/epi.py", line 766, in _run_interface
+    runtime = super(Eddy, self)._run_interface(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 761, in _run_interface
+    self.raise_exception(runtime)
+  File "/gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 698, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A710/ses-shapesV1/dwi/sub-A710_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A710/ses-shapesV1/dwi/sub-A710_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A710/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A710/eddy/eddy_corrected --repol --residuals
+Standard output:
+
+...................Allocated GPU # 0...................
+Standard error:
+terminate called after throwing an instance of 'thrust::system::system_error'
+  what():  device free failed: an illegal memory access was encountered
+Return code: -6
+
+191120-08:42:10,84 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 11 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:42:10,218 nipype.workflow INFO:
+	 [Job 98] Cached (eddy_flow.stripb0).
+191120-08:42:10,230 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.sf" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A689/sf".
+191120-08:42:10,289 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+191120-08:42:10,346 nipype.workflow INFO:
+	 [Node] Finished "eddy_flow.sf".
+191120-08:42:12,76 nipype.workflow INFO:
+	 [Job 102] Completed (eddy_flow.sf).
+191120-08:42:12,77 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 11 jobs ready. Free memory (GB): 338.51/338.91, Free processors: 2/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:42:12,215 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.eddy" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A692/eddy".
+191120-08:42:12,227 nipype.workflow INFO:
+	 [Job 103] Cached (eddy_flow.fslroi).
+191120-08:42:12,302 nipype.workflow INFO:
+	 [Node] Running "eddy" ("nipype.interfaces.fsl.epi.Eddy"), a CommandLine Interface with command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A692/ses-shapesV1/dwi/sub-A692_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A692/ses-shapesV1/dwi/sub-A692_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A692/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A692/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A692/eddy/eddy_corrected --repol --residuals
+191120-08:42:14,78 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 10 jobs ready. Free memory (GB): 338.31/338.91, Free processors: 1/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+191120-08:42:14,255 nipype.workflow INFO:
+	 [Job 104] Cached (eddy_flow.stripb0).
+191120-08:42:16,288 nipype.workflow INFO:
+	 [Node] Setting-up "eddy_flow.eddy" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A689/eddy".
+191120-08:42:16,332 nipype.workflow INFO:
+	 [Node] Running "eddy" ("nipype.interfaces.fsl.epi.Eddy"), a CommandLine Interface with command:
+eddy_cuda --cnr_maps --ff=10.0 --acqp=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_acqparams.txt --bvals=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A689/ses-shapesV1/dwi/sub-A689_ses-shapesV1_dwi.bval --bvecs=/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A689/ses-shapesV1/dwi/sub-A689_ses-shapesV1_dwi.bvec --imain=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A689/preprocessed_dwi.nii.gz --index=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/shapes_index.txt --mask=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A689/stripb0/b0_img_brain_mask.nii.gz --interp=trilinear --data_is_shelled --resamp=jac --niter=5 --nvoxhp=1000 --out=/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/eddy_flow/_subject_id_sub-A689/eddy/eddy_corrected --repol --residuals
+191120-08:42:18,81 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 9 jobs ready. Free memory (GB): 338.11/338.91, Free processors: 0/4.
+                     Currently running:
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+                       * eddy_flow.eddy
+slurmstepd: error: *** JOB 10553165 ON gpu02 CANCELLED AT 2019-11-20T09:47:41 ***
