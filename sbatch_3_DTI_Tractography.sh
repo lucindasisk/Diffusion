@@ -3,7 +3,7 @@
 #SBATCH --job-name=shapes_tractography
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=10
 #SBATCH --mem-per-cpu=10G
 #SBATCH --time=80:00:00
 #SBATCH --partition=verylong

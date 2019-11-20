@@ -223,7 +223,7 @@ tract_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                     ])
 tract_flow.base_dir = workflow_dir
 tract_flow.write_graph(graph2use='flat')
-dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
+dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 10})
 
 
 # In[ ]:
