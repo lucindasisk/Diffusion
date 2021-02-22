@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/var/spool/slurmd/job17097373/slurm_script", line 7, in <module>
-    from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
-ImportError: No module named nipype.interfaces.io
