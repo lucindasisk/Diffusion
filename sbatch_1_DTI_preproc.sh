@@ -20,4 +20,5 @@
 source activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi
 
 home='/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion'
+
 python $home/1_DTI_Preprocessing-SHAPES.py
