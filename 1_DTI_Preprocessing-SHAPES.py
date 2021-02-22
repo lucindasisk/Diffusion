@@ -20,8 +20,6 @@ from datetime import date
 today = str(date.today())
 config.enable_debug_mode()
 
-get_ipython().run_line_magic('autosave', '5')
-
 
 # In[7]:
 
