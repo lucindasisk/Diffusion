@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/var/spool/slurmd/job17097374/slurm_script", line 23, in <module>
+    get_ipython().run_line_magic('autosave', '5')
+NameError: name 'get_ipython' is not defined
