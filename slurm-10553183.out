@@ -4445,3 +4445,575 @@ tckgen -algorithm Tensor_Prob -samples 4 -trials 10000 -output_seeds out_seeds.n
 	 No resources available
 191120-10:14:05,551 nipype.workflow DEBUG:
 	 No resources available
+191120-10:14:07,553 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:09,559 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:11,553 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:13,555 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:15,557 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:18,606 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:19,579 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:21,561 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:23,563 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:25,566 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:27,567 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:29,577 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:31,575 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:33,573 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:35,583 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:37,587 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:38,164 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/tensorProb_brain_tracktography.tck;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi.mif;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/bet/sub-A698_ses-shapesV1_T1w_flirt_brain_brain_mask.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/_0x2aa3bcb41fbe7cb45d56f0c72907bac5_unfinished.json;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/command.txt;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/_inputs.pklz;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/_node.pklz
+191120-10:14:38,180 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/_report
+191120-10:14:38,180 nipype.workflow DEBUG:
+	 Removing files: 
+191120-10:14:38,180 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/result_tract_prob.pklz'
+191120-10:14:38,280 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/_report/report.rst"
+191120-10:14:38,280 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/result_tract_prob.pklz
+191120-10:14:38,285 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191120-10:14:38,766 nipype.workflow INFO:
+	 [Node] Finished "tract_flow.tract_prob".
+191120-10:14:39,573 nipype.workflow INFO:
+	 [Job 7] Completed (tract_flow.tract_prob).
+191120-10:14:39,577 nipype.workflow DEBUG:
+	 Tasks currently running: 3. Pending: 3.
+191120-10:14:39,603 nipype.workflow INFO:
+	 [MultiProc] Running 3 tasks, and 142 jobs ready. Free memory (GB): 225.51/226.11, Free processors: 1/4.
+                     Currently running:
+                       * tract_flow.tract_prob
+                       * tract_flow.dwiresp
+                       * tract_flow.dwiresp
+191120-10:14:40,40 nipype.workflow DEBUG:
+	 Allocating tract_flow.trkconvert2 ID=8 (0.20GB, 1 threads). Free: 225.31GB, 0 threads.
+191120-10:14:40,40 nipype.workflow DEBUG:
+	 Setting node inputs
+191120-10:14:40,40 nipype.workflow DEBUG:
+	 input: image_file
+191120-10:14:40,40 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191120-10:14:40,41 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191120-10:14:40,73 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191120-10:14:40,73 nipype.workflow DEBUG:
+	 output: t1
+191120-10:14:40,73 nipype.workflow DEBUG:
+	 [Node] trkconvert2 - setting input image_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191120-10:14:40,73 nipype.workflow DEBUG:
+	 input: registration_image_file
+191120-10:14:40,73 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191120-10:14:40,73 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/sf/result_sf.pklz
+191120-10:14:40,74 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191120-10:14:40,74 nipype.workflow DEBUG:
+	 output: t1
+191120-10:14:40,74 nipype.workflow DEBUG:
+	 [Node] trkconvert2 - setting input registration_image_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191120-10:14:40,74 nipype.workflow DEBUG:
+	 input: in_file
+191120-10:14:40,74 nipype.workflow DEBUG:
+	 results file: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/result_tract_prob.pklz
+191120-10:14:40,74 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/result_tract_prob.pklz
+191120-10:14:40,100 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+191120-10:14:40,100 nipype.workflow DEBUG:
+	 output: out_file
+191120-10:14:40,100 nipype.workflow DEBUG:
+	 [Node] trkconvert2 - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/tract_prob/tensorProb_brain_tracktography.tck
+191120-10:14:40,101 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2".
+191120-10:14:40,101 nipype.workflow DEBUG:
+	 Checking hash "tract_flow.trkconvert2" locally: cached=False, updated=False.
+191120-10:14:40,102 nipype.workflow INFO:
+	 [Node] Setting-up "tract_flow.trkconvert2" in "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2".
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 [Node] Directory not found "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2".
+191120-10:14:40,103 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2
+191120-10:14:40,103 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task tract_flow.trkconvert2 (taskid=13).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 25 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 30 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 37 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 42 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 48 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 60 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 72 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 84 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 96 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 108 (0.20GB, 1 threads).
+191120-10:14:40,103 nipype.workflow DEBUG:
+	 Cannot allocate job 120 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 132 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 144 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 156 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 168 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 180 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 192 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 204 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 216 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 228 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 240 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 252 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 264 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 276 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 288 (0.20GB, 1 threads).
+191120-10:14:40,104 nipype.workflow DEBUG:
+	 Cannot allocate job 300 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.utils DEBUG:
+	 Creating directory /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2/_report
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 312 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 324 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 336 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 348 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 360 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 372 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 384 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 396 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 408 (0.20GB, 1 threads).
+191120-10:14:40,105 nipype.workflow DEBUG:
+	 Cannot allocate job 420 (0.20GB, 1 threads).
+191120-10:14:40,106 nipype.workflow DEBUG:
+	 Cannot allocate job 432 (0.20GB, 1 threads).
+191120-10:14:40,106 nipype.workflow DEBUG:
+	 Cannot allocate job 444 (0.20GB, 1 threads).
+191120-10:14:40,106 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/trkconvert2/_report/report.rst"
+191120-10:14:40,109 nipype.workflow INFO:
+	 [Node] Running "trkconvert2" ("nipype.interfaces.mrtrix.convert.MRTrix2TrackVis")
+191120-10:14:40,138 nipype.interface INFO:
+	 Reading header data...
+191120-10:14:40,145 nipype.interface INFO:
+	 ...adding "0.100000001" to header for key "init_threshold"
+191120-10:14:40,145 nipype.interface INFO:
+	 ...adding "9" to header for key "max_angle"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "170" to header for key "max_dist"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "100000000" to header for key "max_num_seeds"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "100000" to header for key "max_num_tracks"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "1000" to header for key "max_seed_attempts"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "10000" to header for key "max_trials"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "TensorProb" to header for key "method"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "8.5" to header for key "min_dist"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "3.0_RC3-204-g266a5b4f" to header for key "mrtrix_version"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "0" to header for key "rk4"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "out_seeds.nii.gz" to header for key "seed_output"
+191120-10:14:40,153 nipype.interface INFO:
+	 ...adding "/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi.mif" to header for key "source"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "0.170000002" to header for key "step_size"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "0" to header for key "stop_on_all_include"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "0.100000001" to header for key "threshold"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "1574262746.0574061871" to header for key "timestamp"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "0" to header for key "unidirectional"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "seed sub-A698_ses-shapesV1_T1w_flirt_brain_brain_mask.nii.gz" to header for key "roi"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "Float32LE" to header for key "datatype"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding ". 672" to header for key "file"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "100000" to header for key "count"
+191120-10:14:40,154 nipype.interface INFO:
+	 ...adding "140909" to header for key "total_count"
+191120-10:14:40,154 nipype.interface INFO:
+	 Reached the end of the header!
+191120-10:14:40,154 nipype.interface INFO:
+	 Identifying the number of points per tract...
+191120-10:14:40,106 nipype.workflow DEBUG:
+	 Cannot allocate job 456 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 468 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 480 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 492 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 504 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 516 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 528 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 540 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 552 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 564 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 576 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 588 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 600 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 612 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 624 (0.20GB, 1 threads).
+191120-10:14:40,178 nipype.workflow DEBUG:
+	 Cannot allocate job 636 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 648 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 660 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 672 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 684 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 696 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 708 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 720 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 732 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 744 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 756 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 768 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 780 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 792 (0.20GB, 1 threads).
+191120-10:14:40,179 nipype.workflow DEBUG:
+	 Cannot allocate job 804 (0.20GB, 1 threads).
+191120-10:14:40,206 nipype.workflow DEBUG:
+	 Cannot allocate job 816 (0.20GB, 1 threads).
+191120-10:14:40,232 nipype.workflow DEBUG:
+	 Cannot allocate job 828 (0.20GB, 1 threads).
+191120-10:14:40,273 nipype.workflow DEBUG:
+	 Cannot allocate job 840 (0.20GB, 1 threads).
+191120-10:14:40,274 nipype.workflow DEBUG:
+	 Cannot allocate job 852 (0.20GB, 1 threads).
+191120-10:14:40,274 nipype.workflow DEBUG:
+	 Cannot allocate job 864 (0.20GB, 1 threads).
+191120-10:14:40,274 nipype.workflow DEBUG:
+	 Cannot allocate job 876 (0.20GB, 1 threads).
+191120-10:14:40,297 nipype.workflow DEBUG:
+	 Cannot allocate job 888 (0.20GB, 1 threads).
+191120-10:14:40,322 nipype.workflow DEBUG:
+	 Cannot allocate job 900 (0.20GB, 1 threads).
+191120-10:14:40,345 nipype.workflow DEBUG:
+	 Cannot allocate job 912 (0.20GB, 1 threads).
+191120-10:14:40,374 nipype.workflow DEBUG:
+	 Cannot allocate job 924 (0.20GB, 1 threads).
+191120-10:14:40,397 nipype.workflow DEBUG:
+	 Cannot allocate job 936 (0.20GB, 1 threads).
+191120-10:14:40,424 nipype.workflow DEBUG:
+	 Cannot allocate job 948 (0.20GB, 1 threads).
+191120-10:14:40,426 nipype.workflow DEBUG:
+	 Cannot allocate job 960 (0.20GB, 1 threads).
+191120-10:14:40,426 nipype.workflow DEBUG:
+	 Cannot allocate job 972 (0.20GB, 1 threads).
+191120-10:14:40,449 nipype.workflow DEBUG:
+	 Cannot allocate job 984 (0.20GB, 1 threads).
+191120-10:14:40,477 nipype.workflow DEBUG:
+	 Cannot allocate job 996 (0.20GB, 1 threads).
+191120-10:14:40,479 nipype.workflow DEBUG:
+	 Cannot allocate job 1008 (0.20GB, 1 threads).
+191120-10:14:40,479 nipype.workflow DEBUG:
+	 Cannot allocate job 1020 (0.20GB, 1 threads).
+191120-10:14:40,479 nipype.workflow DEBUG:
+	 Cannot allocate job 1032 (0.20GB, 1 threads).
+191120-10:14:40,501 nipype.workflow DEBUG:
+	 Cannot allocate job 1044 (0.20GB, 1 threads).
+191120-10:14:40,529 nipype.workflow DEBUG:
+	 Cannot allocate job 1056 (0.20GB, 1 threads).
+191120-10:14:40,552 nipype.workflow DEBUG:
+	 Cannot allocate job 1068 (0.20GB, 1 threads).
+191120-10:14:40,553 nipype.workflow DEBUG:
+	 Cannot allocate job 1080 (0.20GB, 1 threads).
+191120-10:14:40,554 nipype.workflow DEBUG:
+	 Cannot allocate job 1092 (0.20GB, 1 threads).
+191120-10:14:40,578 nipype.workflow DEBUG:
+	 Cannot allocate job 1104 (0.20GB, 1 threads).
+191120-10:14:40,625 nipype.workflow DEBUG:
+	 Cannot allocate job 1116 (0.20GB, 1 threads).
+191120-10:14:40,661 nipype.workflow DEBUG:
+	 Cannot allocate job 1128 (0.20GB, 1 threads).
+191120-10:14:40,662 nipype.workflow DEBUG:
+	 Cannot allocate job 1140 (0.20GB, 1 threads).
+191120-10:14:40,689 nipype.workflow DEBUG:
+	 Cannot allocate job 1152 (0.20GB, 1 threads).
+191120-10:14:40,712 nipype.workflow DEBUG:
+	 Cannot allocate job 1164 (0.20GB, 1 threads).
+191120-10:14:40,713 nipype.workflow DEBUG:
+	 Cannot allocate job 1176 (0.20GB, 1 threads).
+191120-10:14:40,713 nipype.workflow DEBUG:
+	 Cannot allocate job 1188 (0.20GB, 1 threads).
+191120-10:14:40,736 nipype.workflow DEBUG:
+	 Cannot allocate job 1200 (0.20GB, 1 threads).
+191120-10:14:40,758 nipype.workflow DEBUG:
+	 Cannot allocate job 1212 (0.20GB, 1 threads).
+191120-10:14:40,780 nipype.workflow DEBUG:
+	 Cannot allocate job 1224 (0.20GB, 1 threads).
+191120-10:14:40,782 nipype.workflow DEBUG:
+	 Cannot allocate job 1236 (0.20GB, 1 threads).
+191120-10:14:40,782 nipype.workflow DEBUG:
+	 Cannot allocate job 1248 (0.20GB, 1 threads).
+191120-10:14:40,804 nipype.workflow DEBUG:
+	 Cannot allocate job 1260 (0.20GB, 1 threads).
+191120-10:14:40,841 nipype.workflow DEBUG:
+	 Cannot allocate job 1272 (0.20GB, 1 threads).
+191120-10:14:40,843 nipype.workflow DEBUG:
+	 Cannot allocate job 1284 (0.20GB, 1 threads).
+191120-10:14:40,865 nipype.workflow DEBUG:
+	 Cannot allocate job 1296 (0.20GB, 1 threads).
+191120-10:14:40,888 nipype.workflow DEBUG:
+	 Cannot allocate job 1308 (0.20GB, 1 threads).
+191120-10:14:40,910 nipype.workflow DEBUG:
+	 Cannot allocate job 1320 (0.20GB, 1 threads).
+191120-10:14:40,932 nipype.workflow DEBUG:
+	 Cannot allocate job 1332 (0.20GB, 1 threads).
+191120-10:14:40,934 nipype.workflow DEBUG:
+	 Cannot allocate job 1344 (0.20GB, 1 threads).
+191120-10:14:40,934 nipype.workflow DEBUG:
+	 Cannot allocate job 1356 (0.20GB, 1 threads).
+191120-10:14:40,956 nipype.workflow DEBUG:
+	 Cannot allocate job 1368 (0.20GB, 1 threads).
+191120-10:14:40,978 nipype.workflow DEBUG:
+	 Cannot allocate job 1380 (0.20GB, 1 threads).
+191120-10:14:40,981 nipype.workflow DEBUG:
+	 Cannot allocate job 1392 (0.20GB, 1 threads).
+191120-10:14:41,3 nipype.workflow DEBUG:
+	 Cannot allocate job 1404 (0.20GB, 1 threads).
+191120-10:14:41,25 nipype.workflow DEBUG:
+	 Cannot allocate job 1416 (0.20GB, 1 threads).
+191120-10:14:41,50 nipype.workflow DEBUG:
+	 Cannot allocate job 1428 (0.20GB, 1 threads).
+191120-10:14:41,72 nipype.workflow DEBUG:
+	 Cannot allocate job 1440 (0.20GB, 1 threads).
+191120-10:14:41,95 nipype.workflow DEBUG:
+	 Cannot allocate job 1452 (0.20GB, 1 threads).
+191120-10:14:41,117 nipype.workflow DEBUG:
+	 Cannot allocate job 1464 (0.20GB, 1 threads).
+191120-10:14:41,139 nipype.workflow DEBUG:
+	 Cannot allocate job 1476 (0.20GB, 1 threads).
+191120-10:14:41,162 nipype.workflow DEBUG:
+	 Cannot allocate job 1488 (0.20GB, 1 threads).
+191120-10:14:41,186 nipype.workflow DEBUG:
+	 Cannot allocate job 1500 (0.20GB, 1 threads).
+191120-10:14:41,208 nipype.workflow DEBUG:
+	 Cannot allocate job 1512 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1524 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1536 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1548 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1560 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1572 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1584 (0.20GB, 1 threads).
+191120-10:14:41,231 nipype.workflow DEBUG:
+	 Cannot allocate job 1596 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1608 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1620 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1632 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1644 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1656 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1668 (0.20GB, 1 threads).
+191120-10:14:41,232 nipype.workflow DEBUG:
+	 Cannot allocate job 1680 (0.20GB, 1 threads).
+191120-10:14:41,574 nipype.workflow DEBUG:
+	 Progress: 1692 jobs, 13/4/141 (done/running/ready), 4/1675 (pending_tasks/waiting).
+191120-10:14:41,574 nipype.workflow DEBUG:
+	 Tasks currently running: 4. Pending: 4.
+191120-10:14:41,584 nipype.workflow INFO:
+	 [MultiProc] Running 4 tasks, and 141 jobs ready. Free memory (GB): 225.31/226.11, Free processors: 0/4.
+                     Currently running:
+                       * tract_flow.trkconvert2
+                       * tract_flow.tract_prob
+                       * tract_flow.dwiresp
+                       * tract_flow.dwiresp
+191120-10:14:41,584 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:43,285 nipype.interface INFO:
+	 MRTrix Header:
+191120-10:14:43,292 nipype.interface INFO:
+	 {'init_threshold': '0.100000001', 'max_angle': '9', 'max_dist': '170', 'max_num_seeds': '100000000', 'max_num_tracks': '100000', 'max_seed_attempts': '1000', 'max_trials': '10000', 'method': 'TensorProb', 'min_dist': '8.5', 'mrtrix_version': '3.0_RC3-204-g266a5b4f', 'rk4': '0', 'seed_output': 'out_seeds.nii.gz', 'source': '/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/_subject_id_sub-A698/gradconv/dwi.mif', 'step_size': '0.170000002', 'stop_on_all_include': '0', 'threshold': '0.100000001', 'timestamp': '1574262746.0574061871', 'unidirectional': '0', 'roi': 'seed sub-A698_ses-shapesV1_T1w_flirt_brain_brain_mask.nii.gz', 'datatype': 'Float32LE', 'file': '. 672', 'count': 100000, 'total_count': '140909', 'offset': 672}
+191120-10:14:43,292 nipype.interface INFO:
+	 Applying transformation from scanner coordinates to /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/2_Preprocessed/sub-A698/sub-A698_ses-shapesV1_T1w_flirt_brain.nii.gz
+191120-10:14:43,377 nipype.interface INFO:
+	 Reading tracks...
+191120-10:14:43,609 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:43,722 nipype.interface INFO:
+	 1% : 1000 tracks read
+191120-10:14:44,51 nipype.interface INFO:
+	 2% : 2000 tracks read
+191120-10:14:44,364 nipype.interface INFO:
+	 3% : 3000 tracks read
+191120-10:14:44,750 nipype.interface INFO:
+	 4% : 4000 tracks read
+191120-10:14:45,32 nipype.interface INFO:
+	 5% : 5000 tracks read
+191120-10:14:45,327 nipype.interface INFO:
+	 6% : 6000 tracks read
+191120-10:14:45,584 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:45,848 nipype.interface INFO:
+	 7% : 7000 tracks read
+191120-10:14:46,361 nipype.interface INFO:
+	 8% : 8000 tracks read
+191120-10:14:46,812 nipype.interface INFO:
+	 9% : 9000 tracks read
+191120-10:14:47,400 nipype.interface INFO:
+	 10% : 10000 tracks read
+191120-10:14:47,585 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:48,24 nipype.interface INFO:
+	 11% : 11000 tracks read
+191120-10:14:48,677 nipype.interface INFO:
+	 12% : 12000 tracks read
+191120-10:14:49,194 nipype.interface INFO:
+	 13% : 13000 tracks read
+191120-10:14:49,591 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:49,624 nipype.interface INFO:
+	 14% : 14000 tracks read
+191120-10:14:50,26 nipype.interface INFO:
+	 15% : 15000 tracks read
+191120-10:14:50,647 nipype.interface INFO:
+	 16% : 16000 tracks read
+191120-10:14:51,170 nipype.interface INFO:
+	 17% : 17000 tracks read
+191120-10:14:51,589 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:51,713 nipype.interface INFO:
+	 18% : 18000 tracks read
+191120-10:14:52,344 nipype.interface INFO:
+	 19% : 19000 tracks read
+191120-10:14:53,13 nipype.interface INFO:
+	 20% : 20000 tracks read
+191120-10:14:53,603 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:53,682 nipype.interface INFO:
+	 21% : 21000 tracks read
+191120-10:14:54,287 nipype.interface INFO:
+	 22% : 22000 tracks read
+191120-10:14:54,835 nipype.interface INFO:
+	 23% : 23000 tracks read
+191120-10:14:55,560 nipype.interface INFO:
+	 24% : 24000 tracks read
+191120-10:14:55,597 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:56,243 nipype.interface INFO:
+	 25% : 25000 tracks read
+191120-10:14:56,821 nipype.interface INFO:
+	 26% : 26000 tracks read
+191120-10:14:57,496 nipype.interface INFO:
+	 27% : 27000 tracks read
+191120-10:14:57,603 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:58,296 nipype.interface INFO:
+	 28% : 28000 tracks read
+191120-10:14:58,978 nipype.interface INFO:
+	 28% : 29000 tracks read
+191120-10:14:59,605 nipype.workflow DEBUG:
+	 No resources available
+191120-10:14:59,607 nipype.interface INFO:
+	 30% : 30000 tracks read
+191120-10:15:00,162 nipype.interface INFO:
+	 31% : 31000 tracks read
+191120-10:15:00,802 nipype.interface INFO:
+	 32% : 32000 tracks read
+191120-10:15:01,360 nipype.interface INFO:
+	 33% : 33000 tracks read
+191120-10:15:01,599 nipype.workflow DEBUG:
+	 No resources available
+191120-10:15:01,839 nipype.interface INFO:
+	 34% : 34000 tracks read
+191120-10:15:02,402 nipype.interface INFO:
+	 35% : 35000 tracks read
+191120-10:15:03,101 nipype.interface INFO:
+	 36% : 36000 tracks read
+191120-10:15:03,605 nipype.workflow DEBUG:
+	 No resources available
+191120-10:15:03,682 nipype.interface INFO:
+	 37% : 37000 tracks read
+191120-10:15:04,237 nipype.interface INFO:
+	 38% : 38000 tracks read
+slurmstepd: error: *** JOB 10553183 ON c04n03 CANCELLED AT 2019-11-20T10:15:04 ***
