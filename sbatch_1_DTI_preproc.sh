@@ -15,7 +15,7 @@
  ml load FreeSurfer/6.0.0
  ml load FSL/6.0.0
  ml load MRtrix3/3.0_RC3-foss-2018a
- ml load Python/miniconda
+ ml load Python/3.6.4-foss-2018a
 
 source activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi
 
