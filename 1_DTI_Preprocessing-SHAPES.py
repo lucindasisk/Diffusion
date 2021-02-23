@@ -231,7 +231,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Apply topup to bias corrected DTI data
                       (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
                                       ('out_movpar','in_topup_movpar')]),
-                      (drop2, apptop, [('out_file', 'in_files')]),
+                      (drop2, apptop, [('roi_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
                           ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
@@ -276,7 +276,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (sf, bias, [('bval', 'in_bval')]),
                       
                       # Resample to isotropic size
-                      (bias, resample, [('out_corrected', 'in_file')]),
+                      (bias, resample, [('out_file', 'in_file')]),
                       (resample, datasink, [('resampled_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                       
                      ])
