@@ -18,7 +18,7 @@
  ml load Python/3.6.4-foss-2018a
  ml load ANTs/2.3.1-foss-2018a
 
-source activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes_dwi
+source activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes-dwi3.7
 
 home='/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion'
 
