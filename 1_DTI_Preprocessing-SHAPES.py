@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[7]:
+# In[2]:
 
 
 # Set variables
@@ -265,7 +265,6 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       
                       #Local PCA to denoise DTI data
                       (eddy, denoise, [('out_corrected', 'in_file')]),
-                      (denoise, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par')]),
                       
                       # Gibbs ringing removal
                       (denoise, gibbs, [('out_file', 'in_file')]),
