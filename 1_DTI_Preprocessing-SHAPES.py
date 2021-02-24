@@ -263,18 +263,18 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                         ('out_outlier_report',
                                          '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]), 
                       
-                      #Local PCA to denoise DTI data
-                      (eddy, denoise, [('out_corrected', 'in_file')]),
-                      
-                      # Gibbs ringing removal
-                      (denoise, gibbs, [('out_file', 'in_file')]),
-                      (sf, gibbs, [('bvec', 'in_bvec')]),
-                      (sf, gibbs, [('bval', 'in_bval')]),
-                      
-                      # Perform DWI bias field correction
-                      (gibbs, bias, [('out_file', 'in_file')]),
+                      #Local b0 bias correction
+                      (eddy, bias, [('out_corrected', 'in_file')]),
                       (sf, bias, [('bvec', 'in_bvec')]),
                       (sf, bias, [('bval', 'in_bval')]),
+                      # Gibbs ringing removal
+#                       (denoise, gibbs, [('out_file', 'in_file')]),
+#                       (sf, gibbs, [('bvec', 'in_bvec')]),
+#                       (sf, gibbs, [('bval', 'in_bval')]),
+                      
+#                       # Perform DWI bias field correction
+#                       (gibbs, bias, [('out_file', 'in_file')]),
+                      
                       
                       # Resample to isotropic size
                       (bias, resample, [('out_file', 'in_file')]),
