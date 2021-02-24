@@ -268,6 +268,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       
                       # Gibbs ringing removal
                       (denoise, gibbs, [('out_file', 'in_file')]),
+                      (sf, gibbs, [('bvec', 'in_bvec')]),
+                      (sf, gibbs, [('bval', 'in_bval')]),
                       
                       # Perform DWI bias field correction
                       (gibbs, bias, [('out_file', 'in_file')]),
