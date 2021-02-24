@@ -125,12 +125,12 @@ drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
 drop2 = drop.clone(name='drop2')
 
 # Denoise DWI data susing local PCA correction - mrTrix3
-denoise = Node(mtx.DWIDenoise(out_file='denoised.nii.gz'),
+denoise = Node(mtx.DWIDenoise(),
                name='denoise')
 
 # Steps added 7/17 per Jiook's reccomendations
 # Gibbs ringing removal
-gibbs = Node(mtx.MRDeGibbs(out_file='denoised_gibbs.nii.gz'),
+gibbs = Node(mtx.MRDeGibbs(),
              name='gibbs')
 
 # DWI bias file correction using ANTS N4
