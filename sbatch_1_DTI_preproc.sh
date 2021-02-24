@@ -19,7 +19,7 @@
  ml load ANTs/2.3.1-foss-2018a
  ml load CUDA/10.2.89
 
-source activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes-dwi3.7
+conda activate /gpfs/milgram/project/gee_dylan/lms233/conda_envs/shapes-dwi3.7
 
 home='/gpfs/milgram/project/gee_dylan/candlab/scripts/shapes/mri/dwi/Diffusion'
 
