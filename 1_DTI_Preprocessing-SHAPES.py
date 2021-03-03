@@ -192,6 +192,10 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                name = "resample")
 
+#Resample dti to isotropic 1.7x1.7x1.7
+resample2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+               name = "resample2")
+
 
 # In[14]:
 
@@ -246,12 +250,17 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                           ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
                       
                       #Resample DTI to uniform dimensions
-                      (apptop, eddy, [('out_corrected', 'in_file')]),
+                      (apptop, resample, [('out_corrected', 'in_file')]),
+                      #Resample mask file
+                      (strip_b0, resample, [('mask_file', 'in_file')]),
+                      
+                      #Pass in resampled outputs to Eddy
+                      (resample, eddy, [('resampled_file', 'in_file')]),
                       (sf, eddy,[('bval', 'in_bval'),
                                  ('bvec', 'in_bvec'),
                                  ('index', 'in_index'),
                                  ('aps', 'in_acqp')]),
-                      (stripb0, eddy, [('mask_file', 'in_mask')]),
+                      (resample2, eddy, [('resampled_file', 'in_mask')]),
                       
                       #Save Eddy outputs
                       (eddy, datasink, [('out_corrected', '3_Eddy_Corrected'),
@@ -269,24 +278,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                         ('out_residuals',
                                          '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_outlier_report',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]), 
-                      
-                      #Local b0 bias correction
-                      (eddy, resample, [('out_corrected', 'in_file')]),
-#                       (sf, bias, [('bvec', 'in_bvec')]),
-#                       (sf, bias, [('bval', 'in_bval')]),
-                      # Gibbs ringing removal
-#                       (denoise, gibbs, [('out_file', 'in_file')]),
-#                       (sf, gibbs, [('bvec', 'in_bvec')]),
-#                       (sf, gibbs, [('bval', 'in_bval')]),
-                      
-#                       # Perform DWI bias field correction
-#                       (gibbs, bias, [('out_file', 'in_file')]),
-                      
-                      
-                      # Resample to isotropic size
-#                       (bias, resample, [('out_file', 'in_file')]),
-                      (resample, datasink, [('resampled_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')])
                       
                      ])
 
