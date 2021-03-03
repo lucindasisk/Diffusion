@@ -235,9 +235,6 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Skullstrip b0
                       (fslroi, stripb0, [('roi_file', 'in_file')]),
                       
-                      #Save b0 mask
-                      (stripb0, datasink, [('mask_file', '3_Eddy_Corrected.@par')]),
-                   
                       #Run Eddy correction
                       # Apply topup to bias corrected DTI data
                       (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
