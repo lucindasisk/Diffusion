@@ -39,7 +39,7 @@ else:
     
 # Read in subject subject_list
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()
+subject_list = subject_csv[0].values.tolist()[0:50]
 
 # Manual subject list
 # subject_list = ['sub-A200', 'sub-A201']
@@ -171,10 +171,6 @@ apptop = Node(fsl.ApplyTOPUP(method='jac',
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
-# Skullstrip the b0 image
-stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
-               name='stripb0')
-
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
@@ -232,13 +228,6 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       
-                      #Skullstrip b0
-                      (fslroi, stripb0, [('roi_file', 'in_file')]),
-                      
-                      #Save b0 mask
-                      (stripb0, datasink, [('mask_file', '3_Eddy_Corrected.@par')]),
-                   
-                      #Run Eddy correction
                       # Apply topup to bias corrected DTI data
                       (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
                                       ('out_movpar','in_topup_movpar')]),
@@ -254,7 +243,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                  ('bvec', 'in_bvec'),
                                  ('index', 'in_index'),
                                  ('aps', 'in_acqp')]),
-                      (stripb0, eddy, [('mask_file', 'in_mask')]),
+                      (stripT1, eddy, [('mask_file', 'in_mask')]),
                       
                       #Save Eddy outputs
                       (eddy, datasink, [('out_corrected', '3_Eddy_Corrected'),

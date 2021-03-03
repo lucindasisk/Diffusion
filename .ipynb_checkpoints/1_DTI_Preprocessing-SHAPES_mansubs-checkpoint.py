@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[2]:
+# In[ ]:
 
 
 # Set variables
@@ -36,22 +36,23 @@ else:
     raw_dir = join(home, 'data/mri/bids_recon/shapes')
     workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
     data_dir = join(home, 'analyses/shapes/dwi/data')
-    
+
 # Read in subject subject_list
-subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()
+# subject_csv = read_csv(
+#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
-# subject_list = ['sub-A200', 'sub-A201']
+subject_list = ['sub-A686']
 
 
-# In[8]:
+# In[ ]:
 
 
 # 9/22/19: change so that T1 is registered to B0 per https://mrtrix.readthedocs.io/en/latest/quantitative_structural_connectivity/act.html
 
 
-# In[9]:
+# In[ ]:
 
 
 # Create preprocessing Workflow
@@ -92,7 +93,7 @@ sf = Node(SelectFiles(template,
           name='sf')
 
 
-# In[10]:
+# In[ ]:
 
 
 # Merge AP/PA encoding direction fieldmaps
@@ -111,8 +112,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
                     name='create_merge')
 
 
-# In[11]:
-
+# In[ ]:
 
 
 # Drop bottom slice (S/I) to create even # of slices
@@ -125,16 +125,17 @@ drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
 drop2 = drop.clone(name='drop2')
 
 # Denoise DWI data susing local PCA correction - mrTrix3
-denoise = Node(mtx.DWIDenoise(),
+denoise = Node(mtx.DWIDenoise(out_file='denoised.nii.gz'),
                name='denoise')
 
 # Steps added 7/17 per Jiook's reccomendations
 # Gibbs ringing removal
-gibbs = Node(mtx.MRDeGibbs(),
+gibbs = Node(mtx.MRDeGibbs(out_file='denoised_gibbs.nii.gz'),
              name='gibbs')
 
 # DWI bias file correction using ANTS N4
-bias = Node(mtx.DWIBiasCorrect(use_ants=True),
+bias = Node(mtx.DWIBiasCorrect(use_ants=True,
+                               out_file='denoised_gibbs_bias.nii.gz'),
             name='bias')
 
 ###########################
@@ -162,20 +163,16 @@ register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
 
 # apply topup from merged file to rest of pe0 scan
 apptop = Node(fsl.ApplyTOPUP(method='jac',
-                             in_index=[2], 
+                             in_index=[2],
                              output_type='NIFTI_GZ',
-                            out_corrected = 'preprocessed_dwi.nii.gz'),
+                             out_corrected='preprocessed_dwi.nii.gz'),
               name='apptop')
 
 # Skullstrip the T1w image
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
-# Skullstrip the b0 image
-stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
-               name='stripb0')
-
-#Eddy_CUDA Node
+# Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
 eddy = Node(fsl.Eddy(is_shelled=True,
@@ -188,111 +185,57 @@ eddy = Node(fsl.Eddy(is_shelled=True,
                      repol=True),
             name='eddy')
 
-#Resample dti to isotropic 1.7x1.7x1.7
-resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
-               name = "resample")
 
-
-# In[14]:
-
+# In[ ]:
 
 
 preproc_flow = Workflow(name='preproc_flow')
 preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
-                      
                       # Select AP and PA encoded fieldmaps; merge niftis
                       (sf, create_merge, [('fmapap', 'ap'),
                                           ('fmappa', 'pa')]),
-                      
                       # Drop bottom slice of nifi (had odd # slices)
                       (create_merge, drop, [('merged_file', 'in_file')]),
-                      
                       # Run topop across merged niftis
                       (drop, topup, [('roi_file', 'in_file')]),
                       (sf, topup, [('aps', 'encoding_file')]),
-                      (topup, datasink, [('out_corrected', '1_Check_Unwarped.@par'),
-                      ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
-                      
+                      (topup, datasink, [
+                       ('out_corrected', '1_Check_Unwarped.@par'),
+                       ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
                       # Extract b0 image from nifti with topup applied
                       (topup, fslroi, [('out_corrected', 'in_file')]),
-                      
-                      #Register T1 to b0 brain
+                      # Register T1 to b0 brain
                       (sf, register1, [('t1', 'in_file')]),
                       (fslroi, register1, [('roi_file', 'reference')]),
-                      
-                      #skullstrip T1
+                      # skullstrip T1
                       (register1, stripT1, [('out_file', 'in_file')]),
-                      
                       # Save stripped anat and mask
                       (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par'),
                                            ('mask_file', '2_Preprocessed.@par.@par')]),
                       (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par'),
-                                             ('out_file', '2_Preprocessed.@par.@par.@par')]),
-                      
+                                           ('out_file', '2_Preprocessed.@par.@par.@par')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
-                      
-                      #Skullstrip b0
-                      (fslroi, stripb0, [('roi_file', 'in_file')]),
-                      
-                      #Save b0 mask
-                      (stripb0, datasink, [('mask_file', '3_Eddy_Corrected.@par')]),
-                   
-                      #Run Eddy correction
+                      # Local PCA to denoise DTI data
+                      (drop2, denoise, [('roi_file', 'in_file')]),
+                      (denoise, datasink, [
+                       ('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par')]),
+                      # Gibbs ringing removal
+                      (drop2, gibbs, [('roi_file', 'in_file')]),
+                      # Perform DWI bias field correction
+                      (gibbs, bias, [('out_file', 'in_file')]),
+                      (sf, bias, [('bvec', 'in_bvec')]),
+                      (sf, bias, [('bval', 'in_bval')]),
                       # Apply topup to bias corrected DTI data
                       (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                      ('out_movpar','in_topup_movpar')]),
-                      (drop2, apptop, [('roi_file', 'in_files')]),
+                                       ('out_movpar', 'in_topup_movpar')]),
+                      (bias, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       (apptop, datasink, [
-                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
-                      
-                      #Resample DTI to uniform dimensions
-                      (apptop, eddy, [('out_corrected', 'in_file')]),
-                      (sf, eddy,[('bval', 'in_bval'),
-                                 ('bvec', 'in_bvec'),
-                                 ('index', 'in_index'),
-                                 ('aps', 'in_acqp')]),
-                      (stripb0, eddy, [('mask_file', 'in_mask')]),
-                      
-                      #Save Eddy outputs
-                      (eddy, datasink, [('out_corrected', '3_Eddy_Corrected'),
-                                        ('out_rotated_bvecs', '3_Eddy_Corrected.@par'),
-                                        ('out_movement_rms',
-                                         '3_Eddy_Corrected.@par.@par'),
-                                        ('out_parameter',
-                                         '3_Eddy_Corrected.@par.@par.@par'),
-                                        ('out_restricted_movement_rms',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par'),
-                                        ('out_shell_alignment_parameters',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par'),
-                                        ('out_cnr_maps',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par'),
-                                        ('out_residuals',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
-                                        ('out_outlier_report',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]), 
-                      
-                      #Local b0 bias correction
-                      (eddy, resample, [('out_corrected', 'in_file')]),
-#                       (sf, bias, [('bvec', 'in_bvec')]),
-#                       (sf, bias, [('bval', 'in_bval')]),
-                      # Gibbs ringing removal
-#                       (denoise, gibbs, [('out_file', 'in_file')]),
-#                       (sf, gibbs, [('bvec', 'in_bvec')]),
-#                       (sf, gibbs, [('bval', 'in_bval')]),
-                      
-#                       # Perform DWI bias field correction
-#                       (gibbs, bias, [('out_file', 'in_file')]),
-                      
-                      
-                      # Resample to isotropic size
-#                       (bias, resample, [('out_file', 'in_file')]),
-                      (resample, datasink, [('resampled_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
-                      
-                     ])
-
+                          ('out_corrected',
+                           '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
+                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')])
+                      ])
 preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
 preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
@@ -301,17 +244,7 @@ preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
 # In[ ]:
 
 
-
-
-
 # In[ ]:
 
 
-
-
-
 # In[ ]:
-
-
-
-
