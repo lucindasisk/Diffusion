@@ -250,7 +250,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Resample DTI to uniform dimensions
                       (apptop, resample, [('out_corrected', 'in_file')]),
                       #Resample mask file
-                      (strip_b0, resample, [('mask_file', 'in_file')]),
+                      (stripb0, resample, [('mask_file', 'in_file')]),
                       
                       #Pass in resampled outputs to Eddy
                       (resample, eddy, [('resampled_file', 'in_file')]),

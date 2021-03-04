@@ -39,7 +39,7 @@ else:
     
 # Read in subject subject_list
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()[0:50]
+subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
 # subject_list = ['sub-A200', 'sub-A201']
@@ -171,6 +171,10 @@ apptop = Node(fsl.ApplyTOPUP(method='jac',
 stripT1 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
                name='stripT1')
 
+# Skullstrip the b0 image
+stripb0 = Node(fsl.BET(mask=True, output_type='NIFTI_GZ'),
+               name='stripb0')
+
 #Eddy_CUDA Node
 # FSL Eddy correction to remove eddy current distortion
 
@@ -187,6 +191,10 @@ eddy = Node(fsl.Eddy(is_shelled=True,
 #Resample dti to isotropic 1.7x1.7x1.7
 resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                name = "resample")
+
+#Resample dti to isotropic 1.7x1.7x1.7
+resample2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+               name = "resample2")
 
 
 # In[14]:
@@ -209,8 +217,17 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (topup, datasink, [('out_corrected', '1_Check_Unwarped.@par'),
                       ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
                       
+                      # Apply topup to bias corrected DTI data
+                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
+                                      ('out_movpar','in_topup_movpar')]),
+                      (drop2, apptop, [('roi_file', 'in_files')]),
+                      (sf, apptop, [('aps', 'encoding_file')]),
+                      (apptop, datasink, [
+                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
+                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
+                      
                       # Extract b0 image from nifti with topup applied
-                      (topup, fslroi, [('out_corrected', 'in_file')]),
+                      (apptop, fslroi, [('out_corrected', 'in_file')]),
                       
                       #Register T1 to b0 brain
                       (sf, register1, [('t1', 'in_file')]),
@@ -228,22 +245,20 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Drop bottom slice from DTI nifti
                       (sf, drop2, [('dti', 'in_file')]),
                       
-                      # Apply topup to bias corrected DTI data
-                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                      ('out_movpar','in_topup_movpar')]),
-                      (drop2, apptop, [('roi_file', 'in_files')]),
-                      (sf, apptop, [('aps', 'encoding_file')]),
-                      (apptop, datasink, [
-                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
-                      
+                      #Skullstrip b0
+                      (fslroi, stripb0, [('roi_file', 'in_file')]),
                       #Resample DTI to uniform dimensions
-                      (apptop, eddy, [('out_corrected', 'in_file')]),
+                      (apptop, resample, [('out_corrected', 'in_file')]),
+                      #Resample mask file
+                      (stripb0, resample, [('mask_file', 'in_file')]),
+                      
+                      #Pass in resampled outputs to Eddy
+                      (resample, eddy, [('resampled_file', 'in_file')]),
                       (sf, eddy,[('bval', 'in_bval'),
                                  ('bvec', 'in_bvec'),
                                  ('index', 'in_index'),
                                  ('aps', 'in_acqp')]),
-                      (stripT1, eddy, [('mask_file', 'in_mask')]),
+                      (resample2, eddy, [('resampled_file', 'in_mask')]),
                       
                       #Save Eddy outputs
                       (eddy, datasink, [('out_corrected', '3_Eddy_Corrected'),
@@ -261,24 +276,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                         ('out_residuals',
                                          '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_outlier_report',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]), 
-                      
-                      #Local b0 bias correction
-                      (eddy, resample, [('out_corrected', 'in_file')]),
-#                       (sf, bias, [('bvec', 'in_bvec')]),
-#                       (sf, bias, [('bval', 'in_bval')]),
-                      # Gibbs ringing removal
-#                       (denoise, gibbs, [('out_file', 'in_file')]),
-#                       (sf, gibbs, [('bvec', 'in_bvec')]),
-#                       (sf, gibbs, [('bval', 'in_bval')]),
-                      
-#                       # Perform DWI bias field correction
-#                       (gibbs, bias, [('out_file', 'in_file')]),
-                      
-                      
-                      # Resample to isotropic size
-#                       (bias, resample, [('out_file', 'in_file')]),
-                      (resample, datasink, [('resampled_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')])
                       
                      ])
 
