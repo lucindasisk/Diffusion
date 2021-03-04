@@ -217,8 +217,17 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (topup, datasink, [('out_corrected', '1_Check_Unwarped.@par'),
                       ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
                       
+                      # Apply topup to bias corrected DTI data
+                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
+                                      ('out_movpar','in_topup_movpar')]),
+                      (drop2, apptop, [('roi_file', 'in_files')]),
+                      (sf, apptop, [('aps', 'encoding_file')]),
+                      (apptop, datasink, [
+                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
+                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
+                      
                       # Extract b0 image from nifti with topup applied
-                      (topup, fslroi, [('out_corrected', 'in_file')]),
+                      (apptop, fslroi, [('out_corrected', 'in_file')]),
                       
                       #Register T1 to b0 brain
                       (sf, register1, [('t1', 'in_file')]),
@@ -238,17 +247,6 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       
                       #Skullstrip b0
                       (fslroi, stripb0, [('roi_file', 'in_file')]),
-                      
-                      #Run Eddy correction
-                      # Apply topup to bias corrected DTI data
-                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                      ('out_movpar','in_topup_movpar')]),
-                      (drop2, apptop, [('roi_file', 'in_files')]),
-                      (sf, apptop, [('aps', 'encoding_file')]),
-                      (apptop, datasink, [
-                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
-                      
                       #Resample DTI to uniform dimensions
                       (apptop, resample, [('out_corrected', 'in_file')]),
                       #Resample mask file
