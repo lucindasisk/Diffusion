@@ -39,10 +39,10 @@ else:
     
 # Read in subject subject_list
 subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-# subject_list = subject_csv[0].values.tolist()
+subject_list = subject_csv[0].values.tolist()
 
 # Manual subject list
-subject_list = ['sub-A632', 'sub-A622']
+#subject_list = ['sub-A632', 'sub-A622']
 
 
 # In[8]:
