@@ -20,7 +20,8 @@ from nipype import config, logging
 from datetime import date
 import sys
 
-sub_index = int(sys.argv[0])
+sub = sys.argv[1]
+
 today = str(date.today())
 config.enable_debug_mode()
 
@@ -40,36 +41,18 @@ config.enable_debug_mode()
 
 #Set user and path variables
 local='False'
-user = expanduser('~')
-if user == '/Users/lucindasisk':
-    if local == 'True':
-        laptop = '/Users/lucindasisk/Desktop/DATA'
-        home = join(user, 'Desktop/Milgram/candlab')
-        raw_dir = join(home, 'data/mri/bids_recon/shapes')
-        proc_dir = join(home, 'analyses/shapes/dwi')
-        workflow_dir = join(laptop, 'workflows_ls')
-        data_dir = join(laptop, 'data_ls')
-    else:
-        home = join(user, 'Desktop/Milgram/candlab')
-        raw_dir = join(home, 'data/mri/bids_recon/shapes')
-        proc_dir = join(home, 'analyses/shapes/dwi/data')
-        workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
-        data_dir = join(home, 'analyses/shapes/dwi/data')
-else:
-    home = '/gpfs/milgram/project/gee_dylan/candlab'
-    raw_dir = join(home, 'data/mri/bids_recon/shapes')
-    proc_dir = join(home, 'analyses/shapes/dwi/data')
-    workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
-    data_dir = join(home, 'analyses/shapes/dwi/data')
+
+home = '/gpfs/milgram/project/gee_dylan/candlab'
+raw_dir = join(home, 'data/mri/bids_recon/shapes')
+proc_dir = join(home, 'analyses/shapes/dwi/data')
+workflow_dir = join(home, 'analyses/shapes/dwi/workflows')
+data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-subject_info = read_csv(
-    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_info[sub_index].tolist()
-
-
-# In[4]:
-
+# subject_info = read_csv(
+#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+# subjects = subject_info[0].tolist()
+subject_list = [sub]
 
 #Setup Datasink, Infosource, Selectfiles
 
@@ -175,16 +158,3 @@ csd_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
 csd_flow.base_dir = workflow_dir
 csd_flow.write_graph(graph2use = 'flat')
 dwi = csd_flow.run('MultiProc', plugin_args={'n_procs': 4})
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
