@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber 
@@ -20,12 +20,12 @@ from nipype import config, logging
 from datetime import date
 import sys
 
-sub = str(sys.argv[0])
+sub_index = int(sys.argv[0])
 today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[2]:
+# In[3]:
 
 
 # Resources for MRTRIX:
@@ -35,7 +35,7 @@ config.enable_debug_mode()
 # Set module load and sourcing scripts within the activate.d folder file
 
 
-# In[3]:
+# In[4]:
 
 
 #Set user and path variables
@@ -63,12 +63,9 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-# subject_info = read_csv(
-#     home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-# subject_list = subject_info[0].tolist()
-
-# Manual subject list
-subject_list = [sub]
+subject_info = read_csv(
+    home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
+subject_list = subject_info[sub_index].tolist()
 
 
 # In[4]:
@@ -177,7 +174,7 @@ csd_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                    ])
 csd_flow.base_dir = workflow_dir
 csd_flow.write_graph(graph2use = 'flat')
-dwi = tract_flow.run('MultiProc', plugin_args={'n_procs': 4})
+dwi = csd_flow.run('MultiProc', plugin_args={'n_procs': 4})
 
 
 # In[ ]:
