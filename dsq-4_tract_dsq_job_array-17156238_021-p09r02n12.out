@@ -1,0 +1,3 @@
+mkdir: cannot create directory ‘/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/tract_output’: File exists
+mkdir: cannot create directory ‘/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/tract_output/sub-A230’: File exists
+[91mERROR[0m[1m: Input image must be a peak image (nifti 4D image with dimensions [x,y,z,9]). If you input a Diffusion image add the option '--raw_diffusion_input'.[0m

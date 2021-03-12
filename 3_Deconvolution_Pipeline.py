@@ -130,7 +130,7 @@ tract = Node(mtx.Tractography(algorithm='iFOD2',
 # In[ ]:
 
 
-csd_flow = Workflow(name = 'tract_flow')
+csd_flow = Workflow(name = 'csd_flow')
 csd_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     #Segment T1 image with FSL 5tt algorithm
                     (sf, seg5tt, [('t1', 'in_file')]),

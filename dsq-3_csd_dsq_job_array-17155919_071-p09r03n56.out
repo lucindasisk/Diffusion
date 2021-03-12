@@ -1,0 +1,467 @@
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.3-centos7_64/etc/fslconf/fsl.sh To use FSLeyes GUI, load the separate FSLeyes module.
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.3-centos7_64/etc/fslconf/fsl.sh To use FSLeyes GUI, load the separate FSLeyes module.
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.3-centos7_64/etc/fslconf/fsl.sh To use FSLeyes GUI, load the separate FSLeyes module.
+Source the FSL configuration script using:
+     . /gpfs/milgram/apps/hpc.rhel7/software/FSL/6.0.3-centos7_64/etc/fslconf/fsl.sh To use FSLeyes GUI, load the separate FSLeyes module.
+210311-18:41:45,878 nipype.utils DEBUG:
+	 Running a newer version (1.6.0) of nipy/nipype than available (1.5.1)
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.infosource, csd_flow.sf): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.infosource, csd_flow.sf): new edge data: {'connect': [('subject_id', 'subject_id')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.sf, csd_flow.seg5tt): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.sf, csd_flow.seg5tt): new edge data: {'connect': [('t1', 'in_file')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.seg5tt, csd_flow.datasink): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.seg5tt, csd_flow.datasink): new edge data: {'connect': [('out_file', '5_Tract_Reconstruction')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.sf, csd_flow.gradconv): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.sf, csd_flow.gradconv): new edge data: {'connect': [('dti', 'in_file'), ('bval', 'in_bval'), ('bvec', 'in_bvec')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.gradconv, csd_flow.dwiresp): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.gradconv, csd_flow.dwiresp): new edge data: {'connect': [('out_file', 'in_file')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.dwiresp, csd_flow.datasink): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.dwiresp, csd_flow.datasink): new edge data: {'connect': [('wm_file', '4_Deconvolution.@par'), ('gm_file', '4_Deconvolution.@par.@par'), ('csf_file', '4_Deconvolution.@par.@par.@par')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.gradconv, csd_flow.mscsd): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.gradconv, csd_flow.mscsd): new edge data: {'connect': [('out_file', 'in_file')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.dwiresp, csd_flow.mscsd): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.dwiresp, csd_flow.mscsd): new edge data: {'connect': [('wm_file', 'wm_txt'), ('gm_file', 'gm_txt'), ('csf_file', 'csf_txt')]}
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.mscsd, csd_flow.tract): No edge data
+210311-18:41:46,542 nipype.workflow DEBUG:
+	 (csd_flow.mscsd, csd_flow.tract): new edge data: {'connect': [('wm_odf', 'in_file')]}
+210311-18:41:46,543 nipype.workflow DEBUG:
+	 (csd_flow.mscsd, csd_flow.datasink): No edge data
+210311-18:41:46,543 nipype.workflow DEBUG:
+	 (csd_flow.mscsd, csd_flow.datasink): new edge data: {'connect': [('wm_odf', '4_Deconvolution.@par.@par.@par.@par'), ('gm_odf', '4_Deconvolution.@par.@par.@par.@par.@par'), ('csf_odf', '4_Deconvolution.@par.@par.@par.@par.@par.@par')]}
+210311-18:41:46,543 nipype.workflow DEBUG:
+	 (csd_flow.gradconv, csd_flow.datasink): No edge data
+210311-18:41:46,543 nipype.workflow DEBUG:
+	 (csd_flow.gradconv, csd_flow.datasink): new edge data: {'connect': [('out_file', '4_Deconvolution.@par.@par.@par.@par.@par.@par.@par')]}
+210311-18:41:46,545 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: csd_flow
+210311-18:41:46,548 nipype.workflow DEBUG:
+	 expanding workflow: csd_flow
+210311-18:41:46,548 nipype.workflow DEBUG:
+	 processing node: csd_flow.infosource
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.sf
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.gradconv
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.dwiresp
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.mscsd
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.tract
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.seg5tt
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 processing node: csd_flow.datasink
+210311-18:41:46,566 nipype.workflow DEBUG:
+	 finished expanding workflow: csd_flow
+210311-18:41:46,569 nipype.workflow DEBUG:
+	 using input graph
+210311-18:41:53,65 nipype.workflow DEBUG:
+	 creating dot graph
+210311-18:41:55,197 nipype.workflow INFO:
+	 Generated workflow graph: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/graph.png (graph2use=flat, simple_form=True).
+210311-18:41:55,415 nipype.workflow DEBUG:
+	 [MultiProc] Starting (n_procs=4, mem_gb=168.77, cwd=/gpfs/milgram/home/lms233/Github/Diffusion)
+210311-18:41:55,416 nipype.workflow DEBUG:
+	 Creating flat graph for workflow: csd_flow
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 expanding workflow: csd_flow
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.infosource
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.sf
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.gradconv
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.dwiresp
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.mscsd
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.tract
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.seg5tt
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 processing node: csd_flow.datasink
+210311-18:41:55,418 nipype.workflow DEBUG:
+	 finished expanding workflow: csd_flow
+210311-18:41:55,419 nipype.workflow INFO:
+	 Workflow csd_flow settings: ['check', 'execution', 'logging', 'monitoring']
+210311-18:41:55,421 nipype.workflow DEBUG:
+	 PE: expanding iterables
+210311-18:41:55,421 nipype.workflow DEBUG:
+	 Detected iterable nodes [csd_flow.infosource]
+210311-18:41:55,422 nipype.workflow DEBUG:
+	 Expanding the iterable node csd_flow.infosource...
+210311-18:41:55,422 nipype.workflow DEBUG:
+	 node: csd_flow.infosource iterables: {'subject_id': <function _standardize_iterables.<locals>.make_field_func.<locals>.<lambda> at 0x2b77c5af25f0>}
+210311-18:41:55,422 nipype.workflow DEBUG:
+	 ('subnodes:', [csd_flow.infosource, csd_flow.sf, csd_flow.seg5tt, csd_flow.datasink, csd_flow.gradconv, csd_flow.dwiresp, csd_flow.mscsd, csd_flow.tract])
+210311-18:41:55,424 nipype.workflow DEBUG:
+	 [Node] infosource - setting input subject_id = sub-A417
+210311-18:41:55,424 nipype.workflow DEBUG:
+	 Parameterization: paramstr=_subject_id_sub-A417
+210311-18:41:55,424 nipype.workflow DEBUG:
+	 PE: expanding iterables ... done
+210311-18:41:55,424 nipype.workflow DEBUG:
+	 [Node] sf - setting input subject_id = sub-A417
+210311-18:41:55,425 nipype.workflow DEBUG:
+	 Removed the identity node csd_flow.infosource from the graph.
+210311-18:41:55,647 nipype.workflow DEBUG:
+	 Performing depth first search
+210311-18:41:55,655 nipype.workflow INFO:
+	 Running in parallel.
+210311-18:41:55,659 nipype.workflow DEBUG:
+	 Progress: 7 jobs, 0/0/1 (done/running/ready), 0/7 (pending_tasks/waiting).
+210311-18:41:55,659 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+210311-18:41:55,660 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 1 jobs ready. Free memory (GB): 168.77/168.77, Free processors: 4/4.
+210311-18:41:55,727 nipype.workflow DEBUG:
+	 Allocating csd_flow.sf ID=0 (0.20GB, 1 threads). Free: 168.57GB, 3 threads.
+210311-18:41:55,729 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf".
+210311-18:41:55,729 nipype.workflow DEBUG:
+	 Checking hash "csd_flow.sf" locally: cached=False, updated=False.
+210311-18:41:55,773 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task csd_flow.sf (taskid=1).
+210311-18:41:55,780 nipype.workflow INFO:
+	 [Node] Setting-up "csd_flow.sf" in "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf".
+210311-18:41:55,782 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf".
+210311-18:41:55,783 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf
+210311-18:41:55,788 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/_report/report.rst"
+210311-18:41:55,793 nipype.workflow INFO:
+	 [Node] Running "sf" ("nipype.interfaces.io.SelectFiles")
+210311-18:41:55,804 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A417/ses-shapesV1/dwi/sub-A417_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/1_Check_Unwarped/sub-A417/sub-A417_ses-shapesV1_T1w_flirt_brain.nii.gz;/gpfs/milgram/project/gee_dylan/candlab/atlases/MNI152_T1_2mm_brain.nii.gz;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/_0x23cfd7f5cbedfd37b17489f4690e9adb_unfinished.json;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/_inputs.pklz;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/_node.pklz
+210311-18:41:55,805 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/_report
+210311-18:41:55,805 nipype.workflow DEBUG:
+	 Removing files: 
+210311-18:41:55,805 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/result_sf.pklz'
+210311-18:41:55,808 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/_report/report.rst"
+210311-18:41:55,809 nipype.workflow INFO:
+	 [Node] Finished "csd_flow.sf".
+210311-18:41:57,664 nipype.workflow DEBUG:
+	 Progress: 7 jobs, 0/1/0 (done/running/ready), 1/6 (pending_tasks/waiting).
+210311-18:41:57,664 nipype.workflow INFO:
+	 [Job 0] Completed (csd_flow.sf).
+210311-18:41:57,667 nipype.workflow DEBUG:
+	 Tasks currently running: 0. Pending: 0.
+210311-18:41:57,669 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 2 jobs ready. Free memory (GB): 168.77/168.77, Free processors: 4/4.
+210311-18:41:57,768 nipype.workflow DEBUG:
+	 Allocating csd_flow.gradconv ID=1 (0.20GB, 1 threads). Free: 168.57GB, 3 threads.
+210311-18:41:57,770 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv".
+210311-18:41:57,770 nipype.workflow DEBUG:
+	 Checking hash "csd_flow.gradconv" locally: cached=False, updated=False.
+210311-18:41:57,775 nipype.workflow INFO:
+	 [Node] Setting-up "csd_flow.gradconv" in "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv".
+210311-18:41:57,775 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv".
+210311-18:41:57,775 nipype.workflow DEBUG:
+	 [Node] Setting 3 connected inputs of node "gradconv" from 1 previous nodes.
+210311-18:41:57,777 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/result_sf.pklz
+210311-18:41:57,780 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+210311-18:41:57,780 nipype.workflow DEBUG:
+	 output: dti
+210311-18:41:57,780 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.nii.gz
+210311-18:41:57,780 nipype.workflow DEBUG:
+	 output: bval
+210311-18:41:57,781 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_bval = /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A417/ses-shapesV1/dwi/sub-A417_ses-shapesV1_dwi.bval
+210311-18:41:57,781 nipype.workflow DEBUG:
+	 output: bvec
+210311-18:41:57,781 nipype.workflow DEBUG:
+	 [Node] gradconv - setting input in_bvec = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.eddy_rotated_bvecs
+210311-18:41:57,782 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv
+210311-18:41:57,782 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task csd_flow.gradconv (taskid=2).
+210311-18:41:57,782 nipype.workflow DEBUG:
+	 Allocating csd_flow.seg5tt ID=5 (0.20GB, 1 threads). Free: 168.37GB, 2 threads.
+210311-18:41:57,783 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/seg5tt".
+210311-18:41:57,783 nipype.workflow DEBUG:
+	 Checking hash "csd_flow.seg5tt" locally: cached=False, updated=False.
+210311-18:41:57,787 nipype.workflow INFO:
+	 [Node] Setting-up "csd_flow.seg5tt" in "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/seg5tt".
+210311-18:41:57,787 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task csd_flow.seg5tt (taskid=3).
+210311-18:41:57,859 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/seg5tt".
+210311-18:41:57,859 nipype.workflow DEBUG:
+	 [Node] Setting 1 connected inputs of node "seg5tt" from 1 previous nodes.
+210311-18:41:57,861 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/sf/result_sf.pklz
+210311-18:41:57,866 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+210311-18:41:57,867 nipype.workflow DEBUG:
+	 output: t1
+210311-18:41:57,867 nipype.workflow DEBUG:
+	 [Node] seg5tt - setting input in_file = /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/1_Check_Unwarped/sub-A417/sub-A417_ses-shapesV1_T1w_flirt_brain.nii.gz
+210311-18:41:57,868 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/seg5tt
+210311-18:41:57,870 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/_report/report.rst"
+210311-18:41:57,911 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/seg5tt/_report/report.rst"
+210311-18:41:58,273 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.nii.gz
+210311-18:41:58,273 nipype.interface DEBUG:
+	 out_file_dwi.mif
+210311-18:41:58,305 nipype.workflow INFO:
+	 [Node] Running "gradconv" ("nipype.interfaces.mrtrix3.utils.MRConvert"), a CommandLine Interface with command:
+mrconvert -fslgrad /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.eddy_rotated_bvecs /gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A417/ses-shapesV1/dwi/sub-A417_ses-shapesV1_dwi.bval /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.nii.gz dwi.mif
+210311-18:41:58,308 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.nii.gz
+210311-18:41:58,308 nipype.interface DEBUG:
+	 out_file_dwi.mif
+210311-18:41:58,314 nipype.interface DEBUG:
+	 algorithm_fsl
+210311-18:41:58,314 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/1_Check_Unwarped/sub-A417/sub-A417_ses-shapesV1_T1w_flirt_brain.nii.gz
+210311-18:41:58,315 nipype.interface DEBUG:
+	 out_file_T1s_5tt_segmented.nii.gz
+210311-18:41:58,318 nipype.workflow INFO:
+	 [Node] Running "seg5tt" ("nipype.interfaces.mrtrix3.utils.Generate5tt"), a CommandLine Interface with command:
+5ttgen fsl /gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/1_Check_Unwarped/sub-A417/sub-A417_ses-shapesV1_T1w_flirt_brain.nii.gz T1s_5tt_segmented.nii.gz
+210311-18:41:58,321 nipype.interface DEBUG:
+	 algorithm_fsl
+210311-18:41:58,321 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/1_Check_Unwarped/sub-A417/sub-A417_ses-shapesV1_T1w_flirt_brain.nii.gz
+210311-18:41:58,321 nipype.interface DEBUG:
+	 out_file_T1s_5tt_segmented.nii.gz
+210311-18:41:59,663 nipype.workflow DEBUG:
+	 Progress: 7 jobs, 1/2/0 (done/running/ready), 2/4 (pending_tasks/waiting).
+210311-18:41:59,663 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+210311-18:41:59,664 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 168.37/168.77, Free processors: 2/4.
+                     Currently running:
+                       * csd_flow.seg5tt
+                       * csd_flow.gradconv
+210311-18:42:12,104 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif;/gpfs/milgram/project/gee_dylan/candlab/data/mri/bids_recon/shapes/sub-A417/ses-shapesV1/dwi/sub-A417_ses-shapesV1_dwi.bval;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.eddy_rotated_bvecs;/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/data/3_Eddy_Corrected/sub-A417/eddy_corrected.nii.gz;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/_0xff11738295d8cd24478940f6b8edef49_unfinished.json;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/command.txt;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/_inputs.pklz;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/_node.pklz
+210311-18:42:12,328 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/_report
+210311-18:42:12,328 nipype.workflow DEBUG:
+	 Removing files: 
+210311-18:42:12,328 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/result_gradconv.pklz'
+210311-18:42:12,368 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/_report/report.rst"
+210311-18:42:12,369 nipype.workflow INFO:
+	 [Node] Finished "csd_flow.gradconv".
+210311-18:42:13,669 nipype.workflow INFO:
+	 [Job 1] Completed (csd_flow.gradconv).
+210311-18:42:13,670 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+210311-18:42:13,670 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 168.57/168.77, Free processors: 3/4.
+                     Currently running:
+                       * csd_flow.seg5tt
+210311-18:42:13,776 nipype.workflow DEBUG:
+	 Allocating csd_flow.dwiresp ID=2 (0.20GB, 1 threads). Free: 168.37GB, 2 threads.
+210311-18:42:13,776 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp".
+210311-18:42:13,776 nipype.workflow DEBUG:
+	 Checking hash "csd_flow.dwiresp" locally: cached=False, updated=False.
+210311-18:42:13,778 nipype.workflow INFO:
+	 [Node] Setting-up "csd_flow.dwiresp" in "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp".
+210311-18:42:13,779 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp".
+210311-18:42:13,779 nipype.workflow DEBUG:
+	 [Node] Setting 1 connected inputs of node "dwiresp" from 1 previous nodes.
+210311-18:42:13,779 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/result_gradconv.pklz
+210311-18:42:13,780 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+210311-18:42:13,781 nipype.workflow DEBUG:
+	 output: out_file
+210311-18:42:13,781 nipype.workflow DEBUG:
+	 [Node] dwiresp - setting input in_file = /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif
+210311-18:42:13,781 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp
+210311-18:42:13,778 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task csd_flow.dwiresp (taskid=4).
+210311-18:42:13,783 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/_report/report.rst"
+210311-18:42:13,786 nipype.interface DEBUG:
+	 algorithm_dhollander
+210311-18:42:13,786 nipype.interface DEBUG:
+	 csf_file_csf_response.txt
+210311-18:42:13,786 nipype.interface DEBUG:
+	 gm_file_gm_response.txt
+210311-18:42:13,786 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif
+210311-18:42:13,786 nipype.interface DEBUG:
+	 max_sh_[0, 2, 4, 4, 8]
+210311-18:42:13,786 nipype.interface DEBUG:
+	 wm_file_wm_response.txt
+210311-18:42:13,787 nipype.workflow INFO:
+	 [Node] Running "dwiresp" ("nipype.interfaces.mrtrix3.preprocess.ResponseSD"), a CommandLine Interface with command:
+dwi2response dhollander -lmax 0,2,4,4,8 /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif wm_response.txt gm_response.txt csf_response.txt
+210311-18:42:13,788 nipype.interface DEBUG:
+	 algorithm_dhollander
+210311-18:42:13,788 nipype.interface DEBUG:
+	 csf_file_csf_response.txt
+210311-18:42:13,788 nipype.interface DEBUG:
+	 gm_file_gm_response.txt
+210311-18:42:13,788 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif
+210311-18:42:13,788 nipype.interface DEBUG:
+	 max_sh_[0, 2, 4, 4, 8]
+210311-18:42:13,788 nipype.interface DEBUG:
+	 wm_file_wm_response.txt
+210311-18:42:15,670 nipype.workflow DEBUG:
+	 Progress: 7 jobs, 2/2/0 (done/running/ready), 2/3 (pending_tasks/waiting).
+210311-18:42:15,678 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+210311-18:42:15,687 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 168.37/168.77, Free processors: 2/4.
+                     Currently running:
+                       * csd_flow.dwiresp
+                       * csd_flow.seg5tt
+210311-18:49:17,346 nipype.workflow DEBUG:
+	 Needed files: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/wm_response.txt;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/gm_response.txt;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/csf_response.txt;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/_0x6bc45bd49205b708f49731ae68b81eac_unfinished.json;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/command.txt;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/_inputs.pklz;/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/_node.pklz
+210311-18:49:17,355 nipype.workflow DEBUG:
+	 Needed dirs: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/_report
+210311-18:49:17,356 nipype.workflow DEBUG:
+	 Removing files: 
+210311-18:49:17,356 nipype.workflow DEBUG:
+	 Saving results file: '/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/result_dwiresp.pklz'
+210311-18:49:17,359 nipype.workflow DEBUG:
+	 [Node] Writing post-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/_report/report.rst"
+210311-18:49:17,360 nipype.workflow INFO:
+	 [Node] Finished "csd_flow.dwiresp".
+210311-18:49:17,772 nipype.workflow INFO:
+	 [Job 2] Completed (csd_flow.dwiresp).
+210311-18:49:17,773 nipype.workflow DEBUG:
+	 Tasks currently running: 1. Pending: 1.
+210311-18:49:17,773 nipype.workflow INFO:
+	 [MultiProc] Running 1 tasks, and 1 jobs ready. Free memory (GB): 168.57/168.77, Free processors: 3/4.
+                     Currently running:
+                       * csd_flow.seg5tt
+210311-18:49:17,878 nipype.workflow DEBUG:
+	 Allocating csd_flow.mscsd ID=3 (0.20GB, 1 threads). Free: 168.37GB, 2 threads.
+210311-18:49:17,879 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/mscsd".
+210311-18:49:17,879 nipype.workflow DEBUG:
+	 Checking hash "csd_flow.mscsd" locally: cached=False, updated=False.
+210311-18:49:17,880 nipype.workflow INFO:
+	 [Node] Setting-up "csd_flow.mscsd" in "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/mscsd".
+210311-18:49:17,880 nipype.workflow DEBUG:
+	 [Node] Not cached "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/mscsd".
+210311-18:49:17,880 nipype.workflow DEBUG:
+	 [Node] Setting 4 connected inputs of node "mscsd" from 2 previous nodes.
+210311-18:49:17,880 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/result_gradconv.pklz
+210311-18:49:17,881 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task csd_flow.mscsd (taskid=5).
+210311-18:49:17,882 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+210311-18:49:17,882 nipype.workflow DEBUG:
+	 output: out_file
+210311-18:49:17,882 nipype.workflow DEBUG:
+	 [Node] mscsd - setting input in_file = /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif
+210311-18:49:17,882 nipype.utils DEBUG:
+	 Loading pkl: /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/result_dwiresp.pklz
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 Resolving paths in outputs loaded from results file.
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 output: wm_file
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 [Node] mscsd - setting input wm_txt = /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/wm_response.txt
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 output: gm_file
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 [Node] mscsd - setting input gm_txt = /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/gm_response.txt
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 output: csf_file
+210311-18:49:17,883 nipype.workflow DEBUG:
+	 [Node] mscsd - setting input csf_txt = /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/csf_response.txt
+210311-18:49:17,884 nipype.utils DEBUG:
+	 Removing contents of /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/mscsd
+210311-18:49:17,886 nipype.workflow DEBUG:
+	 [Node] Writing pre-exec report to "/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/mscsd/_report/report.rst"
+210311-18:49:17,903 nipype.interface DEBUG:
+	 algorithm_msmt_csd
+210311-18:49:17,903 nipype.interface DEBUG:
+	 bval_scale_yes
+210311-18:49:17,903 nipype.interface DEBUG:
+	 csf_odf_csf.mif
+210311-18:49:17,903 nipype.interface DEBUG:
+	 csf_txt_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/csf_response.txt
+210311-18:49:17,903 nipype.interface DEBUG:
+	 gm_odf_gm.mif
+210311-18:49:17,903 nipype.interface DEBUG:
+	 gm_txt_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/gm_response.txt
+210311-18:49:17,903 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif
+210311-18:49:17,903 nipype.interface DEBUG:
+	 max_sh_[8, 8, 8]
+210311-18:49:17,903 nipype.interface DEBUG:
+	 wm_odf_wm.mif
+210311-18:49:17,903 nipype.interface DEBUG:
+	 wm_txt_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/wm_response.txt
+210311-18:49:17,904 nipype.workflow INFO:
+	 [Node] Running "mscsd" ("nipype.interfaces.mrtrix3.reconst.EstimateFOD"), a CommandLine Interface with command:
+dwi2fod -bvalue_scaling yes -lmax 8,8,8 msmt_csd /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/wm_response.txt wm.mif /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/gm_response.txt gm.mif /gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/csf_response.txt csf.mif
+210311-18:49:17,905 nipype.interface DEBUG:
+	 algorithm_msmt_csd
+210311-18:49:17,905 nipype.interface DEBUG:
+	 bval_scale_yes
+210311-18:49:17,905 nipype.interface DEBUG:
+	 csf_odf_csf.mif
+210311-18:49:17,905 nipype.interface DEBUG:
+	 csf_txt_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/csf_response.txt
+210311-18:49:17,905 nipype.interface DEBUG:
+	 gm_odf_gm.mif
+210311-18:49:17,905 nipype.interface DEBUG:
+	 gm_txt_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/gm_response.txt
+210311-18:49:17,905 nipype.interface DEBUG:
+	 in_file_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/gradconv/dwi.mif
+210311-18:49:17,905 nipype.interface DEBUG:
+	 max_sh_[8, 8, 8]
+210311-18:49:17,905 nipype.interface DEBUG:
+	 wm_odf_wm.mif
+210311-18:49:17,905 nipype.interface DEBUG:
+	 wm_txt_/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/_subject_id_sub-A417/dwiresp/wm_response.txt
+210311-18:49:19,773 nipype.workflow DEBUG:
+	 Progress: 7 jobs, 3/2/0 (done/running/ready), 2/2 (pending_tasks/waiting).
+210311-18:49:19,773 nipype.workflow DEBUG:
+	 Tasks currently running: 2. Pending: 2.
+210311-18:49:19,774 nipype.workflow INFO:
+	 [MultiProc] Running 2 tasks, and 0 jobs ready. Free memory (GB): 168.37/168.77, Free processors: 2/4.
+                     Currently running:
+                       * csd_flow.mscsd
+                       * csd_flow.seg5tt
