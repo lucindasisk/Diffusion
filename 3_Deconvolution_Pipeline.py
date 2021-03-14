@@ -69,7 +69,7 @@ infosource.iterables = [('subject_id', subject_list)]
 template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.nii.gz'),
                 bval = join(raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
-                t1 = join(proc_dir, '1_Check_Unwarped/{subject_id}/{subject_id}_ses-shapesV1_T1w_flirt_brain.nii.gz'),
+                t1 = join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_ses-shapesV1_T1w.nii.gz'),
                 mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
                )
 
