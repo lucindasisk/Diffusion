@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
@@ -21,7 +21,7 @@ today = str(date.today())
 config.enable_debug_mode()
 
 
-# In[2]:
+# In[ ]:
 
 
 # Set variables
@@ -38,11 +38,9 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-subject_csv = read_csv(home + '/scripts/shapes/mri/dwi/shapes_dwi_subjList_08.07.2019.txt', sep=' ', header=None)
-subject_list = subject_csv[0].values.tolist()
-
-# Manual subject list
-#subject_list = ['sub-A632', 'sub-A622']
+subject_csv = read_csv(home + '/analyses/shapes/dwi/DTI_RI_SubjectList.csv', header=0)
+sublist = 'sub-' + Series(subject_csv['subid'])
+subject_list = sublist.values.tolist()
 
 
 # In[8]:
@@ -84,7 +82,8 @@ template = dict(t1=join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_se
                     raw_dir, '{subject_id}/ses-shapesV1/fmap/{subject_id}_ses-shapesV1_acq-dwi_dir-AP_epi.nii.gz'),
                 aps=join(raw_dir, 'shapes_acqparams.txt'),
                 index=join(raw_dir, 'shapes_index.txt'),
-                mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz')
+                mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz',
+                mni_mask=join(home, 'atlases/MNI152_T1_2mm_brain_mask.nii.gz')
                 )
 
 sf = Node(SelectFiles(template,
@@ -196,6 +195,18 @@ resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
 resample2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
                name = "resample2")
 
+#Register DTI to MNI brain
+registermni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
+                           rigid2D=True,
+                           output_type='NIFTI_GZ'),
+                 name='registermni')
+
+applyreg_mni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
+                             rigid2D=True,
+                             output_type='NIFTI_GZ',
+                             apply_xfm = True),
+                 name='applyreg_mni')
+
 
 # In[14]:
 
@@ -276,8 +287,13 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                         ('out_residuals',
                                          '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_outlier_report',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')])
-                      
+                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                      #Register b0 to MNI
+                      (fslroi, registermni, [('roi_file', 'in_file')]),
+                      (sf, registermni, [('mni', 'ref')]),
+                      (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
+                      (eddy, applyreg_mni, [('out_corrected', 'in_file')])
+                      (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
                      ])
 
 preproc_flow.base_dir = workflow_dir
