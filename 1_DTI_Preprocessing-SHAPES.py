@@ -291,6 +291,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Register b0 to MNI
                       (fslroi, registermni, [('roi_file', 'in_file')]),
                       (sf, registermni, [('mni', 'ref')]),
+                      #Apply transform to eddy corrected data
                       (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
                       (eddy, applyreg_mni, [('out_corrected', 'in_file')])
                       (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
