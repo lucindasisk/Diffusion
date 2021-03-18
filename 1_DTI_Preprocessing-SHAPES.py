@@ -10,6 +10,7 @@ from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 from nipype.interfaces import fsl
 import nipype.interfaces.mrtrix3 as mtx
 import nipype.interfaces.freesurfer as fsr
+import nipype.interfaces.freesurfer.model as fsrm
 from pandas import Series, read_csv, to_numeric
 from glob import glob
 from os.path import abspath, expanduser, join
@@ -86,7 +87,7 @@ template = dict(t1=join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_se
                     raw_dir, '{subject_id}/ses-shapesV1/fmap/{subject_id}_ses-shapesV1_acq-dwi_dir-AP_epi.nii.gz'),
                 aps=join(raw_dir, 'shapes_acqparams.txt'),
                 index=join(raw_dir, 'shapes_index.txt'),
-                mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz',
+                mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz'),
                 mni_mask=join(home, 'atlases/MNI152_T1_2mm_brain_mask.nii.gz')
                 )
 
@@ -201,16 +202,15 @@ resample2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
 
 #Register DTI to MNI brain
 registermni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                           rigid2D=True,
+                           rigid2D=False,
                            output_type='NIFTI_GZ'),
                  name='registermni')
 
 applyreg_mni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                             rigid2D=True,
+                             rigid2D=False,
                              output_type='NIFTI_GZ',
                              apply_xfm = True),
                  name='applyreg_mni')
-
 
 # In[14]:
 
@@ -262,10 +262,18 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       
                       #Skullstrip b0
                       (fslroi, stripb0, [('roi_file', 'in_file')]),
+                      
                       #Resample DTI to uniform dimensions
                       (apptop, resample, [('out_corrected', 'in_file')]),
+                      
                       #Resample mask file
                       (stripb0, resample2, [('mask_file', 'in_file')]),
+                      
+                      #Saveb0 files
+                      (stripb0, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                           ('mask_file', '2_Preprocessed.@par.@par.@par.@par.@par.@par.@par')]),
+                      (stripb0, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                             ('out_file', '2_Preprocessed.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                       
                       #Pass in resampled outputs to Eddy
                       (resample, eddy, [('resampled_file', 'in_file')]),
@@ -293,12 +301,14 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                                         ('out_outlier_report',
                                          '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]),
                       #Register b0 to MNI
-                      (fslroi, registermni, [('roi_file', 'in_file')]),
-                      (sf, registermni, [('mni', 'ref')]),
+                      (stripb0, registermni, [('out_file', 'in_file')]),
+                      (sf, registermni, [('mni', 'reference')]),
+                      (registermni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                       #Apply transform to eddy corrected data
                       (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
-                      (eddy, applyreg_mni, [('out_corrected', 'in_file')])
-                      (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
+                      (sf, applyreg_mni, [('mni', 'reference')]),
+                      (eddy, applyreg_mni, [('out_corrected', 'in_file')]),
+                      (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
                      ])
 
 preproc_flow.base_dir = workflow_dir

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --array 0-100
+#SBATCH --array 0-174
 #SBATCH --output dsq-3_csd_dsq_job_array-%A_%3a-%N.out
 #SBATCH --job-name dsq-3_csd_dsq_job_array
 #SBATCH --mem-per-cpu 10g -t 60:00:00 --mail-type ALL --partition verylong

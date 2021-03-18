@@ -8,6 +8,7 @@ from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
 from nipype.interfaces.utility import IdentityInterface, Function    
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 import nipype.interfaces.mrtrix3 as mtx
+import nipype.interfaces.mrtrix3.utils as mtxu
 import nipype.interfaces.mrtrix.convert as mtxc
 import nipype.interfaces.mrtrix.preprocess as mtxp
 import nipype.interfaces.fsl as fsl
@@ -66,7 +67,7 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 #SelectFiles
-template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.nii.gz'),
+template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected_flirt.nii.gz'),
                 bval = join(raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
                 bvec = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
                 t1 = join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_ses-shapesV1_T1w.nii.gz'),
@@ -134,26 +135,32 @@ csd_flow = Workflow(name = 'csd_flow')
 csd_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                     #Segment T1 image with FSL 5tt algorithm
                     (sf, seg5tt, [('t1', 'in_file')]),
-                    (seg5tt, datasink, [('out_file', '5_Tract_Reconstruction')]),
+                    (seg5tt, datasink, [('out_file', '4_Deconvolution')]),
+                    # Extract mask
+                    (sf, mask, [('dti', 'in_file')]),
+                    (sf, mask, [('bval', 'in_bval'),
+                                ('bvec', 'in_bvec')]),
+                    (mask, datasink, [('out_file', '4_Deconvolution.@par')]),
                     #Convert bval/bvec to gradient tables
                     (sf, gradconv, [('dti', 'in_file'),
                                    ('bval','in_bval'),
                                    ('bvec', 'in_bvec')]),
                     #Compute FOD response functions
                     (gradconv, dwiresp, [('out_file', 'in_file')]),
-                    (dwiresp, datasink, [('wm_file', '4_Deconvolution.@par'),
-                                        ('gm_file', '4_Deconvolution.@par.@par'),
-                                        ('csf_file', '4_Deconvolution.@par.@par.@par')]),
+                    (dwiresp, datasink, [('wm_file', '4_Deconvolution.@par.@par'),
+                                        ('gm_file', '4_Deconvolution.@par.@par.@par'),
+                                        ('csf_file', '4_Deconvolution.@par.@par.@par.@par')]),
                     (gradconv, mscsd, [('out_file', 'in_file')]),
                     #Perform multi-shell constrained spherical deconvolution
                     (dwiresp, mscsd, [('wm_file', 'wm_txt'),
                                       ('gm_file', 'gm_txt'),
                                       ('csf_file', 'csf_txt')]),
+                    (mask, mscsd, [('out_file', 'mask_file')]),
 #                     (mscsd, tract, [('wm_odf', 'in_file')]),
-                    (mscsd, datasink, [('wm_odf', '4_Deconvolution.@par.@par.@par.@par'),
-                                       ('gm_odf', '4_Deconvolution.@par.@par.@par.@par.@par'),
-                                       ('csf_odf','4_Deconvolution.@par.@par.@par.@par.@par.@par')]),
-                    (gradconv, datasink, [('out_file', '4_Deconvolution.@par.@par.@par.@par.@par.@par.@par')])
+                    (mscsd, datasink, [('wm_odf', '4_Deconvolution.@par.@par.@par.@par.@par'),
+                                       ('gm_odf', '4_Deconvolution.@par.@par.@par.@par.@par.@par'),
+                                       ('csf_odf','4_Deconvolution.@par.@par.@par.@par.@par.@par.@par')]),
+                    (gradconv, datasink, [('out_file', '4_Deconvolution.@par.@par.@par.@par.@par.@par.@par.@par')])
                    ])
 csd_flow.base_dir = workflow_dir
 csd_flow.write_graph(graph2use = 'flat')
