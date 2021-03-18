@@ -212,6 +212,15 @@ applyreg_mni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
                              apply_xfm = True),
                  name='applyreg_mni')
 
+applyreg_mask = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
+                             rigid2D=False,
+                             output_type='NIFTI_GZ',
+                             apply_xfm = True),
+                 name='applyreg_mask')
+
+# binarize = Node(fsrm.Binarize(min = 1,
+#                              out_type = 'nii.gz'),
+#                 name = 'binarize')
 # In[14]:
 
 
@@ -308,7 +317,11 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
                       (sf, applyreg_mni, [('mni', 'reference')]),
                       (eddy, applyreg_mni, [('out_corrected', 'in_file')]),
-                      (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
+                      (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                      (sf, applyreg_mask, [('mni', 'reference')]),
+                      (registermni, applyreg_mask, [('out_matrix_file', 'in_matrix_file')]),
+                      (resample2, applyreg_mask, [('resampled_file', 'in_file')]),
+                      (applyreg_mask, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
                      ])
 
 preproc_flow.base_dir = workflow_dir
