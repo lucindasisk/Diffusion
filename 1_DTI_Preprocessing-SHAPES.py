@@ -17,6 +17,9 @@ from os import chdir, remove, getcwd, makedirs
 from shutil import copyfile
 from nipype import config, logging
 from datetime import date
+import sys
+
+var1 = str(sys.argv[1])
 today = str(date.today())
 config.enable_debug_mode()
 
@@ -38,9 +41,10 @@ else:
     data_dir = join(home, 'analyses/shapes/dwi/data')
     
 # Read in subject subject_list
-subject_csv = read_csv(home + '/analyses/shapes/dwi/DTI_RI_SubjectList.csv', header=0)
-sublist = 'sub-' + Series(subject_csv['subid'])
-subject_list = sublist.values.tolist()
+# subject_csv = read_csv(home + '/analyses/shapes/dwi/DTI_RI_SubjectList.csv', header=0)
+# sublist = 'sub-' + Series(subject_csv['subid'])
+# subject_list = sublist.values.tolist()
+subject_list = [var1]
 
 
 # In[8]:
