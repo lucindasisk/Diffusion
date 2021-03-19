@@ -218,10 +218,10 @@ applyreg_mask = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
                              apply_xfm = True),
                  name='applyreg_mask')
 
-# binarize = Node(fsrm.Binarize(min = 1,
-#                              out_type = 'nii.gz'),
-#                 name = 'binarize')
-# In[14]:
+binarize = Node(fsrm.Binarize(min = 1,
+                             out_type = 'nii.gz',
+                             dilate = 3),
+                name = 'binarize')
 
 
 
@@ -275,8 +275,9 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Resample DTI to uniform dimensions
                       (apptop, resample, [('out_corrected', 'in_file')]),
                       
-                      #Resample mask file
-                      (stripb0, resample2, [('mask_file', 'in_file')]),
+                      #Resample mask file and dilate to fill holes
+                      (stripb0, binarize, [('mask_file', 'in_file')]),
+                      (binarize, resample2, [('binary_file', 'in_file')]),
                       
                       #Saveb0 files
                       (stripb0, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par'),

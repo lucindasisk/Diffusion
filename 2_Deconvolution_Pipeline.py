@@ -72,7 +72,7 @@ template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_correcte
                 bvec = join(proc_dir, '3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
                 t1 = join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_ses-shapesV1_T1w.nii.gz'),
                 mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz'),
-                b0_mask = join(proc_dir, '3_Eddy_Corrected/{subject_id}/b0_img_brain_mask_resample_flirt.nii.gz')
+                b0_mask = join(proc_dir, '3_Eddy_Corrected/{subject_id}/b0_img_brain_mask_thresh_resample_flirt.nii.gz')
                )
 
 sf = Node(SelectFiles(template, 
@@ -143,6 +143,7 @@ csd_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
                                    ('bval','in_bval'),
                                    ('bvec', 'in_bvec')]),
                     #Compute FOD response functions
+                    (sf, dwiresp, [('b0_mask', 'in_mask')]),
                     (gradconv, dwiresp, [('out_file', 'in_file')]),
                     (dwiresp, datasink, [('wm_file', '4_Deconvolution.@par.@par'),
                                         ('gm_file', '4_Deconvolution.@par.@par.@par'),
