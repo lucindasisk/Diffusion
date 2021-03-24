@@ -1,12 +1,12 @@
 #! /bin/bash
 
 #SBATCH --job-name=create_fixeltemplate
-#SBATCH --partition=long
+#SBATCH --partition=verylong
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=10G
-#SBATCH --time=12:00:00
+#SBATCH --time=160:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=lucinda.sisk@yale.edu
 source ~/.bashrc
@@ -25,4 +25,5 @@ for sub in ${subs}; do
     rm mrconvert ${sub}_dwi_mask.nii.gz
 done
     
-population_template $in_fldr -mask_dir $mask_fldr $out_file
+population_template -force $in_fldr -mask_dir $mask_fldr $out_file
+
