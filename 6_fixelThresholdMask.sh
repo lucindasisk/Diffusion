@@ -10,21 +10,21 @@
 source ~/.bashrc
 
 ml load StdEnv
-MRtrix3/3.0_RC3-foss-2018a
+ml load MRtrix3/3.0_RC3-foss-2018a
 
 conda activate /gpfs/milgram/pi/gee_dylan/lms233/conda_envs/shapes-dwi3.7
 
 path='/gpfs/milgram/pi/gee_dylan/candlab/analyses/shapes/dwi/data/CSD_MSMT_fixel_dir'
-in_template=$path'/CSD_MSMT_TemplatePeaksImage.mif'
+in_template=${path}'/CSD_MSMT_TemplatePeaksImage.mif'
 
 echo 'Threholding peaks'
 #Threshold the peaks fixel image:
-mrthreshold -force $in_template -abs 0.15 ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask.mif'
+mrthreshold -force ${in_template} -abs 0.15 ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask.mif'
 
-#Generate an analysis voxel mask from the fixel mask. 
-fixel2voxel -force ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask.mif' count - | mrthreshold - - -abs 0.5 -force | mrfilter - median -force ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask_VoxelMask.mif' 
+#Generate an analysis voxel mask from the fixel mask.
+fixel2voxel -force ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask.mif' count - | mrthreshold - - -abs 0.5 -force | mrfilter - median -force ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask_VoxelMask.mif'
 
-#Recompute the fixel mask using the analysis voxel mask. 
+#Recompute the fixel mask using the analysis voxel mask.
 mkdir ${path}'/recomputed_fixel_dir'
 rm ${path}'/recomputed_fixel_dir/*'
 
