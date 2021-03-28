@@ -15,6 +15,7 @@ source ~/.bashrc
 ml load StdEnv
 ml load FreeSurfer/6.0.0
 ml load FSL/6.0.3-centos7_64
+ml load ANTs/2.3.1-foss-2018a
 ml load MRtrix3/3.0_RC3-foss-2018a
 ml load Python/3.6.4-foss-2018a
 ml load FreeSurfer/7.1.0-centos7_x86_64

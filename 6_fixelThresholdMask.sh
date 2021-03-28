@@ -24,14 +24,10 @@ mrthreshold -force ${in_template} -abs 0.15 ${path}'/CSD_MSMT_FOD_StudyTemplate_
 #Generate an analysis voxel mask from the fixel mask.
 fixel2voxel -force ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask.mif' count - | mrthreshold - - -abs 0.5 -force | mrfilter - median -force ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask_VoxelMask.mif'
 
-#Recompute the fixel mask using the analysis voxel mask.
-mkdir ${path}'/recomputed_fixel_dir'
-rm ${path}'/recomputed_fixel_dir/*'
+echo "Converting FOD images to fixels"
 
 fod2fixel -force -mask ${path}'/CSD_MSMT_FOD_StudyTemplate_ThresholdedMask_VoxelMask.mif' ${path}'/../CSD_MSMT_FOD_StudyTemplate.mif' $path'/recomputed_fixel_dir' -peak '/temp.mif'
 
 mrthreshold -force ${path}'/recomputed_fixel_dir/temp.mif' -abs 0.2 ${path}'/CSD_MSMT_FOD_StudyTemplate_Thresholded_FixelMaskFinal.mif' -force
-
-rm ${path}'/CSD_MSMT_fixel_dir/temp.mif'
 
 echo 'Done'

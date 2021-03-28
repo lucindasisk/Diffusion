@@ -8,6 +8,7 @@ from nipype.interfaces.io import DataSink, SelectFiles, DataGrabber
 from nipype.interfaces.utility import IdentityInterface, Function
 from nipype.pipeline.engine import Node, Workflow, JoinNode, MapNode
 from nipype.interfaces import fsl
+from nipype.interfaces import ants
 import nipype.interfaces.mrtrix3 as mtx
 import nipype.interfaces.freesurfer as fsr
 import nipype.interfaces.freesurfer.model as fsrm
@@ -118,6 +119,7 @@ create_merge = Node(Function(input_names=['ap', 'pa'],
 # In[11]:
 
 
+########################### MRTrix Commands ###########################
 
 # Drop bottom slice (S/I) to create even # of slices
 drop = Node(fsl.ExtractROI(x_min=0, x_size=140,
@@ -141,7 +143,11 @@ gibbs = Node(mtx.MRDeGibbs(),
 bias = Node(mtx.DWIBiasCorrect(use_ants=True),
             name='bias')
 
-###########################
+# Extract mask from DWI data
+dwimask = Node(mtx.BrainMask(bval_scale = 'yes'),
+              name = 'dwimask')
+
+########################### Standard/Other nodes ###########################
 
 # Run topup on merged files from pe1 and pe0
 topup = Node(fsl.TOPUP(config='b02b0.cnf',
@@ -192,37 +198,28 @@ eddy = Node(fsl.Eddy(is_shelled=True,
                      repol=True),
             name='eddy')
 
-#Resample dti to isotropic 1.7x1.7x1.7
-resample = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+#Upsample dti to isotropic 1x1x1
+resample = Node(fsr.Resample(voxel_size=(1, 1, 1)),
                name = "resample")
 
-#Resample dti to isotropic 1.7x1.7x1.7
-resample2 = Node(fsr.Resample(voxel_size=(1.7, 1.7, 1.7)),
+#Upsample dti to isotropic 1x1x1
+resample2 = Node(fsr.Resample(voxel_size=(1, 1, 1)),
                name = "resample2")
 
 #Register DTI to MNI brain
 registermni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                           rigid2D=False,
+                           rigid2D=True,
                            output_type='NIFTI_GZ'),
                  name='registermni')
 
 applyreg_mni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                             rigid2D=False,
+                             rigid2D=True,
                              output_type='NIFTI_GZ',
                              apply_xfm = True),
                  name='applyreg_mni')
 
-applyreg_mask = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                             rigid2D=False,
-                             output_type='NIFTI_GZ',
-                             apply_xfm = True),
-                 name='applyreg_mask')
 
-binarize = Node(fsrm.Binarize(min = 1,
-                             out_type = 'nii.gz',
-                             dilate = 3),
-                name = 'binarize')
-
+# In[14]:
 
 
 preproc_flow = Workflow(name='preproc_flow')
@@ -238,52 +235,58 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       # Run topop across merged niftis
                       (drop, topup, [('roi_file', 'in_file')]),
                       (sf, topup, [('aps', 'encoding_file')]),
-                      (topup, datasink, [('out_corrected', '1_Check_Unwarped.@par'),
-                      ('out_fieldcoef', '1_Check_Unwarped.@par.@par')]),
                       
-                      # Apply topup to bias corrected DTI data
-                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
-                                      ('out_movpar','in_topup_movpar')]),
-                      (drop2, apptop, [('roi_file', 'in_files')]),
-                      (sf, apptop, [('aps', 'encoding_file')]),
-                      (apptop, datasink, [
-                          ('out_corrected', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par'),
-                          ('out_corrected', '2_Preprocessed.@par.@par.@par.@par')]),
-                      
-                      # Extract b0 image from nifti with topup applied
-                      (apptop, fslroi, [('out_corrected', 'in_file')]),
-                      
-                      #Register T1 to b0 brain
-                      (sf, register1, [('t1', 'in_file')]),
-                      (fslroi, register1, [('roi_file', 'reference')]),
-                      
-                      #skullstrip T1
-                      (register1, stripT1, [('out_file', 'in_file')]),
-                      
-                      # Save stripped anat and mask
-                      (stripT1, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par'),
-                                           ('mask_file', '2_Preprocessed.@par.@par')]),
-                      (stripT1, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par'),
-                                             ('out_file', '2_Preprocessed.@par.@par.@par')]),
-                      
-                      # Drop bottom slice from DTI nifti
+                      #Select data, drop bottom slice (odd # slices)
                       (sf, drop2, [('dti', 'in_file')]),
                       
-                      #Skullstrip b0
+                      # denoise
+                      (drop2, denoise, [('roi_file', 'in_file')]),
+                      
+                      # Gibbs ringing removal (in this order per https://mrtrix.readthedocs.io/en/latest/reference/commands/mrdegibbs.html)
+                      (denoise, gibbs, [('out_file', 'in_file')]),
+                      
+                      # Apply topup to bias/Gibbs corrected DTI data
+                      (topup, apptop, [('out_fieldcoef', 'in_topup_fieldcoef'),
+                                      ('out_movpar','in_topup_movpar')]),
+                      (gibbs, apptop, [('out_file', 'in_files')]),
+                      (sf, apptop, [('aps', 'encoding_file')]),
+                      
+                      # Perform B1 field inhomogeneity correction for a DWI volume series.
+                      (apptop, bias, [('out_corrected', 'in_file')]),
+                      
+                      # Extract b0 image from nifti with topup applied
+                      (bias, fslroi, [('out_file', 'in_file')]),
+                      
+                      # Skullstrip T1 and b0
+                      (sf, stripT1, [('t1', 'in_file')]),
                       (fslroi, stripb0, [('roi_file', 'in_file')]),
                       
-                      #Resample DTI to uniform dimensions
-                      (apptop, resample, [('out_corrected', 'in_file')]),
+                      #Register b0 to MNI
+                      (stripb0, registermni, [('out_file', 'in_file')]),
+                      (sf, registermni, [('mni', 'reference')]),
+                      (registermni, datasink, [('out_file', 'Preprocessed_Data')]),
                       
-                      #Resample mask file and dilate to fill holes
-                      (stripb0, binarize, [('mask_file', 'in_file')]),
-                      (binarize, resample2, [('binary_file', 'in_file')]),
+                      #Apply transform to dwi data
+                      (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
+                      (sf, applyreg_mni, [('mni', 'reference')]),
+                      (bias, applyreg_mni, [('out_file', 'in_file')]),
+                      (applyreg_mni, datasink, [('out_file', 'Preprocessed_Data.@par')]),
                       
-                      #Saveb0 files
-                      (stripb0, datasink, [('mask_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par'),
-                                           ('mask_file', '2_Preprocessed.@par.@par.@par.@par.@par.@par.@par')]),
-                      (stripb0, datasink, [('out_file', '1_Check_Unwarped.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
-                                             ('out_file', '2_Preprocessed.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                      # Register T1 to MNI-registered b0 ]
+                      (stripT1, register1, [('out_file', 'in_file')]),
+                      (registermni, register1, [('out_file', 'reference')]),
+                      (register1, datasink, [('out_file', 'Preprocessed_Data.@par.@par')]),
+                      
+                      # Create analysis mask for next steps
+                      (applyreg_mni, dwimask, [('out_file', 'in_file')]),
+                      (sf, dwimask, [('bval', 'in_bval'),
+                                     ('bvec', 'in_bvec')]),
+                      
+                      #Resample DTI to uniform dimensions 1x1x1
+                      (applyreg_mni, resample, [('out_file', 'in_file')]),
+                      
+                      #Resample mask file 1x1x1
+                      (dwimask, resample2, [('out_file', 'in_file')]),
                       
                       #Pass in resampled outputs to Eddy
                       (resample, eddy, [('resampled_file', 'in_file')]),
@@ -294,35 +297,22 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (resample2, eddy, [('resampled_file', 'in_mask')]),
                       
                       #Save Eddy outputs
-                      (eddy, datasink, [('out_corrected', '3_Eddy_Corrected'),
-                                        ('out_rotated_bvecs', '3_Eddy_Corrected.@par'),
+                      (eddy, datasink, [('out_corrected', 'Preprocessed_Data.@par.@par.@par'),
+                                        ('out_rotated_bvecs', 'Preprocessed_Data.@par.@par.@par.@par'),
                                         ('out_movement_rms',
-                                         '3_Eddy_Corrected.@par.@par'),
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par'),
                                         ('out_parameter',
-                                         '3_Eddy_Corrected.@par.@par.@par'),
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par'),
                                         ('out_restricted_movement_rms',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par'),
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_shell_alignment_parameters',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par'),
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_cnr_maps',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par'),
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_residuals',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par'),
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_outlier_report',
-                                         '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par')]),
-                      #Register b0 to MNI
-                      (stripb0, registermni, [('out_file', 'in_file')]),
-                      (sf, registermni, [('mni', 'reference')]),
-                      (registermni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
-                      #Apply transform to eddy corrected data
-                      (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
-                      (sf, applyreg_mni, [('mni', 'reference')]),
-                      (eddy, applyreg_mni, [('out_corrected', 'in_file')]),
-                      (applyreg_mni, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
-                      (sf, applyreg_mask, [('mni', 'reference')]),
-                      (registermni, applyreg_mask, [('out_matrix_file', 'in_matrix_file')]),
-                      (resample2, applyreg_mask, [('resampled_file', 'in_file')]),
-                      (applyreg_mask, datasink, [('out_file', '3_Eddy_Corrected.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')])
+                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                      ])
 
 preproc_flow.base_dir = workflow_dir
