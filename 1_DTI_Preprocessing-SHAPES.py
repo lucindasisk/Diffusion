@@ -140,12 +140,20 @@ gibbs = Node(mtx.MRDeGibbs(),
              name='gibbs')
 
 # DWI bias file correction using ANTS N4
-bias = Node(mtx.DWIBiasCorrect(use_ants=True),
+bias = Node(mtx.DWIBiasCorrect(use_ants=True,
+                              bval_scale = 'yes'),
             name='bias')
 
 # Extract mask from DWI data
-dwimask = Node(mtx.BrainMask(bval_scale = 'yes'),
+dwimask = Node(mtx.BrainMask(bval_scale = 'yes',
+                            out_file = 'dwi_brain_mask.nii.gz'),
               name = 'dwimask')
+
+mrconvert1 = Node(mtx.MRConvert(),
+                 name = 'mrconvert1')
+
+mrconvert2 = Node(mtx.MRConvert(),
+                 name = 'mrconvert2')
 
 ########################### Standard/Other nodes ###########################
 
@@ -251,11 +259,8 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (gibbs, apptop, [('out_file', 'in_files')]),
                       (sf, apptop, [('aps', 'encoding_file')]),
                       
-                      # Perform B1 field inhomogeneity correction for a DWI volume series.
-                      (apptop, bias, [('out_corrected', 'in_file')]),
-                      
-                      # Extract b0 image from nifti with topup applied
-                      (bias, fslroi, [('out_file', 'in_file')]),
+                       # Extract b0 image from nifti with topup applied
+                      (apptop, fslroi, [('out_corrected', 'in_file')]),
                       
                       # Skullstrip T1 and b0
                       (sf, stripT1, [('t1', 'in_file')]),
@@ -269,7 +274,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       #Apply transform to dwi data
                       (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
                       (sf, applyreg_mni, [('mni', 'reference')]),
-                      (bias, applyreg_mni, [('out_file', 'in_file')]),
+                      (apptop, applyreg_mni, [('out_corrected', 'in_file')]),
                       (applyreg_mni, datasink, [('out_file', 'Preprocessed_Data.@par')]),
                       
                       # Register T1 to MNI-registered b0 ]
@@ -277,10 +282,13 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (registermni, register1, [('out_file', 'reference')]),
                       (register1, datasink, [('out_file', 'Preprocessed_Data.@par.@par')]),
                       
-                      # Create analysis mask for next steps
-                      (applyreg_mni, dwimask, [('out_file', 'in_file')]),
-                      (sf, dwimask, [('bval', 'in_bval'),
+                      #Convert image data to .mif for dwimask
+                      (applyreg_mni, mrconvert1, [('out_file', 'in_file')]),
+                      (sf, mrconvert1, [('bval', 'in_bval'),
                                      ('bvec', 'in_bvec')]),
+               
+                      # Create analysis mask for next steps
+                      (mrconvert1, dwimask, [('out_file', 'in_file')]),
                       
                       #Resample DTI to uniform dimensions 1x1x1
                       (applyreg_mni, resample, [('out_file', 'in_file')]),
@@ -317,7 +325,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
 
 preproc_flow.base_dir = workflow_dir
 preproc_flow.write_graph(graph2use='flat')
-preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 4})
+preproc = preproc_flow.run('MultiProc', plugin_args={'n_procs': 2})
 
 
 # In[ ]:
