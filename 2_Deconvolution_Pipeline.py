@@ -11,6 +11,7 @@ import nipype.interfaces.mrtrix3 as mtx
 import nipype.interfaces.mrtrix3.utils as mtxu
 import nipype.interfaces.mrtrix.convert as mtxc
 import nipype.interfaces.mrtrix.preprocess as mtxp
+from nipype.interfaces import ants
 import nipype.interfaces.fsl as fsl
 from pandas import Series, read_csv, to_numeric
 from glob import glob
@@ -67,12 +68,13 @@ infosource = Node(IdentityInterface(fields=['subject_id']),
 infosource.iterables = [('subject_id', subject_list)]
 
 #SelectFiles
-template = dict(dti = join(proc_dir,'3_Eddy_Corrected/{subject_id}/eddy_corrected_flirt.nii.gz'),
+template = dict(dti = join(proc_dir,'1_Preprocessed_Data/{subject_id}/eddy_corrected.nii.gz'),
                 bval = join(raw_dir, '{subject_id}/ses-shapesV1/dwi/{subject_id}_ses-shapesV1_dwi.bval'),
-                bvec = join(proc_dir, '3_Eddy_Corrected/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
-                t1 = join(raw_dir, '{subject_id}/ses-shapesV1/anat/{subject_id}_ses-shapesV1_T1w.nii.gz'),
+                bvec = join(proc_dir, '1_Preprocessed_Data/{subject_id}/eddy_corrected.eddy_rotated_bvecs'),
+                t1 = join(proc_dir, '1_Preprocessed_Data/{subject_id}/{subject_id}_ses-shapesV1_T1w_reoriented_flirt.nii.gz'),
                 mni=join(home, 'atlases/MNI152_T1_2mm_brain.nii.gz'),
-                b0_mask = join(proc_dir, '3_Eddy_Corrected/{subject_id}/b0_img_brain_mask_thresh_resample_flirt.nii.gz')
+                b0_mask = join(proc_dir, '1_Preprocessed_Data/{subject_id}/dwi_brain_mask_resample.nii.gz'),
+                aps=join(raw_dir, 'shapes_acqparams.txt')
                )
 
 sf = Node(SelectFiles(template, 
@@ -121,6 +123,20 @@ mscsd = Node(mtx.EstimateFOD(algorithm = 'msmt_csd',
                             max_sh = [8,8,8]),
             name='mscsd')
 
+# DWI bias file correction using ANTS N4
+bias5 = Node(mtx.DWIBiasCorrect(use_ants=True),
+            name='bias5')
+
+# Extract FA
+tensor = Node(mtx.FitTensor(),
+            name='tensor')
+
+fa = Node(mtx.TensorMetrics(out_adc = 'ADC.mif',
+                           out_eval = 'Eigenvalues.mif',
+                           out_evec = 'Eigenvectors.mif',
+                           out_fa = 'FA.mif'),
+          name = 'fa')
+
 #Perform Tractography - iFOD2 (https://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.mrtrix3/tracking.html) 
 tract = Node(mtx.Tractography(algorithm='iFOD2',
                               select=100000, #Jiook has done 100 million streamlines
@@ -134,32 +150,43 @@ tract = Node(mtx.Tractography(algorithm='iFOD2',
 
 csd_flow = Workflow(name = 'csd_flow')
 csd_flow.connect([(infosource, sf, [('subject_id','subject_id')]),
-                    #Segment T1 image with FSL 5tt algorithm
-                    (sf, seg5tt, [('t1', 'in_file')]),
-                    (seg5tt, datasink, [('out_file', '4_Deconvolution')]),
+                  #Segment T1 image with FSL 5tt algorithm
+                  (sf, seg5tt, [('t1', 'in_file')]),
+                  (seg5tt, datasink, [('out_file', '2_Deconvolved_Data')]),
                    
-                    #Convert bval/bvec to gradient tables
-                    (sf, gradconv, [('dti', 'in_file'),
-                                   ('bval','in_bval'),
-                                   ('bvec', 'in_bvec')]),
-                    #Compute FOD response functions
-                    (sf, dwiresp, [('b0_mask', 'in_mask')]),
-                    (gradconv, dwiresp, [('out_file', 'in_file')]),
-                    (dwiresp, datasink, [('wm_file', '4_Deconvolution.@par.@par'),
-                                        ('gm_file', '4_Deconvolution.@par.@par.@par'),
-                                        ('csf_file', '4_Deconvolution.@par.@par.@par.@par')]),
-                    (gradconv, mscsd, [('out_file', 'in_file')]),
-                    #Perform multi-shell constrained spherical deconvolution
-                    (dwiresp, mscsd, [('wm_file', 'wm_txt'),
-                                      ('gm_file', 'gm_txt'),
-                                      ('csf_file', 'csf_txt')]),
-                    (sf, mscsd, [('b0_mask', 'mask_file')]),
-#                     (mscsd, tract, [('wm_odf', 'in_file')]),
-                    (mscsd, datasink, [('wm_odf', '4_Deconvolution.@par.@par.@par.@par.@par'),
-                                       ('gm_odf', '4_Deconvolution.@par.@par.@par.@par.@par.@par'),
-                                       ('csf_odf','4_Deconvolution.@par.@par.@par.@par.@par.@par.@par')]),
-                    (gradconv, datasink, [('out_file', '4_Deconvolution.@par.@par.@par.@par.@par.@par.@par.@par')])
-                   ])
+                  #Convert bval/bvec to gradient tables
+                  (sf, gradconv, [('dti', 'in_file'),
+                                  ('bval','in_bval'),
+                                  ('bvec', 'in_bvec')]),
+                  #Compute FOD response functions
+                  (sf, dwiresp, [('b0_mask', 'in_mask')]),
+                  (gradconv, dwiresp, [('out_file', 'in_file')]),
+                  (dwiresp, datasink, [('wm_file', '2_Deconvolved_Data.@par.@par'),
+                                       ('gm_file', '2_Deconvolved_Data.@par.@par.@par'),
+                                       ('csf_file', '2_Deconvolved_Data.@par.@par.@par.@par')]),
+                  (gradconv, mscsd, [('out_file', 'in_file')]),
+                  #Perform multi-shell constrained spherical deconvolution
+                  (dwiresp, mscsd, [('wm_file', 'wm_txt'),
+                                    ('gm_file', 'gm_txt'),
+                                    ('csf_file', 'csf_txt')]),
+                  (sf, mscsd, [('b0_mask', 'mask_file')]),
+#                   (mscsd, tract, [('wm_odf', 'in_file')]),
+                  (mscsd, datasink, [('wm_odf', '2_Deconvolved_Data.@par.@par.@par.@par.@par'),
+                                     ('gm_odf', '2_Deconvolved_Data.@par.@par.@par.@par.@par.@par'),
+                                     ('csf_odf','2_Deconvolved_Data.@par.@par.@par.@par.@par.@par.@par')]),
+                  (gradconv, datasink, [('out_file', '2_Deconvolved_Data.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                  #Bias Correction and Tensor Extraction  
+                  (gradconv, bias5, [('out_file', 'in_file')]),
+                  (bias5, tensor, [('out_file', 'in_file')]),
+                  (sf, tensor, [('bval','in_bval'),
+                                ('bvec', 'in_bvec')]),
+                  (tensor, fa, [('out_file', 'in_file')]),
+                  (tensor, datasink, [('out_file', '3_Tensor_Data')]),
+                  (fa, datasink, [('out_adc', '3_Tensor_Data.@par')]),
+                  (fa, datasink, [('out_eval', '3_Tensor_Data.@par.@par')]),
+                  (fa, datasink, [('out_evec', '3_Tensor_Data.@par.@par.@par')]),
+                  (fa, datasink, [('out_fa', '3_Tensor_Data.@par.@par.@par.@par')])
+                      ])
 csd_flow.base_dir = workflow_dir
 csd_flow.write_graph(graph2use = 'flat')
 dwi = csd_flow.run('MultiProc', plugin_args={'n_procs': 4})

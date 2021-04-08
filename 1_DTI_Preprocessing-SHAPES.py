@@ -174,7 +174,6 @@ reorient1 = Node(fsl.Reorient2Std(output_type='NIFTI_GZ'),
 
 # Register T1 to b0 - rigid 2D transformation
 register1 = Node(fsl.FLIRT(out_matrix_file='b0toT1_reorient_reg.mat',
-                           rigid2D=True,
                            output_type='NIFTI_GZ'),
                  name='register1')
 
@@ -216,12 +215,10 @@ resample2 = Node(fsr.Resample(voxel_size=(1, 1, 1)),
 
 #Register DTI to MNI brain
 registermni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                           rigid2D=True,
                            output_type='NIFTI_GZ'),
                  name='registermni')
 
 applyreg_mni = Node(fsl.FLIRT(out_matrix_file='b0toMNI_registered.mat',
-                             rigid2D=True,
                              output_type='NIFTI_GZ',
                              apply_xfm = True),
                  name='applyreg_mni')
@@ -262,25 +259,24 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                        # Extract b0 image from nifti with topup applied
                       (apptop, fslroi, [('out_corrected', 'in_file')]),
                       
-                      # Skullstrip T1 and b0
-                      (sf, stripT1, [('t1', 'in_file')]),
+                      # Skullstrip b0
                       (fslroi, stripb0, [('roi_file', 'in_file')]),
                       
                       #Register b0 to MNI
                       (stripb0, registermni, [('out_file', 'in_file')]),
                       (sf, registermni, [('mni', 'reference')]),
-                      (registermni, datasink, [('out_file', 'Preprocessed_Data')]),
                       
                       #Apply transform to dwi data
                       (registermni, applyreg_mni, [('out_matrix_file', 'in_matrix_file')]),
                       (sf, applyreg_mni, [('mni', 'reference')]),
                       (apptop, applyreg_mni, [('out_corrected', 'in_file')]),
-                      (applyreg_mni, datasink, [('out_file', 'Preprocessed_Data.@par')]),
+                      (applyreg_mni, datasink, [('out_file', '1_Preprocessed_Data')]),
                       
                       # Register T1 to MNI-registered b0 ]
-                      (stripT1, register1, [('out_file', 'in_file')]),
+                      (sf, reorient1, [('t1', 'in_file')]),
+                      (reorient1, register1, [('out_file', 'in_file')]),
                       (registermni, register1, [('out_file', 'reference')]),
-                      (register1, datasink, [('out_file', 'Preprocessed_Data.@par.@par')]),
+                      (register1, datasink, [('out_file', '1_Preprocessed_Data.@par')]),
                       
                       #Convert image data to .mif for dwimask
                       (applyreg_mni, mrconvert1, [('out_file', 'in_file')]),
@@ -295,6 +291,7 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       
                       #Resample mask file 1x1x1
                       (dwimask, resample2, [('out_file', 'in_file')]),
+                      (resample2, datasink, [('resampled_file', '1_Preprocessed_Data.@par.@par')]),
                       
                       #Pass in resampled outputs to Eddy
                       (resample, eddy, [('resampled_file', 'in_file')]),
@@ -305,22 +302,22 @@ preproc_flow.connect([(infosource, sf, [('subject_id', 'subject_id')]),
                       (resample2, eddy, [('resampled_file', 'in_mask')]),
                       
                       #Save Eddy outputs
-                      (eddy, datasink, [('out_corrected', 'Preprocessed_Data.@par.@par.@par'),
-                                        ('out_rotated_bvecs', 'Preprocessed_Data.@par.@par.@par.@par'),
+                      (eddy, datasink, [('out_corrected', '1_Preprocessed_Data.@par.@par.@par'),
+                                        ('out_rotated_bvecs', '1_Preprocessed_Data.@par.@par.@par.@par'),
                                         ('out_movement_rms',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par'),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par'),
                                         ('out_parameter',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par'),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par.@par'),
                                         ('out_restricted_movement_rms',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par'),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_shell_alignment_parameters',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_cnr_maps',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_residuals',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par'),
                                         ('out_outlier_report',
-                                         'Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
+                                         '1_Preprocessed_Data.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par.@par')]),
                      ])
 
 preproc_flow.base_dir = workflow_dir

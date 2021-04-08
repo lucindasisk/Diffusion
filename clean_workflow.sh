@@ -1,9 +1,9 @@
 #! /bin/bash
 
-home='/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/tract_flow/'
+home='/gpfs/milgram/project/gee_dylan/candlab/analyses/shapes/dwi/workflows/csd_flow/'
 cd $home
 subs=$(ls)
-dir='seg5tt'
+dir='bias'
 
 for sub in $subs ; do
   echo 'removing '$dir' directory for '$sub
